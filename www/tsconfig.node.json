@@ -29,6 +29,7 @@
       "@layout/*": ["./src/layouts/*"],
       "@pages/*": ["./src/pages/*"],
       "@hooks/*": ["./src/hooks/*"],
+      "@layouts/*": ["./src/layouts/*"],
       "@ui/*": ["./src/components/ui/*"],
       "@/*": ["./src/*"]
     }
