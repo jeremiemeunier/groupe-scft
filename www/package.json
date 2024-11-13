@@ -25,6 +25,7 @@
     "react-router-dom": "^6.28.0",
     "sass": "^1.80.6",
     "scss": "^0.2.4",
+    "simplebar-react": "^3.2.6",
     "vite-tsconfig-paths": "^5.1.0"
   },
   "devDependencies": {
