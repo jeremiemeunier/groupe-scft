@@ -1,0 +1,206 @@
+@use "sass:map";
+@use "sass:math";
+
+@mixin global($theme) {
+  $colors: map.get($map: $theme, $key: 'colors');
+  $color_schemas: map.get($map: $theme, $key: 'color_schemas');
+  $fonts: map.get($map: $theme, $key: 'fonts');
+  $radius: map.get($map: $theme, $key: 'radius');
+
+  &.header-root {
+    display: grid;
+    align-items: center;
+    align-content: center;
+
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 3;
+
+    height: 80px;
+    padding: 0 16px;
+  }
+
+  &.header-container {
+    display: grid;
+    align-items: center;
+    align-content: center;
+    grid-template-columns: min-content 1fr;
+    column-gap: 16px;
+
+    height: 48px;
+    width: 90vw;
+    max-width: 1080px;
+    margin: auto;
+  }
+
+  .header-nav {
+    display: grid;
+  }
+
+  .app-logo {
+    display: grid;
+    align-items: center;
+    align-content: center;
+    grid-auto-flow: column;
+    grid-auto-columns: min-content;
+    column-gap: 8px;
+
+    height: 40px;
+
+    span {
+      line-height: 24px;
+
+      font-weight: 900;
+      font-size: 24px;
+      font-family: map.get($map: $fonts, $key: "title");
+      text-transform: uppercase;
+      white-space: nowrap;
+    }
+
+    &.mono {
+      color: map.get($map: $colors, $key: "background_1");
+
+      @if ($color_schemas =="default") {
+        color: map.get($map: $colors, $key: "content");
+      }
+
+      .logo {
+        background-color: map.get($map: $colors, $key: "background_1");
+
+        @if ($color_schemas =="default") {
+          background-color: map.get($map: $colors, $key: "content");
+        }
+
+        >span {
+          background-color: map.get($map: $colors, $key: 'main');
+        }
+      }
+    }
+
+  }
+}
+
+@mixin search($theme) {
+  $colors: map.get($theme, 'colors');
+  $radius: map.get($theme, 'radius');
+  $color_schemas: map.get($theme, 'color_schemas');
+
+  .header-search {
+    background: transparent;
+    border-width: 1px;
+    border-style: solid;
+    border-color: transparent;
+    border-radius: map.get($map: $radius, $key: "small") + 4px;
+    padding: 4px;
+    margin: -5px;
+
+    transition:
+      border-color .3s,
+      background-color .3s,
+      box-shadow .3s;
+
+    .form {
+      position: relative;
+
+      input {
+        padding-right: 40px;
+      }
+
+      .infusedui-loader {
+        position: absolute;
+        right: 48px;
+        top: 50%;
+
+        transform: translateY(-50%);
+      }
+
+      .clear {
+        all: unset;
+
+        position: absolute;
+        right: 8px;
+        top: 50%;
+
+        color: map.get($map: $colors, $key: "main");
+        transform: translateY(-50%);
+      }
+    }
+
+    .form-input:focus-within {
+      outline: none;
+    }
+
+    &.active,
+    &:focus-within {
+      box-shadow: 0 2px 16px rgba(#000000, .15);
+      background: map.get($map: $colors, $key: "background_2");
+      border-color: rgba($color: map.get($map: $colors, $key: "content"), $alpha: .3);
+    }
+
+    .results {
+      max-height: 50vh;
+    }
+  }
+}
+
+@mixin account($theme) {
+  $colors: map.get($map: $theme, $key: 'colors');
+  $radius: map.get($map: $theme, $key: 'radius');
+
+  &.account {
+    position: relative;
+
+    display: grid;
+    justify-content: end;
+    justify-items: end;
+
+    height: 40px;
+
+    .account-menu {
+      position: relative;
+      z-index: 3;
+
+      .account-links {
+        position: absolute;
+        top: calc(100% + 8px);
+        right: 0;
+
+        background-color: rgba(map.get($map: $colors, $key: "background_1"), .6);
+        backdrop-filter: blur(8px);
+        border-radius: map.get($map: $radius, $key: "small");
+        border: 1px solid rgba(map.get($map: $colors, $key: "content"), .3);
+        box-shadow: 0 0 16px rgba(0, 0, 0, .1);
+        overflow: hidden;
+      }
+
+      ul,
+      li {
+        padding: 0;
+        margin: 0;
+        list-style: none;
+
+        a {
+          display: grid;
+          align-items: center;
+          align-content: center;
+
+          height: 40px;
+          padding: 0 16px;
+          border: none;
+
+          color: map.get($map: $colors, $key: "content");
+          white-space: nowrap;
+          transition:
+            background-color .3s;
+
+          &:hover {
+            background: rgba(map.get($map: $colors, $key: "background_2"), .5);
+            border: none;
+          }
+        }
+      }
+    }
+  }
+}

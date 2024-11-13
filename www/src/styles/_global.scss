@@ -1,0 +1,752 @@
+@use "sass:color";
+@use "sass:map";
+@mixin icon($theme) {
+  $colors: map.get($map: $theme, $key: 'colors');
+  $shades: map.get($map: $theme, $key: 'shades');
+
+  .icon {
+    display: grid;
+    grid-template-columns: 24px;
+    grid-template-rows: 24px;
+    align-items: center;
+    align-content: center;
+    justify-items: center;
+    justify-content: center;
+
+    min-width: 24px;
+    min-height: 24px;
+
+    color: inherit;
+    font-size: 24px;
+    text-transform: none;
+    font-style: normal;
+
+    // making all colors variants
+    @each $name, $value in $colors {
+      &.color-#{$name} {
+        color: $value;
+      }
+    }
+
+    @each $name, $value in $shades {
+      &.color-#{$name} {
+        color: $value;
+      }
+    }
+
+
+
+    &.state-positive {
+      color: map.get($map: $colors, $key: 'positive');
+    }
+
+    &.state-negative {
+      color: map.get($map: $colors, $key: 'negative');
+    }
+
+    &.state-neutral {
+      color: map.get($map: $colors, $key: 'neutral');
+    }
+
+    &.state-main {
+      color: map.get($map: $colors, $key: 'main');
+    }
+
+
+
+    &.sm {
+      grid-template-columns: 16px;
+      grid-template-rows: 16px;
+
+      font-size: 16px;
+    }
+
+    &.sl {
+      grid-template-columns: 32px;
+      grid-template-rows: 32px;
+
+      font-size: 32px;
+    }
+
+    &.sxl {
+      grid-template-columns: 64px;
+      grid-template-rows: 64px;
+
+      font-size: 64px;
+    }
+  }
+}
+
+@mixin switch($theme) {
+  $colors: map.get($theme, 'colors');
+  $radius: map.get($theme, 'radius');
+
+  &.theme-switch {
+    label {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      align-items: center;
+      justify-items: center;
+
+      position: relative;
+
+      width: 72px;
+      height: 40px;
+      border-radius: 40px;
+      background: map.get($map: $colors, $key: 'content');
+
+      color: map.get($map: $colors, $key: 'background_1');
+      cursor: pointer;
+
+      transition: border-color .1s ease-in-out, left .1s ease-in-out;
+    }
+
+    label:after {
+      display: grid;
+
+      position: absolute;
+      top: 50%;
+      left: 2px;
+
+      content: '';
+      height: calc(100% - 4px);
+      aspect-ratio: 1/1;
+      border-radius: 50%;
+      background-color: map.get($map: $colors, $key: 'background_1');
+      transform: translateY(-50%) translateX(calc(100% - 4px));
+    }
+
+    input[type="checkbox"] {
+
+      &:not(:checked),
+      &:checked {
+        display: none;
+      }
+
+      &:checked {
+        +label:after {
+          transform: translateY(-50%) translateX(0%);
+        }
+      }
+    }
+  }
+}
+
+@mixin svg($theme) {
+  $colors: map.get($map: $theme, $key: 'colors');
+
+  svg {
+    [fill="content"] {
+      fill: map.get($map: $colors, $key: 'content');
+    }
+
+    [fill="main"] {
+      fill: map.get($map: $colors, $key: 'main');
+    }
+
+    [fill="bg1"] {
+      fill: map.get($map: $colors, $key: 'background_1');
+    }
+
+    [fill="bg2"] {
+      fill: map.get($map: $colors, $key: 'background_2');
+    }
+
+    [fill="bg3"] {
+      fill: map.get($map: $colors, $key: 'background_3');
+    }
+
+    [stroke="content"] {
+      stroke: map.get($map: $colors, $key: 'content');
+    }
+
+    [stroke="main"] {
+      stroke: map.get($map: $colors, $key: 'main');
+    }
+
+    [stroke="bg1"] {
+      stroke: map.get($map: $colors, $key: 'background_1');
+    }
+
+    [stroke="bg2"] {
+      stroke: map.get($map: $colors, $key: 'background_2');
+    }
+
+    [stroke="bg3"] {
+      stroke: map.get($map: $colors, $key: 'background_3');
+    }
+  }
+}
+
+@mixin loader($theme) {
+  $colors: map.get($theme, 'colors');
+  $color_schemas: map.get($theme, 'schemas');
+
+  .infusedui-loader {
+    display: grid;
+    align-items: center;
+    justify-items: center;
+
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+
+    svg {
+      width: 24px;
+      height: 24px;
+      transform-origin: center;
+      animation: rotate4 2s linear infinite;
+    }
+
+    circle {
+      fill: none;
+      stroke: map.get($colors, 'main');
+      stroke-width: 5;
+      stroke-dasharray: 1, 200;
+      stroke-dashoffset: 0;
+      stroke-linecap: round;
+      animation: dash4 1.5s ease-in-out infinite;
+    }
+
+    @keyframes rotate4 {
+      100% {
+        transform: rotate(360deg);
+      }
+    }
+
+    @keyframes dash4 {
+      0% {
+        stroke-dasharray: 1, 200;
+        stroke-dashoffset: 0;
+      }
+
+      50% {
+        stroke-dasharray: 90, 200;
+        stroke-dashoffset: -35px;
+      }
+
+      100% {
+        stroke-dashoffset: -125px;
+      }
+    }
+  }
+
+  &.loader {
+    width: 24px;
+    height: 24px;
+
+    &.size-giant {
+      width: 64px;
+      height: 64px;
+
+      svg {
+        width: 64px;
+        height: 64px;
+      }
+
+      circle {
+        stroke-width: 2;
+      }
+    }
+
+    &.size-medium {
+      width: 48px;
+      height: 48px;
+
+      svg {
+        width: 48px;
+        height: 48px;
+      }
+
+      circle {
+        stroke-width: 3;
+      }
+    }
+
+    svg {
+      width: 24px;
+      height: 24px;
+      transform-origin: center;
+      animation: rotate4 2s linear infinite;
+    }
+
+    circle {
+      fill: none;
+      stroke: map.get($colors, 'main');
+      stroke-width: 5;
+      stroke-dasharray: 1, 200;
+      stroke-dashoffset: 0;
+      stroke-linecap: round;
+      animation: dash4 1.5s ease-in-out infinite;
+    }
+
+    @keyframes rotate4 {
+      100% {
+        transform: rotate(360deg);
+      }
+    }
+
+    @keyframes dash4 {
+      0% {
+        stroke-dasharray: 1, 200;
+        stroke-dashoffset: 0;
+      }
+
+      50% {
+        stroke-dasharray: 90, 200;
+        stroke-dashoffset: -35px;
+      }
+
+      100% {
+        stroke-dashoffset: -125px;
+      }
+    }
+  }
+}
+
+@mixin default($theme) {
+  $fonts: map.get($theme, 'fonts');
+  $colors: map.get($map: $theme, $key: 'colors');
+  $radius: map.get($map: $theme, $key: 'radius');
+  $color_schemas: map.get($map: $theme, $key: 'color_schemas');
+
+  .unicorn {
+    display: grid;
+
+    width: 160px;
+    height: 160px;
+    border-radius: 50%;
+    background-image: url("https://1.images.cdn.digitalteacompany.fr/sportable/unicorn.png");
+    background-size: cover;
+  }
+
+  .separator {
+    display: grid;
+
+    background: rgba($color: map.get($map: $colors, $key: 'content'), $alpha: .3);
+
+    &.dir-vertical {
+      width: 1px;
+      height: 32px;
+      margin: 0 12px;
+    }
+
+    &.dir-horizontal {
+      height: 1px;
+      width: 80px;
+      margin: 12px auto;
+    }
+  }
+
+  .highlighted {
+    background: map.get($map: $colors, $key: 'content');
+    color: map.get($map: $colors, $key: 'background_1');
+  }
+
+  @media all and (min-width: 992px) {
+    .ls-invisible {
+      display: none !important;
+    }
+  }
+
+  @media all and (min-width: 768px) and (max-width: 992px) {
+    .ms-invisible {
+      display: none !important;
+    }
+  }
+
+  @media all and (max-width: 768px) {
+    .xs-invisible {
+      display: none !important;
+    }
+  }
+
+  .position-sticky {
+    position: sticky;
+    z-index: 2;
+
+    $a: 0;
+
+    @while $a <=20 {
+      &.top-#{$a * 8} {
+        top: $a * 8px;
+      }
+
+      &.bottom-#{$a * 8} {
+        bottom: $a * 8px;
+      }
+
+      &.left-#{$a * 8} {
+        left: $a * 8px;
+      }
+
+      &.right-#{$a * 8} {
+        right: $a * 8px;
+      }
+
+      $a: $a + 1;
+    }
+  }
+
+  .position-fixed {
+    position: fixed;
+    z-index: 3;
+
+    $a: 0;
+
+    @while $a <=20 {
+      &.top-#{$a * 8} {
+        top: $a * 8px;
+      }
+
+      &.bottom-#{$a * 8} {
+        bottom: $a * 8px;
+      }
+
+      &.left-#{$a * 8} {
+        left: $a * 8px;
+      }
+
+      &.right-#{$a * 8} {
+        right: $a * 8px;
+      }
+
+      $a: $a + 1;
+    }
+  }
+
+  body {
+    font-family: map.get($map: $fonts, $key: 'text');
+
+    * {
+      position: relative;
+
+      box-sizing: border-box;
+      scroll-behavior: smooth;
+
+      font-family: map.get($map: $fonts, $key: 'text');
+    }
+  }
+
+  .simplebar-scrollbar {
+
+    &.simplebar-visible:before,
+    &:before {
+      background-color: rgba($color: map.get($map: $colors, $key: 'content'), $alpha: .5);
+    }
+  }
+}
+
+@mixin schemas($theme) {
+  $colors: map.get($map: $theme, $key: 'colors');
+
+  &.body {
+    background: map.get($map: $colors, $key: 'background_1');
+    min-height: 100vh;
+    min-width: 100vw;
+    overflow-y: hidden;
+
+    color: map.get($map: $colors, $key: 'content');
+  }
+}
+
+@mixin shadow($theme) {
+
+  &.shadow-browser {
+    box-shadow: 0 0 128px 64px rgba($color: #000000, $alpha: 5%);
+  }
+}
+
+@mixin tag($theme) {
+  $radius: map.get($map: $theme, $key: 'radius');
+  $colors: map.get($map: $theme, $key: 'colors');
+  $shades: map.get($map: $theme, $key: 'shades');
+  $color_schemas: map.get($map: $theme, $key: 'color_schemas');
+  $fontsize: map.get($map: $theme, $key: 'fontsize');
+
+  .infusedui-tag-root,
+  &.tag-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 4px;
+  }
+
+  .infusedui-tag {
+    display: inline-flex;
+    align-items: center;
+    align-content: center;
+
+    border-radius: 8px;
+    border-width: 1px;
+    border-style: solid;
+    border-color: rgba($color: map.get($map: $colors, $key: 'content'), $alpha: .3);
+    background: map.get($map: $colors, $key: "background_2");
+    padding-left: 12px;
+    padding-right: 12px;
+    width: fit-content;
+    height: 40px;
+
+    cursor: pointer;
+    transition:
+      background-color .3s;
+
+    &:hover {
+      background-color: color.adjust($color: map.get($colors, 'content'), $lightness: 75%);
+
+      @if($color_schemas =="dark") {
+        background-color: color.adjust($color: map.get($colors, 'content'), $lightness: -75%);
+        color: map.get($map: $colors, $key: "content");
+      }
+    }
+  }
+
+  &.tag {
+    display: inline-flex;
+    align-items: center;
+    align-content: center;
+
+    height: fit-content;
+    border-radius: 24px;
+    border: 1px solid transparent;
+    padding-left: 8px;
+    padding-right: 8px;
+    width: fit-content;
+    height: 24px;
+
+    color: map.get($map: $colors, $key: 'background_1');
+    font-size: .8em;
+    font-weight: 600;
+    white-space: nowrap;
+
+    .circle {
+      width: 24px;
+      height: 24px;
+      border: 2px solid transparent;
+      border-radius: 50%;
+    }
+
+    &.size-small {
+      border-radius: map.get($map: $radius, $key: 'large');
+    }
+
+    &.size-large {
+      border-radius: map.get($map: $radius, $key: 'medium');
+
+      font-size: map.get($map: $fontsize, $key: 'text');
+    }
+
+    &.format-icon {
+      display: inline-grid;
+      align-items: center;
+      grid-template-columns: 24px min-content;
+      column-gap: 8px;
+
+      padding-left: 4px;
+
+      span {
+        white-space: nowrap;
+      }
+    }
+
+    &.format-badge {
+      padding: 4px 8px;
+      height: 24px;
+      border-radius: map.get($map: $radius, $key: 'large');
+
+      &.position {
+        position: absolute;
+
+        &.top-left {
+          top: 4px;
+          left: 4px;
+        }
+
+        &.top-right {
+          top: 4px;
+          right: 4px;
+        }
+
+        &.bottom-left {
+          bottom: 4px;
+          left: 4px;
+        }
+
+        &.bottom-right {
+          bottom: 4px;
+          right: 4px;
+        }
+      }
+    }
+
+    &.format-pastille {
+      padding: 0;
+      height: 12px;
+      aspect-ratio: 1/1;
+      border-radius: 50%;
+
+      &.position {
+        position: absolute;
+
+        &.top-left {
+          top: 8px;
+          left: 8px;
+        }
+
+        &.top-right {
+          top: 8px;
+          right: 8px;
+        }
+
+        &.bottom-left {
+          bottom: 8px;
+          left: 8px;
+        }
+
+        &.bottom-right {
+          bottom: 8px;
+          right: 8px;
+        }
+      }
+    }
+
+    &.fill {
+      @each $name, $value in $shades {
+        &.color-#{$name} {
+          background-color: $value;
+          color: color.adjust($value, $lightness: -80%);
+        }
+      }
+
+      @each $name, $value in $colors {
+        &.color-#{$name} {
+          background-color: $value;
+          color: color.adjust($value, $lightness: -80%);
+        }
+      }
+    }
+
+    &.stroke {
+      .circle {
+        &.draft {
+          border-style: dashed;
+          border-color: map.get($map: $colors, $key: 'content');
+        }
+      }
+
+      @each $name, $value in $shades {
+        &.color-#{$name} {
+          border-color: $value;
+          background-color: color.adjust($value, $lightness: 40%);
+
+          @if($color_schemas =="dark") {
+            background-color: color.adjust($value, $lightness: -50%);
+          }
+
+          color: $value;
+
+          .circle:not(.draft) {
+            background-color: $value;
+          }
+        }
+      }
+
+      @each $name, $value in $colors {
+        &.color-#{$name} {
+          border-color: $value;
+          background-color: color.adjust($value, $lightness: 50%);
+
+          @if($color_schemas =="dark") {
+            background-color: color.adjust($value, $lightness: -50%);
+          }
+
+          color: $value;
+
+          .circle:not(.draft) {
+            background-color: $value;
+          }
+        }
+      }
+    }
+  }
+}
+
+@mixin shadow($theme) {
+
+  &.shadow-browser {
+    box-shadow: 0 0 128px 64px rgba($color: #000000, $alpha: 5%);
+  }
+}
+
+@mixin flag($theme) {
+
+  &.flag {
+    height: 6px;
+    max-height: 6px;
+
+    &.french {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+
+      width: 24px;
+      min-height: 120px;
+
+      div:first-child {
+        background: linear-gradient(to bottom, #000091, transparent);
+      }
+
+      div:nth-child(2) {
+        background: linear-gradient(to bottom, #ffffff, transparent);
+      }
+
+      div:nth-child(3) {
+        background: linear-gradient(to bottom, #e1000f, transparent);
+      }
+    }
+  }
+}
+
+@mixin link($theme) {
+  $colors: map.get($theme, 'colors');
+  $shades: map.get($theme, 'shades');
+
+  a {
+    transition:
+      color .3s;
+
+    // making all colors variants
+    @each $name, $value in $colors {
+      &.hover-color-#{$name}:hover {
+        color: $value;
+      }
+    }
+
+    @each $name, $value in $shades {
+      &.hover-color-#{$name}:hover {
+        color: $value;
+      }
+    }
+  }
+}
+
+@mixin layout($theme) {
+
+  .root-support-article {
+    display: grid;
+    grid-template-columns: 1fr 400px;
+    align-items: start;
+
+    @extend .grid;
+    @extend .format-page;
+    @extend .sl;
+  }
+
+  .root-support {
+    display: grid;
+    grid-template-columns: 1fr;
+    align-items: start;
+
+    @extend .grid;
+    @extend .format-page;
+    @extend .sl;
+  }
+}
