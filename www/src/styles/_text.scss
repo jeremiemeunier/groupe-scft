@@ -103,6 +103,7 @@
 @mixin title($theme) {
   $fonts: map.get($theme, 'fonts');
   $fontsize: map.get($theme, 'fontsize');
+  $colors: map.get($theme, 'colors');
 
   div.title-container {
     display: grid;
@@ -126,6 +127,7 @@
 
   h1 {
     font-family: map.get($fonts, 'title');
+    text-transform: uppercase;
 
     span {
       font-family: inherit;
@@ -143,10 +145,10 @@
 
   h1 {
     padding-bottom: 16px;
-    opacity: .6;
 
+    color: map.get($map: $colors, $key: "background_1");
     font-size: map.get($fontsize, 'h1');
-    font-weight: 300;
+    font-weight: 700;
   }
 
   h2 {

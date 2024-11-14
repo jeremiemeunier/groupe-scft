@@ -1,5 +1,6 @@
 @use "sass:color";
 @use "sass:map";
+
 @mixin container($theme) {
   $radius: map.get($map: $theme, $key: "radius");
 
@@ -138,7 +139,7 @@
     text-decoration: none;
     white-space: nowrap;
     font-size: map.get($map: $fontsize, $key: 'text');
-    outline: 0 solid rgba(map.get($colors, 'main'), $alpha: .4);
+    outline: 0 solid rgba(map.get($colors, 'punch'), $alpha: .4);
     outline-offset: 2px;
     transition:
       outline-width .1s ease-in-out,
@@ -291,15 +292,15 @@
 
     // Level
     &.level-primary {
-      background-color: map.get($map: $colors, $key: 'main');
+      background-color: map.get($map: $colors, $key: 'punch');
       border-color: rgba(map.get($colors, "content"), .3);
 
-      color: color.adjust($color: map.get($colors, "main"), $lightness: -60%);
+      color: color.adjust($color: map.get($colors, "punch"), $lightness: -60%);
 
       &:hover,
       &:focus,
       &:target {
-        background-color: color.adjust(map.get($colors, 'main'), $lightness: 10%);
+        background-color: color.adjust(map.get($colors, 'punch'), $lightness: 10%);
       }
 
       // making all colors variants

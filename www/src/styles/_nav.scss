@@ -42,6 +42,8 @@
         justify-items: center;
         justify-content: center;
 
+        position: relative;
+
         height: 32px;
         background: none;
         border-bottom-width: 2px;
@@ -49,15 +51,29 @@
         border-bottom-color: transparent;
 
         color: map.get($map: $colors, $key: "background_1");
-        font-weight: 400;
+        font-weight: 600;
+        font-size: .9em;
         white-space: nowrap;
         transition:
           color .3s,
           background-color .3s,
           opacity .3s;
 
-        &:not(.active):hover {
-          border-bottom-color: map.get($map: $colors, $key: "background_1");
+        &:before {
+          position: absolute;
+          top: 100%;
+          left: 0;
+
+          content: "";
+          height: 2px;
+          width: 0%;
+          background: map.get($colors, "background_1");
+          transition:
+            width .3s;
+        }
+
+        &:not(.active):hover:before {
+          width: 100%;
         }
 
         &.active {
