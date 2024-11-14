@@ -31,6 +31,9 @@ const Nav = () => {
         <li>
           <Link to={"/valeurs"}>Valeurs</Link>
         </li>
+        <li>
+          <Link to={"/gare-connexions"}>Nos gares</Link>
+        </li>
       </ul>
     </nav>
   );
