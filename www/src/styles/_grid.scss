@@ -154,6 +154,11 @@
         max-width: 1080px;
       }
 
+      &.sxl {
+        width: 90vw;
+        max-width: 75vw;
+      }
+
       &.sf {
         width: 100vw;
         max-width: calc(100vw - 32px);

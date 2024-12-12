@@ -50,7 +50,7 @@
         border-bottom-style: solid;
         border-bottom-color: transparent;
 
-        color: map.get($map: $colors, $key: "background_1");
+        color: map.get($map: $colors, $key: "content");
         font-weight: 600;
         font-size: .9em;
         white-space: nowrap;
@@ -65,9 +65,9 @@
           left: 0;
 
           content: "";
-          height: 2px;
+          height: 1px;
           width: 0%;
-          background: map.get($colors, "background_1");
+          background: map.get($colors, "content");
           transition:
             width .3s;
         }

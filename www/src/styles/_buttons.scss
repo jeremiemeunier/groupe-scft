@@ -139,6 +139,7 @@
     text-decoration: none;
     white-space: nowrap;
     font-size: map.get($map: $fontsize, $key: 'text');
+    font-weight: 600;
     outline: 0 solid rgba(map.get($colors, 'punch'), $alpha: .4);
     outline-offset: 2px;
     transition:

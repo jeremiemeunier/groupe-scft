@@ -20,6 +20,8 @@
 
     height: 80px;
     padding: 0 16px;
+    background-color: rgba(map.get($map: $colors, $key: "background_1"), .6);
+    backdrop-filter: blur(16px);
   }
 
   &.header-container {
