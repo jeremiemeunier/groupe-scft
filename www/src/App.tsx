@@ -21,7 +21,7 @@ export default App;
 const RouteContainer = () => {
   return (
     <ScrollProvider>
-      <div>
+      <div className="teaui body">
         <GlobalLayout>
           <Routes>
             <Route path="/" element={<Home />} />
