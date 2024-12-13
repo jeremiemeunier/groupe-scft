@@ -1,5 +1,6 @@
 @use "sass:color";
 @use "sass:map";
+
 @mixin icon($theme) {
   $colors: map.get($map: $theme, $key: 'colors');
   $shades: map.get($map: $theme, $key: 'shades');
@@ -444,7 +445,7 @@
     background: map.get($map: $colors, $key: 'background_1');
     min-height: 100vh;
     min-width: 100vw;
-    overflow-y: hidden;
+    overflow: hidden;
 
     color: map.get($map: $colors, $key: 'content');
   }
