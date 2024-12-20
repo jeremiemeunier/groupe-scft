@@ -11,7 +11,7 @@ const PartHeroHeader = () => {
         backgroundPosition: "center center",
       }}
     >
-      <div className="teaui grid format-page sl sv-60 va-center">
+      <div className="teaui grid format-page sl sv-70 va-center">
         <h1 className="teaui mb80">
           Vous transporter,
           <br />
