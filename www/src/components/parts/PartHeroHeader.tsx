@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 const PartHeroHeader = () => {
   return (
     <div
-      className="teaui grid format-page sxl radius-small shadow browser mt80"
+      className="teaui grid format-page sxl radius-small mt80"
       style={{
         background:
           "url(https://images.pexels.com/photos/258444/pexels-photo-258444.jpeg",
