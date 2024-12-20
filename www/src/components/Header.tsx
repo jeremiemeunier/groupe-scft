@@ -20,13 +20,7 @@ const Nav = () => {
     <nav className="teaui header-nav">
       <ul>
         <li>
-          <Link to={"/ttgv"}>TTGV</Link>
-        </li>
-        <li>
-          <Link to={"/ter"}>TER</Link>
-        </li>
-        <li>
-          <Link to={"/fret"}>FRET</Link>
+          <Link to={"/trains"}>Trains</Link>
         </li>
         <li>
           <Link to={"/valeurs"}>Valeurs</Link>
