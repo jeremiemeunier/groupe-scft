@@ -30,7 +30,7 @@ const EmblaCarousel: React.FC<PropType> = (props) => {
         <div className="embla__container">
           {slides.map((slide, key) => (
             <Link
-              to={`/gare/${slide.link}`}
+              to={`/gare-connexions/${slide.link}`}
               className="embla__slide"
               key={key}
               title={slide.label}
