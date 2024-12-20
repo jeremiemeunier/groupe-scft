@@ -6,9 +6,10 @@ import {
   usePrevNextButtons,
 } from "@part/PartEmblaCarouselButtons";
 import useEmblaCarousel from "embla-carousel-react";
+import { Link } from "react-router-dom";
 
 type PropType = {
-  slides: { media: string }[];
+  slides: { media: string; link: string; label: string }[];
   options?: EmblaOptionsType;
 };
 
@@ -28,14 +29,19 @@ const EmblaCarousel: React.FC<PropType> = (props) => {
       <div className="embla__viewport" ref={emblaRef}>
         <div className="embla__container">
           {slides.map((slide, key) => (
-            <div className="embla__slide" key={key}>
+            <Link
+              to={`/gare/${slide.link}`}
+              className="embla__slide"
+              key={key}
+              title={slide.label}
+            >
               <img
                 src={slide.media}
                 className="teaui media shape-round"
                 width={"100%"}
                 alt=""
               />
-            </div>
+            </Link>
           ))}
         </div>
       </div>
