@@ -1,4 +1,5 @@
 @use "sass:map";
+
 @mixin global($theme) {
   $colors: map.get($map: $theme, $key: 'colors');
   $brand: map.get($map: $theme, $key: 'brand');
@@ -62,7 +63,7 @@
     .footer-column {
       display: grid;
       grid-auto-flow: row;
-      grid-template-rows: 40px min-content;
+      grid-template-rows: min-content;
       align-items: center;
       row-gap: 16px;
 
