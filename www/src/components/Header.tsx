@@ -5,7 +5,7 @@ const Header = () => {
     <header className="teaui header-root">
       <div className="teaui header-container">
         <Link to={"/"}>
-          <img src="/imgs/logo.svg" height={32} />
+          <img src="/imgs/logo.svg" height={24} />
         </Link>
         <Nav />
       </div>
