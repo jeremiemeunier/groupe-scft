@@ -3,11 +3,10 @@ import { Link } from "react-router-dom";
 const PartHeroHeader = () => {
   return (
     <div
-      className="teaui grid format-page sxl radius-small mt80"
+      className="teaui grid format-page sf radius-small mt80"
       style={{
-        background:
-          "url(https://images.pexels.com/photos/258444/pexels-photo-258444.jpeg",
-        backgroundSize: "100%",
+        background: "url(/imgs/background/gradient.png",
+        backgroundSize: "cover",
         backgroundPosition: "center center",
       }}
     >
@@ -28,7 +27,7 @@ const PartHeroHeader = () => {
           </Link>
           <Link
             to={""}
-            className="teaui cta format-icon-right level-secondary sl"
+            className="teaui cta format-icon-right level-tertiary sl"
           >
             <span>Faire carrière</span>
             <i className="icon teaui-icon-arrow-right"></i>
