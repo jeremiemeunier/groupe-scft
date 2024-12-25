@@ -41,6 +41,7 @@ const EmblaCarousel: React.FC<PropType> = (props) => {
                 width={"100%"}
                 alt=""
               />
+              <h2>{slide.label}</h2>
             </Link>
           ))}
         </div>
