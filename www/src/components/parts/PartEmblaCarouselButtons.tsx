@@ -56,7 +56,7 @@ export const PrevButton: React.FC<PropType> = (props) => {
 
   return (
     <button
-      className="teaui cta format-icon-only level-secondary sl"
+      className="teaui cta format-icon-only level-secondary"
       type="button"
       {...restProps}
     >
@@ -70,7 +70,7 @@ export const NextButton: React.FC<PropType> = (props) => {
 
   return (
     <button
-      className="teaui cta format-icon-only level-secondary sl"
+      className="teaui cta format-icon-only level-secondary"
       type="button"
       {...restProps}
     >
