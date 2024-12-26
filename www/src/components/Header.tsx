@@ -8,10 +8,15 @@ const Header = () => {
       <div className="teaui header-container">
         <div className="teaui grid tac va-center">
           <Link to={"/"}>
-            <img src="/imgs/logo.svg" height={24} />
+            <img src="/imgs/icon_colored.svg" height={28} />
           </Link>
           {pathname.startsWith("/sgp") && (
-            <img src="/imgs/societe-grand-projet-color-black.svg" height={40} />
+            <Link to={"/sgp"} className="teaui ml16 ms-ml16 xs-ml16">
+              <img
+                src="/imgs/societe-grand-projet-color-black.svg"
+                height={40}
+              />
+            </Link>
           )}
         </div>
         <Nav />
@@ -36,7 +41,7 @@ const Nav = () => {
           <Link to={"/gare-connexions"}>Nos gares</Link>
         </li>
         <li>
-          <Link to={"/travaux"}>Chantiers</Link>
+          <Link to={"/chantiers"}>Chantiers</Link>
         </li>
       </ul>
     </nav>
