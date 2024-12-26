@@ -27,7 +27,7 @@
       "@section/*": ["./src/components/sections/*"],
       "@modal/*": ["./src/components/modals/*"],
       "@card/*": ["./src/components/cards/*"],
-      "@context/*": ["./src/context/*"],
+      "@context/*": ["./src/contexts/*"],
       "@layout/*": ["./src/layouts/*"],
       "@pages/*": ["./src/pages/*"],
       "@hooks/*": ["./src/hooks/*"],
