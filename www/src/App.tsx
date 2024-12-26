@@ -2,9 +2,12 @@ import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 
 import "@infusedui/core/dist/infusedui.style.css";
 import "./App.scss";
-import ScrollProvider from "./contexts/ScrollContext";
+import ScrollProvider from "@context/ScrollContext";
 import GlobalLayout from "@layout/GlobalLayout";
+
 import Home from "@pages/Home";
+import PageError404 from "@pages/error/PageError404";
+import PageChantier from "@pages/Chantiers";
 
 const App = () => {
   return (
@@ -25,7 +28,8 @@ const RouteContainer = () => {
         <GlobalLayout>
           <Routes>
             <Route path="/" element={<Home />} />
-            {/* <Route path="*" element={<Error404 />} /> */}
+            <Route path="/chantiers" element={<PageChantier />} />
+            <Route path="*" element={<PageError404 />} />
           </Routes>
         </GlobalLayout>
       </div>
