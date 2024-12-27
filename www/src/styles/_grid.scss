@@ -1,3 +1,4 @@
+@use "sass:color";
 @use "sass:map";
 @use "sass:math";
 
@@ -362,7 +363,7 @@
     @each $name, $value in $shades {
       &.bg-#{$name} {
         background-color: $value;
-        color: darken($color: $value, $amount: 60%);
+        color: color.adjust($color: $value, $lightness: -60%);
       }
 
       &.color-#{$name} {
