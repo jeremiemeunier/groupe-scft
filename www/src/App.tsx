@@ -10,6 +10,7 @@ import PageError404 from "@pages/error/PageError404";
 import PageChantier from "@pages/Chantiers";
 import PageChantierArticle from "@pages/ChantierArticle";
 import PageSocietyLargeProject from "@pages/SocietyLargeProject";
+import PageGareConnection from "@pages/GareConnection";
 
 const App = () => {
   return (
@@ -30,13 +31,17 @@ const RouteContainer = () => {
         <GlobalLayout>
           <Routes>
             <Route path="/" element={<Home />} />
+            <Route
+              path="/societes/gare-connexions"
+              element={<PageGareConnection />}
+            />
             <Route path="/chantiers" element={<PageChantier />} />
             <Route
               path="/chantiers/:chantier"
               element={<PageChantierArticle />}
             />
             <Route
-              path="/societe/societe-grands-projets"
+              path="/societes/societe-grands-projets"
               element={<PageSocietyLargeProject />}
             />
             <Route path="*" element={<PageError404 />} />
