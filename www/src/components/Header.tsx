@@ -8,7 +8,7 @@ const Header = () => {
       <div className="teaui header-container">
         <div className="teaui grid tac va-center">
           <Link to={"/"}>
-            <img src="/imgs/icon_colored.svg" height={28} />
+            <img src="/imgs/icon_colored.png" height={28} />
           </Link>
           {pathname.startsWith("/societes/societe-grands-projets") && (
             <Link
@@ -16,7 +16,7 @@ const Header = () => {
               className="teaui ml16 ms-ml16 xs-ml16"
             >
               <img
-                src="/imgs/societe-grand-projet-color-black.svg"
+                src="/imgs/societe-grand-projet-color-black.png"
                 height={40}
               />
             </Link>
