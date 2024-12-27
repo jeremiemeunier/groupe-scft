@@ -67,7 +67,7 @@
     row-gap: 8px;
 
     min-height: 48px;
-    border-radius: map.get($map: $radius, $key: 'medium');
+    border-radius: map.get($map: $radius, $key: 'small');
     border: 1px solid transparent;
     background: map.get($map: $colors, $key: 'background_1');
     box-shadow: 0 0 32px rgba(0, 0, 0, .1);
