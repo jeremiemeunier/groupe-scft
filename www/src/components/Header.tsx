@@ -10,8 +10,11 @@ const Header = () => {
           <Link to={"/"}>
             <img src="/imgs/icon_colored.svg" height={28} />
           </Link>
-          {pathname.startsWith("/sgp") && (
-            <Link to={"/sgp"} className="teaui ml16 ms-ml16 xs-ml16">
+          {pathname.startsWith("/societe-grands-projets") && (
+            <Link
+              to={"/societe-grands-projets"}
+              className="teaui ml16 ms-ml16 xs-ml16"
+            >
               <img
                 src="/imgs/societe-grand-projet-color-black.svg"
                 height={40}
@@ -19,7 +22,9 @@ const Header = () => {
             </Link>
           )}
         </div>
-        <Nav />
+        <div className="teaui grid ha-end">
+          <Nav />
+        </div>
       </div>
     </header>
   );
