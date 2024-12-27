@@ -1,5 +1,6 @@
 @use "sass:color";
 @use "sass:map";
+
 @mixin container($theme) {
   $colors: map.get($map: $theme, $key: 'colors');
   $radius: map.get($map: $theme, $key: 'radius');
@@ -61,16 +62,14 @@
   &.card {
     display: grid;
     align-items: center;
+    grid-auto-rows: min-content;
     row-gap: 8px;
 
     min-height: 48px;
     border-radius: map.get($map: $radius, $key: 'medium');
     border: 1px solid transparent;
-    background: map.get($map: $colors, $key: 'background_2');
-    border-width: 1px;
-    border-style: solid;
-    border-color: rgba(map.get($map: $colors, $key: 'content'), .3);
-    padding: 8px;
+    background: map.get($map: $colors, $key: 'background_1');
+    box-shadow: 0 0 32px rgba(0, 0, 0, .1);
 
     color: map.get($map: $colors, $key: 'content');
     text-decoration: none;

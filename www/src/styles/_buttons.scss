@@ -103,6 +103,7 @@
 
 @mixin cta($theme) {
   $colors: map.get($theme, 'colors');
+  $shades: map.get($theme, 'shades');
   $brand: map.get($theme, 'brand');
   $fonts: map.get($theme, 'fonts');
   $fontsize: map.get($theme, 'fontsize');
@@ -323,6 +324,20 @@
             @if($schemas =="dark") {
               background-color: color.adjust($color: $value, $lightness: -35%);
             }
+          }
+        }
+      }
+
+      @each $name, $value in $shades {
+        &.color-#{$name} {
+          background-color: color.adjust($color: $value, $lightness: -60%);
+          color: color.adjust($color: $value, $lightness: 60%);
+
+          &:hover,
+          &:focus,
+          &:target {
+            background-color: $value;
+            color: color.adjust($color: $value, $lightness: -60%);
           }
         }
       }
