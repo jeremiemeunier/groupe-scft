@@ -8,6 +8,7 @@ import GlobalLayout from "@layout/GlobalLayout";
 import Home from "@pages/Home";
 import PageError404 from "@pages/error/PageError404";
 import PageChantier from "@pages/Chantiers";
+import PageChantierArticle from "@pages/ChantierArticle";
 
 const App = () => {
   return (
@@ -29,6 +30,10 @@ const RouteContainer = () => {
           <Routes>
             <Route path="/" element={<Home />} />
             <Route path="/chantiers" element={<PageChantier />} />
+            <Route
+              path="/chantiers/:chantier"
+              element={<PageChantierArticle />}
+            />
             <Route path="*" element={<PageError404 />} />
           </Routes>
         </GlobalLayout>
