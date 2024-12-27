@@ -9,7 +9,7 @@ const PartFooterLogo = () => {
         </Link>
       </div>
       <div className="teaui grid tac">
-        <Link to={"/societe/societe-grands-projets"}>
+        <Link to={"/societes/societe-grands-projets"}>
           <img src="/imgs/societe-grand-projet-color-black.svg" height={56} />
         </Link>
       </div>
