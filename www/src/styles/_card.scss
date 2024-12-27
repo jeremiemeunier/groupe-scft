@@ -33,6 +33,7 @@
 
 @mixin card($theme) {
   $colors: map.get($map: $theme, $key: "colors");
+  $shades: map.get($map: $theme, $key: "shades");
   $color_schemas: map.get($map: $theme, $key: "color_schemas");
   $radius: map.get($map: $theme, $key: "radius");
   $fonts: map.get($map: $theme, $key: "fonts");
@@ -98,6 +99,21 @@
     &.aspect {
       &.square {
         aspect-ratio: 1/1;
+      }
+    }
+
+    &.color {
+      @each $name, $value in $shades {
+        &.shade-#{$name} {
+          background-color: $value;
+          color: color.adjust($color: $value, $lightness: -60%);
+
+          &:is(a) {
+            &:hover {
+              box-shadow: 0 0 32px $value;
+            }
+          }
+        }
       }
     }
   }

@@ -340,6 +340,7 @@
             background-color: $value;
             color: color.adjust($color: $value, $lightness: -60%);
             border-color: color.adjust($color: $value, $lightness: -60%);
+            outline-color: rgba(color.adjust($color: $value, $lightness: -60%), $alpha: .4);
           }
         }
       }
