@@ -44,7 +44,7 @@ const PartHeroHeader = () => {
 
           <div className="teaui grid tac va-end">
             <Link
-              to={""}
+              to={"/societe/societe-grands-projets/emplois"}
               className="teaui cta format-icon-right level-primary color-cobalt-reverse sl"
             >
               <span>Faire carrière</span>
