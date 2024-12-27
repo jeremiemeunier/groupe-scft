@@ -320,6 +320,7 @@
           &:target {
             background-color: rgba($value, .3);
             color: map.get($map: $colors, $key: "content");
+            border-color: color.adjust($color: $value, $lightness: -60%);
 
             @if($schemas =="dark") {
               background-color: color.adjust($color: $value, $lightness: -35%);
@@ -338,6 +339,7 @@
           &:target {
             background-color: $value;
             color: color.adjust($color: $value, $lightness: -60%);
+            border-color: color.adjust($color: $value, $lightness: -60%);
           }
         }
       }
