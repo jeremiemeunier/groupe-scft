@@ -9,6 +9,7 @@ import Home from "@pages/Home";
 import PageError404 from "@pages/error/PageError404";
 import PageChantier from "@pages/Chantiers";
 import PageChantierArticle from "@pages/ChantierArticle";
+import PageSocietyLargeProject from "@pages/SocietyLargeProject";
 
 const App = () => {
   return (
@@ -33,6 +34,10 @@ const RouteContainer = () => {
             <Route
               path="/chantiers/:chantier"
               element={<PageChantierArticle />}
+            />
+            <Route
+              path="/societe/societe-grands-projets"
+              element={<PageSocietyLargeProject />}
             />
             <Route path="*" element={<PageError404 />} />
           </Routes>
