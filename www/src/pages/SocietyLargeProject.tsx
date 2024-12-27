@@ -1,6 +1,11 @@
+import { useEffect } from "react";
 import { Link } from "react-router-dom";
 
 const PageSocietyLargeProject = () => {
+  useEffect(() => {
+    document.title = "Société des Grands Projets — TeuTeuTrain Company";
+  }, []);
+
   return (
     <div>
       <div className="teaui grid bg-dark-cobalt-reverse va-center sv-80">
@@ -39,7 +44,7 @@ const PageSocietyLargeProject = () => {
       <div className="teaui grid format-page sl pa64">
         <h2>Nos réalisations</h2>
 
-        <div className="teaui grid tc-2">
+        <div className="teaui grid cgs-24 tc-2">
           <Link
             to={"/societe/societe-grands-projets/chantier/spawn-end-1h20"}
             className="teaui card background color shade-nude pa32"
