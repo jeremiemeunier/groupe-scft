@@ -10,9 +10,9 @@ const Header = () => {
           <Link to={"/"}>
             <img src="/imgs/icon_colored.svg" height={28} />
           </Link>
-          {pathname.startsWith("/societe-grands-projets") && (
+          {pathname.startsWith("/societe/societe-grands-projets") && (
             <Link
-              to={"/societe-grands-projets"}
+              to={"/societe/societe-grands-projets"}
               className="teaui ml16 ms-ml16 xs-ml16"
             >
               <img
