@@ -45,18 +45,18 @@ const PageSocietyLargeProject = () => {
         </p>
       </div>
 
-      <div className="teaui grid format-page sl pa64">
+      <div className="teaui grid format-page sl pt64 pb64">
         <h2>Nos réalisations</h2>
 
         <div className="teaui grid cgs-24 tc-2">
           <Link
             to={"/societes/societe-grands-projets/chantier/spawn-end-1h20"}
-            className="teaui card background color shade-nude pa32"
+            className="teaui card background pa32"
           >
             <h4 className="teaui pa0 ms-pa0 xs-pa0 ma0 ms-ma0 ff-title xs-ma0 text fs-56">
               Rejoindre l'end en seulement 1h20
             </h4>
-            <p>
+            <p className="teaui mt40">
               Comment sommes nous en train de réaliser le plus grand chantier
               ferroviaire de toutes la TeuTeuLandie en créant une liaison
               directe entre le Grand Centre du Monde et l'End ?
@@ -64,12 +64,12 @@ const PageSocietyLargeProject = () => {
           </Link>
           <Link
             to={"/societes/societe-grands-projets/chantier/prolongement-nord"}
-            className="teaui card background color shade-ceruleen pa32"
+            className="teaui card background pa32"
           >
             <h4 className="teaui pa0 ms-pa0 xs-pa0 ma0 ms-ma0 ff-title xs-ma0 text fs-56">
               Prolongement de la voie du Nord
             </h4>
-            <p>
+            <p className="teaui mt40">
               Parce qu’on a remarqué qu’il y avait encore de la place pour poser
               des rails là-bas ! Avec cette extension, les Teuteus du Nord
               pourront enfin dire : "On n’est plus perdus, on a une gare !" Un
@@ -80,7 +80,7 @@ const PageSocietyLargeProject = () => {
         </div>
       </div>
 
-      <div className="teaui grid format-page sl pa80 radius-small bg-dark-cobalt-reverse">
+      <div className="teaui grid format-page pa80 radius-small bg-dark-cobalt-reverse">
         <h3>La SCP recrute !</h3>
         <p>
           Vous rêvez de travailler sur des chantiers gigantesques où chaque jour
