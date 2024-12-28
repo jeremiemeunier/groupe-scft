@@ -44,6 +44,10 @@ const RouteContainer = () => {
               path="/societes/societe-grands-projets"
               element={<PageSocietyLargeProject />}
             />
+            <Route
+              path="/societes/societe-grands-projets/chantier/:chantier"
+              element={<PageChantierArticle />}
+            />
             <Route path="*" element={<PageError404 />} />
           </Routes>
         </GlobalLayout>
