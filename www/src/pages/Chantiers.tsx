@@ -1,6 +1,14 @@
+import { ThemeContext } from "@context/ThemeContext";
+import { useContext, useEffect } from "react";
 import { Link } from "react-router-dom";
 
 const PageChantier = () => {
+  const { setShade } = useContext(ThemeContext);
+
+  useEffect(() => {
+    setShade("");
+  }, []);
+
   return (
     <div className="teaui grid rgs-0 mt120">
       <div className="teaui grid format-page sl">
