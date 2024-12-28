@@ -1,3 +1,9 @@
+import { SetStateAction } from "react";
+
+export interface ContextProviderProps {
+  children: React.ReactNode;
+}
+
 export interface ScrollContextProps {
   children: React.ReactNode;
 }
@@ -21,7 +27,11 @@ export interface SessionContextProps {
   me: UserTypes | null;
 }
 
-export interface SessionProviderProps {
-  children: React.ReactNode;
+export interface SessionProviderProps extends ContextProviderProps {
   exception?: string[];
+}
+
+export interface ThemeContextProps {
+  setShade: React.Dispatch<SetStateAction<string>>;
+  shade: string;
 }
