@@ -18,6 +18,7 @@
 @use '../status';
 @use '../table';
 @use '../media';
+@use '../carousel';
 @use '../dedicated';
 
 @mixin worker($theme) {
@@ -113,6 +114,8 @@
     @include footer.global($theme);
 
     @include table.global($theme);
+
+    @include carousel.global($theme);
 
     @include dedicated.global($theme);
     @include dedicated.calendar($theme);
