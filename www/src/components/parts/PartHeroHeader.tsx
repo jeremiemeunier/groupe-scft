@@ -2,8 +2,8 @@ import { Link } from "react-router-dom";
 
 const PartHeroHeader = () => {
   return (
-    <div className="teaui grid format-page sf tc-2">
-      <div className="teaui grid bg-ocre radius-small mt80">
+    <div className="teaui grid format-page sf tc-2 mt112">
+      <div className="teaui grid bg-vert-menthe radius-small">
         <div className="teaui grid sv-70 rc-1 pa80">
           <p className="teaui text fs-80 fw-900">
             Vous transporter, notre métier.
@@ -19,7 +19,7 @@ const PartHeroHeader = () => {
           <div className="teaui grid tac va-end">
             <Link
               to={""}
-              className="teaui cta format-icon-right level-primary color-ocre sl"
+              className="teaui cta format-icon-right level-primary color-vert-menthe sl"
             >
               <span>En savoir plus</span>
               <i className="icon teaui-icon-arrow-right"></i>
@@ -27,7 +27,7 @@ const PartHeroHeader = () => {
           </div>
         </div>
       </div>
-      <div className="teaui grid bg-cobalt-reverse radius-small mt80">
+      <div className="teaui grid bg-cobalt-reverse radius-small">
         <div className="teaui grid sv-70 rc-1 pa80">
           <p className="teaui text fs-80 fw-900">
             Pour des projets
