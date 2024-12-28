@@ -15,21 +15,24 @@
     align-content: center;
 
     position: fixed;
-    top: 0;
-    left: 0;
-    right: 0;
+    top: 16px;
+    left: 50%;
     z-index: 3;
 
     height: 80px;
-    padding: 0 16px;
-    background-color: rgba(map.get($map: $colors, $key: "background_1"), .8);
+    background-color: rgba(map.get($map: $colors, $key: "background_1"), .6);
     backdrop-filter: blur(16px);
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 0 24px rgba(0, 0, 0, .1);
+    transform: translateX(-50%);
 
     @each $name, $value in $shades {
       &.color-#{$name} {
-        background-color: rgba($value, .8);
+        .header-container {
+          border-top-color: color.adjust($color: $value, $lightness: -60%);
+        }
       }
-
     }
   }
 
@@ -40,10 +43,14 @@
     grid-template-columns: min-content 1fr;
     column-gap: 16px;
 
-    height: 48px;
+    height: 80px;
     width: 90vw;
-    max-width: 1080px;
+    padding: 0 16px;
+    max-width: 1160px;
     margin: auto;
+    border-top-style: solid;
+    border-top-width: 8px;
+    border-top-color: map.get($shades, "burgundy");
   }
 
   .header-nav {

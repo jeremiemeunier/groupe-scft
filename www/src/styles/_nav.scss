@@ -19,7 +19,6 @@
     @each $name, $value in $shades {
       &.color-#{$name} {
         ul li a {
-
           color: color.adjust($color: $value, $lightness: -60%);
 
           &:before {
@@ -64,7 +63,7 @@
         border-bottom-style: solid;
         border-bottom-color: transparent;
 
-        color: map.get($map: $colors, $key: "content");
+        color: map.get($shades, "burgundy");
         font-weight: 600;
         font-size: .9em;
         white-space: nowrap;
@@ -81,7 +80,7 @@
           content: "";
           height: 2px;
           width: 0%;
-          background: map.get($colors, "content");
+          background: map.get($shades, "burgundy");
           transition:
             width .3s;
         }
