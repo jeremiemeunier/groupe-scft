@@ -46,7 +46,7 @@ const PageSocietyLargeProject = () => {
 
         <div className="teaui grid cgs-24 tc-2">
           <Link
-            to={"/societe/societe-grands-projets/chantier/spawn-end-1h20"}
+            to={"/societes/societe-grands-projets/chantier/spawn-end-1h20"}
             className="teaui card background color shade-nude pa32"
           >
             <h4 className="teaui pa0 ms-pa0 xs-pa0 ma0 ms-ma0 ff-title xs-ma0 text fs-56">
@@ -59,7 +59,7 @@ const PageSocietyLargeProject = () => {
             </p>
           </Link>
           <Link
-            to={"/societe/societe-grands-projets/chantier/prolongement-nord"}
+            to={"/societes/societe-grands-projets/chantier/prolongement-nord"}
             className="teaui card background color shade-ceruleen pa32"
           >
             <h4 className="teaui pa0 ms-pa0 xs-pa0 ma0 ms-ma0 ff-title xs-ma0 text fs-56">
