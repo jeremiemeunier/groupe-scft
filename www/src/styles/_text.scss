@@ -92,6 +92,15 @@
     font-weight: 700;
   }
 
+  sup,
+  sub {
+    font-size: .64em;
+  }
+
+  sup {
+    vertical-align: super;
+  }
+
   p code {
     font-family: 'Courier New', Courier, monospace;
     background: map.get($map: $colors, $key: 'main');
