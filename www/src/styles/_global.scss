@@ -181,6 +181,7 @@
 
 @mixin loader($theme) {
   $colors: map.get($theme, 'colors');
+  $shades: map.get($map: $theme, $key: 'shades');
   $color_schemas: map.get($theme, 'schemas');
 
   .infusedui-loader {
@@ -232,74 +233,60 @@
     }
   }
 
+  .loader-fullscreen {
+    display: grid;
+    justify-items: center;
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+
+    z-index: 2;
+    background-color: map.get($colors, "main");
+
+    @each $name, $value in $shades {
+      &.color-#{$name} {
+        background-color: $value;
+      }
+    }
+  }
+
   &.loader {
-    width: 24px;
-    height: 24px;
+    width: 49px;
+    height: 28px;
 
-    &.size-giant {
-      width: 64px;
-      height: 64px;
-
-      svg {
-        width: 64px;
-        height: 64px;
-      }
-
-      circle {
-        stroke-width: 2;
-      }
-    }
-
-    &.size-medium {
-      width: 48px;
-      height: 48px;
-
-      svg {
-        width: 48px;
-        height: 48px;
-      }
-
-      circle {
-        stroke-width: 3;
-      }
-    }
-
-    svg {
-      width: 24px;
-      height: 24px;
-      transform-origin: center;
-      animation: rotate4 2s linear infinite;
-    }
-
-    circle {
-      fill: none;
-      stroke: map.get($colors, 'main');
-      stroke-width: 5;
-      stroke-dasharray: 1, 200;
+    path {
+      animation: stretch 1.5s ease-in-out infinite;
+      stroke-width: 3px;
+      stroke: map.get($map: $colors, $key: 'content');
+      stroke-dasharray: 25, 100;
       stroke-dashoffset: 0;
-      stroke-linecap: round;
-      animation: dash4 1.5s ease-in-out infinite;
     }
 
-    @keyframes rotate4 {
-      100% {
-        transform: rotate(360deg);
+    @each $name, $value in $shades {
+      &.color-#{$name} {
+        path {
+          stroke: color.adjust($color: $value, $lightness: -60%);
+        }
       }
     }
 
-    @keyframes dash4 {
+    @keyframes stretch {
       0% {
-        stroke-dasharray: 1, 200;
         stroke-dashoffset: 0;
       }
 
       50% {
-        stroke-dasharray: 90, 200;
-        stroke-dashoffset: -35px;
+        stroke-dashoffset: -200;
       }
 
       100% {
-        stroke-dashoffset: -125px;
+        stroke-dashoffset: 0;
       }
     }
   }
@@ -310,16 +297,6 @@
   $colors: map.get($map: $theme, $key: 'colors');
   $radius: map.get($map: $theme, $key: 'radius');
   $color_schemas: map.get($map: $theme, $key: 'color_schemas');
-
-  .unicorn {
-    display: grid;
-
-    width: 160px;
-    height: 160px;
-    border-radius: 50%;
-    background-image: url("https://1.images.cdn.digitalteacompany.fr/sportable/unicorn.png");
-    background-size: cover;
-  }
 
   .separator {
     display: grid;

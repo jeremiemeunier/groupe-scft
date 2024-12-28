@@ -89,7 +89,7 @@
           &:hover,
           &:focus,
           &:target {
-            background-color: color.adjust($color: $value, $lightness: -40%);
+            background-color: $value;
           }
         }
       }
