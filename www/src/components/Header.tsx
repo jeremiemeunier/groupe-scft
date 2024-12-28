@@ -1,15 +1,30 @@
+import { ThemeContext } from "@context/ThemeContext";
+import { useContext } from "react";
 import { Link, useLocation } from "react-router-dom";
 
 const Header = () => {
   const { pathname } = useLocation();
+  const { shade } = useContext(ThemeContext);
 
   return (
-    <header className="teaui header-root">
+    <header
+      className={
+        shade ? `teaui header-root color-${shade}` : "teaui header-root"
+      }
+    >
       <div className="teaui header-container">
         <div className="teaui grid tac va-center">
-          <Link to={"/"}>
-            <img src="/imgs/icon_colored.png" height={28} />
-          </Link>
+          <div className="teaui app-logo">
+            <Link to={"/"}>
+              <span
+                className={
+                  shade ? `teaui logo-shape color-${shade}` : "teaui logo-shape"
+                }
+              >
+                &nbsp;
+              </span>
+            </Link>
+          </div>
           {pathname.startsWith("/societes/societe-grands-projets") && (
             <Link
               to={"/societes/societe-grands-projets"}
@@ -33,8 +48,12 @@ const Header = () => {
 export default Header;
 
 const Nav = () => {
+  const { shade } = useContext(ThemeContext);
+
   return (
-    <nav className="teaui header-nav">
+    <nav
+      className={shade ? `teaui header-nav color-${shade}` : "teaui header-nav"}
+    >
       <ul>
         <li>
           <Link to={"/trains"}>Trains</Link>
