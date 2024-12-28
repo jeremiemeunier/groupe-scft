@@ -15,6 +15,7 @@
     padding: calc(var(--gap) * .5);
     margin: calc(var(--gap) * -.5);
     scroll-padding-inline: calc(var(--gap) * .5);
+    overflow-x: auto;
 
     $i: 1;
 
@@ -35,6 +36,7 @@
 
     .carousel-slide {
       min-width: calc((100% - (var(--items) - 1) * var(--gap)) / var(--items));
+      max-width: calc((100% - (var(--items) - 1) * var(--gap)) / var(--items));
       scroll-snap-align: start;
 
       @media (max-width: 1000px) {
@@ -42,10 +44,21 @@
         min-width: 250px;
       }
     }
+  }
 
-    .carousel-nav {
-      @media (max-width: 1000px) {
-        display: none;
+  .carousel-nav {
+    @media (max-width: 1000px) {
+      display: none;
+    }
+
+    .carousel-nav-button {
+      @extend .cta;
+      @extend .level-secondary;
+      @extend .format-icon-only;
+
+
+      * {
+        pointer-events: none;
       }
     }
   }

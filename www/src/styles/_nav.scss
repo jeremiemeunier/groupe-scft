@@ -3,6 +3,7 @@
 
 @mixin header($theme) {
   $colors: map.get($map: $theme, $key: 'colors');
+  $shades: map.get($map: $theme, $key: 'shades');
   $radius: map.get($map: $theme, $key: 'radius');
 
   &.header-nav {
@@ -14,6 +15,19 @@
 
     height: 48px;
     padding: 0 40px;
+
+    @each $name, $value in $shades {
+      &.color-#{$name} {
+        ul li a {
+
+          color: color.adjust($color: $value, $lightness: -60%);
+
+          &:before {
+            background-color: color.adjust($color: $value, $lightness: -60%);
+          }
+        }
+      }
+    }
 
     ul,
     li {
@@ -72,12 +86,10 @@
             width .3s;
         }
 
-        &:not(.active):hover:before {
+        &:not(.active):hover:before,
+        &:not(.active):target:before,
+        &:not(.active):focus:before {
           width: 100%;
-        }
-
-        &.active {
-          background-color: rgba(map.get($map: $colors, $key: "main"), .3);
         }
 
         &:hover,
