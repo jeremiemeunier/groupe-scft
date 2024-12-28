@@ -1,4 +1,11 @@
+import { useEffect } from "react";
+
 const PageChantierArticle = () => {
+  useEffect(() => {
+    document.title =
+      "Rejoindre l'End en seulement 1h20 — Société des Grands Projets — TeuTeuTrain Company";
+  }, []);
+
   return (
     <div>
       <div className="teaui grid background bg-nude pt80">
