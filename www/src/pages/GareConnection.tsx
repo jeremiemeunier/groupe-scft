@@ -1,8 +1,12 @@
-import { useEffect } from "react";
+import { ThemeContext } from "@context/ThemeContext";
+import { useContext, useEffect } from "react";
 
 const PageGareConnection = () => {
+  const { setShade } = useContext(ThemeContext);
+
   useEffect(() => {
     document.title = "Gare & Connexions — TeuTeuTrain Company";
+    setShade("corail");
   }, []);
 
   return (
