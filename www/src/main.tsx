@@ -6,6 +6,7 @@ import { ReactQueryDevtools } from "@tanstack/react-query-devtools";
 import { ToastProvider } from "@infusedui/toast";
 
 import App from "./App.tsx";
+import ThemeProvider from "@context/ThemeContext.tsx";
 
 const queryClient = new QueryClient();
 
@@ -14,7 +15,9 @@ createRoot(document.getElementById("root")!).render(
     <QueryClientProvider client={queryClient}>
       <ReactQueryDevtools initialIsOpen={false} />
       <ToastProvider>
-        <App />
+        <ThemeProvider>
+          <App />
+        </ThemeProvider>
       </ToastProvider>
     </QueryClientProvider>
   </StrictMode>
