@@ -1,9 +1,13 @@
-import { useEffect } from "react";
+import { ThemeContext } from "@context/ThemeContext";
+import { useContext, useEffect } from "react";
 import { Link } from "react-router-dom";
 
 const PageError404 = () => {
+  const { setShade } = useContext(ThemeContext);
+
   useEffect(() => {
     document.title = "Page non trouvée — TeuTeuTrain Company";
+    setShade("");
   }, []);
 
   return (
