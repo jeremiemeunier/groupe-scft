@@ -20,7 +20,7 @@ const PageSocietyLargeProject = () => {
             (trop) grands
           </p>
           <div className="teaui grid tc-2">
-            <p className="teaui mt80">
+            <p>
               Ponts audacieux, tunnels interminables, et lignes de train
               mythiques : aucun défi n’est trop grand pour cette équipe
               d’experts… ou presque.
