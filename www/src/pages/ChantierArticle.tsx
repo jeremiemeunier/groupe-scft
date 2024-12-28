@@ -1,9 +1,13 @@
-import { useEffect } from "react";
+import { ThemeContext } from "@context/ThemeContext";
+import { useContext, useEffect } from "react";
 
 const PageChantierArticle = () => {
+  const { setShade } = useContext(ThemeContext);
+
   useEffect(() => {
     document.title =
       "Rejoindre l'End en seulement 1h20 — Société des Grands Projets — TeuTeuTrain Company";
+    setShade("nude");
   }, []);
 
   return (
