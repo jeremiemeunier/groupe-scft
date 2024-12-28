@@ -11,6 +11,7 @@ import PageChantier from "@pages/Chantiers";
 import PageChantierArticle from "@pages/ChantierArticle";
 import PageSocietyLargeProject from "@pages/SocietyLargeProject";
 import PageGareConnection from "@pages/GareConnection";
+import PageFret from "@pages/Fret";
 
 const App = () => {
   return (
@@ -48,6 +49,7 @@ const RouteContainer = () => {
               path="/societes/societe-grands-projets/chantier/:chantier"
               element={<PageChantierArticle />}
             />
+            <Route path="/societes/fret" element={<PageFret />} />
             <Route path="*" element={<PageError404 />} />
           </Routes>
         </GlobalLayout>
