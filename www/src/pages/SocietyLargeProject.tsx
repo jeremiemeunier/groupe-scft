@@ -1,9 +1,13 @@
-import { useEffect } from "react";
+import { ThemeContext } from "@context/ThemeContext";
+import { useContext, useEffect } from "react";
 import { Link } from "react-router-dom";
 
 const PageSocietyLargeProject = () => {
+  const { setShade } = useContext(ThemeContext);
+
   useEffect(() => {
     document.title = "Société des Grands Projets — TeuTeuTrain Company";
+    setShade("dark-cobalt-reverse");
   }, []);
 
   return (
