@@ -30,7 +30,7 @@ const PageChantier = () => {
                 directe entre le Grand Centre du Monde et l'End ?
               </p>
               <Link
-                to={""}
+                to={"/societes/societe-grands-projets/chantier/spawn-end-1h20"}
                 className="teaui cta color-nude level-primary format-icon-right"
               >
                 <i className="icon teaui-icon-arrow-right"></i>
