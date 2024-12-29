@@ -6,6 +6,7 @@ const PageChantier = () => {
   const { setShade } = useContext(ThemeContext);
 
   useEffect(() => {
+    document.title = "Nos chantiers — TeuTeuTrain Company";
     setShade("");
   }, []);
 
