@@ -14,17 +14,7 @@ const Header = () => {
     >
       <div className="teaui header-container">
         <div className="teaui grid tac va-center">
-          <div className="teaui app-logo">
-            <Link to={"/"}>
-              <span
-                className={
-                  shade ? `teaui logo-shape color-${shade}` : "teaui logo-shape"
-                }
-              >
-                &nbsp;
-              </span>
-            </Link>
-          </div>
+          <Logo />
           {pathname.startsWith("/societes/societe-grands-projets") && (
             <Link
               to={"/societes/societe-grands-projets"}
@@ -46,6 +36,31 @@ const Header = () => {
 };
 
 export default Header;
+
+const Logo = () => {
+  const { shade } = useContext(ThemeContext);
+  const { pathname } = useLocation();
+
+  return (
+    <div className="teaui app-logo">
+      <Link to={"/"}>
+        <span
+          className={
+            shade
+              ? `teaui logo-shape color-${shade} ${
+                  pathname.startsWith("/societes") ? "format-groupe" : ""
+                }`
+              : `teaui logo-shape ${
+                  pathname.startsWith("/societes") ? "format-groupe" : ""
+                }`
+          }
+        >
+          &nbsp;
+        </span>
+      </Link>
+    </div>
+  );
+};
 
 const Nav = () => {
   const { shade } = useContext(ThemeContext);
