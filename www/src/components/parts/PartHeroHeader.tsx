@@ -5,7 +5,7 @@ const PartHeroHeader = () => {
     <div className="teaui grid format-page sf tc-2 mt112">
       <div className="teaui grid bg-vert-menthe radius-small">
         <div className="teaui grid sv-70 rc-1 pa80">
-          <p className="teaui text fs-80 fw-900">
+          <p className="teaui text lh-100 fs-80 fw-900">
             Vous transporter, notre métier.
           </p>
           <p>
@@ -29,7 +29,7 @@ const PartHeroHeader = () => {
       </div>
       <div className="teaui grid bg-cobalt-reverse radius-small">
         <div className="teaui grid sv-70 rc-1 pa80">
-          <p className="teaui text fs-80 fw-900">
+          <p className="teaui text lh-100 fs-80 fw-900">
             Pour des projets
             <br />
             (trop) grands
