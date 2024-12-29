@@ -14,7 +14,7 @@ const PageSocietyLargeProject = () => {
     <>
       <div className="teaui grid bg-dark-cobalt-reverse va-center sv-80">
         <div className="teaui grid format-page sl">
-          <p className="teaui text fs-80 fw-900">
+          <p className="teaui text lh-100 fs-80 fw-900">
             Pour des projets
             <br />
             (trop) grands
@@ -45,15 +45,15 @@ const PageSocietyLargeProject = () => {
         </p>
       </div>
 
-      <div className="teaui grid format-page sl pt64 pb64">
+      <div className="teaui grid format-page sl pt64 ms-pt64 xs-pt64 pb64 ms-pb64 xs-pb64">
         <h2>Nos réalisations</h2>
 
-        <div className="teaui grid cgs-24 tc-2">
+        <div className="teaui grid cgs-24 tc-3">
           <Link
             to={"/societes/societe-grands-projets/chantier/spawn-end-1h20"}
-            className="teaui card background pa32"
+            className="teaui card no-shadow border background pa32"
           >
-            <h4 className="teaui pa0 ms-pa0 xs-pa0 ma0 ms-ma0 ff-title xs-ma0 text fs-56">
+            <h4 className="teaui pa0 ms-pa0 xs-pa0 ma0 ms-ma0 ff-title xs-ma0 text fs-40">
               Rejoindre l'end en seulement 1h20
             </h4>
             <p className="teaui mt40">
@@ -64,10 +64,27 @@ const PageSocietyLargeProject = () => {
           </Link>
           <Link
             to={"/societes/societe-grands-projets/chantier/prolongement-nord"}
-            className="teaui card background pa32"
+            className="teaui card no-shadow border background pa32"
           >
-            <h4 className="teaui pa0 ms-pa0 xs-pa0 ma0 ms-ma0 ff-title xs-ma0 text fs-56">
+            <h4 className="teaui pa0 ms-pa0 xs-pa0 ma0 ms-ma0 ff-title xs-ma0 text fs-40">
               Prolongement de la voie du Nord
+            </h4>
+            <p className="teaui mt40">
+              Parce qu’on a remarqué qu’il y avait encore de la place pour poser
+              des rails là-bas ! Avec cette extension, les Teuteus du Nord
+              pourront enfin dire : "On n’est plus perdus, on a une gare !" Un
+              projet ambitieux pour rapprocher les gens, même si ça rallonge un
+              peu le planning des trains.
+            </p>
+          </Link>
+          <Link
+            to={
+              "/societes/societe-grands-projets/chantier/rejoindre-le-pays-du-soleil-levant"
+            }
+            className="teaui card no-shadow border background pa32"
+          >
+            <h4 className="teaui pa0 ms-pa0 xs-pa0 ma0 ms-ma0 ff-title xs-ma0 text fs-40">
+              Direction : Le Pays du Soleil Levant
             </h4>
             <p className="teaui mt40">
               Parce qu’on a remarqué qu’il y avait encore de la place pour poser
@@ -80,7 +97,7 @@ const PageSocietyLargeProject = () => {
         </div>
       </div>
 
-      <div className="teaui grid format-page pa80 radius-small bg-dark-cobalt-reverse">
+      <div className="teaui grid format-page pa80 ms-pa80 xs-pa80 radius-small bg-dark-cobalt-reverse">
         <h3>La SCP recrute !</h3>
         <p>
           Vous rêvez de travailler sur des chantiers gigantesques où chaque jour
