@@ -341,6 +341,10 @@
       opacity: .6;
     }
 
+    &.lh-100 {
+      line-height: 1em;
+    }
+
     // making all fonts
     @each $name, $value in $fonts {
       &.ff-#{$name} {
