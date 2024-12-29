@@ -21,7 +21,7 @@ const PageChantier = () => {
       <div className="teaui grid">
         <div className="teaui grid format-page sxl radius-small background bg-nude mt40">
           <div className="teaui grid tc-2 format-page sl pt80 ms-pt80 xs-pt80 pb80 ms-pb80 xs-pb80">
-            <h2 className="teaui pa0 ms-pa0 xs-pa0 ma0 ms-ma0 xs-ma0 text fs-72">
+            <h2 className="teaui pa0 ms-pa0 xs-pa0 ma0 ms-ma0 xs-ma0 text lh-100 fs-72">
               Rejoindre l'end en seulement 1h20
             </h2>
             <div className="teaui grid pl40">
@@ -43,7 +43,7 @@ const PageChantier = () => {
 
         <div className="teaui grid format-page sxl radius-small background bg-ceruleen">
           <div className="teaui grid tc-2 format-page sl pt80 ms-pt80 xs-pt80 pb80 ms-pb80 xs-pb80">
-            <h2 className="teaui pa0 ms-pa0 xs-pa0 ma0 ms-ma0 xs-ma0 text fs-72">
+            <h2 className="teaui pa0 ms-pa0 xs-pa0 ma0 ms-ma0 xs-ma0 text lh-100 fs-72">
               Prolongement de la voie du Nord
             </h2>
             <div className="teaui grid pl40">
@@ -67,7 +67,7 @@ const PageChantier = () => {
 
         <div className="teaui grid format-page sxl radius-small background bg-cobalt-reverse">
           <div className="teaui grid tc-2 format-page sl pt80 ms-pt80 xs-pt80 pb80 ms-pb80 xs-pb80">
-            <h2 className="teaui pa0 ms-pa0 xs-pa0 ma0 ms-ma0 xs-ma0 text fs-72">
+            <h2 className="teaui pa0 ms-pa0 xs-pa0 ma0 ms-ma0 xs-ma0 text lh-100 fs-72">
               Liaison complète Spawn - Usine à Fer
             </h2>
             <div className="teaui grid pl40">
