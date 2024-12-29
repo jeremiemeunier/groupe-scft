@@ -87,6 +87,10 @@ const PageGareConnection = () => {
           destination, même si ce n’était pas celle prévue.
         </p>
       </div>
+
+      <div className="teaui grid bg-corail pa64">
+        <div className="teaui grid format-page sl"></div>
+      </div>
     </div>
   );
 };
