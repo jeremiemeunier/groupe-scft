@@ -12,6 +12,7 @@ import PageChantierArticle from "@pages/ChantierArticle";
 import PageSocietyLargeProject from "@pages/SocietyLargeProject";
 import PageGareConnection from "@pages/GareConnection";
 import PageFret from "@pages/Fret";
+import PageCrimson from "@pages/Crimson";
 
 const App = () => {
   return (
@@ -50,6 +51,7 @@ const RouteContainer = () => {
               element={<PageChantierArticle />}
             />
             <Route path="/societes/fret" element={<PageFret />} />
+            <Route path="/societes/crimson" element={<PageCrimson />} />
             <Route path="*" element={<PageError404 />} />
           </Routes>
         </GlobalLayout>
