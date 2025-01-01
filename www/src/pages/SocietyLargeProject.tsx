@@ -97,7 +97,7 @@ const PageSocietyLargeProject = () => {
         </div>
       </div>
 
-      <div className="teaui grid format-page pa80 ms-pa80 xs-pa80 radius-small bg-dark-cobalt-reverse">
+      <div className="teaui grid format-page sl pa80 ms-pa80 xs-pa80 radius-small bg-dark-cobalt-reverse">
         <h3>La SCP recrute !</h3>
         <p>
           Vous rêvez de travailler sur des chantiers gigantesques où chaque jour
