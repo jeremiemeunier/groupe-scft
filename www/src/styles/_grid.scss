@@ -363,7 +363,7 @@
     @each $name, $value in $shades {
       &.bg-#{$name} {
         background-color: $value;
-        color: color.adjust($color: $value, $lightness: -60%);
+        color: color.adjust($color: $value, $lightness: -50%);
       }
 
       &.color-#{$name} {

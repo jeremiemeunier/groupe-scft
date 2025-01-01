@@ -62,14 +62,14 @@
     &.color {
       @each $name, $value in $shades {
         &.shade-#{$name} {
-          color: color.adjust($color: $value, $lightness: -60%);
+          color: color.adjust($color: $value, $lightness: -50%);
 
           &:hover {
             padding-left: 40px;
 
             i.icon {
               color: $value;
-              background-color: color.adjust($color: $value, $lightness: -60%);
+              background-color: color.adjust($color: $value, $lightness: -50%);
             }
 
             &:before {

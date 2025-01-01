@@ -94,7 +94,7 @@
         color: color.adjust($color: $value, $lightness: -50%);
 
         @if($color_schemas =="dark") {
-          background-color: color.adjust($value, $lightness: -60%);
+          background-color: color.adjust($value, $lightness: -50%);
           color: $value;
         }
       }
@@ -107,7 +107,7 @@
         color: color.adjust($color: $value, $lightness: -50%);
 
         @if($color_schemas =="dark") {
-          background-color: color.adjust($value, $lightness: -60%);
+          background-color: color.adjust($value, $lightness: -50%);
           color: $value;
         }
       }
@@ -120,7 +120,7 @@
         color: color.adjust($color: $value, $lightness: -50%);
 
         @if($color_schemas =="dark") {
-          background-color: color.adjust($value, $lightness: -60%);
+          background-color: color.adjust($value, $lightness: -50%);
           color: $value;
         }
       }

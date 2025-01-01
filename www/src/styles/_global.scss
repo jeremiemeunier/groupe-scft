@@ -271,7 +271,7 @@
     @each $name, $value in $shades {
       &.color-#{$name} {
         path {
-          stroke: color.adjust($color: $value, $lightness: -60%);
+          stroke: color.adjust($color: $value, $lightness: -50%);
         }
       }
     }

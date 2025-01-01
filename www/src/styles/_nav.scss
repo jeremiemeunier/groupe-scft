@@ -19,10 +19,10 @@
     @each $name, $value in $shades {
       &.color-#{$name} {
         ul li a {
-          color: color.adjust($color: $value, $lightness: -60%);
+          color: color.adjust($color: $value, $lightness: -50%);
 
           &:before {
-            background-color: color.adjust($color: $value, $lightness: -60%);
+            background-color: color.adjust($color: $value, $lightness: -50%);
           }
         }
       }
