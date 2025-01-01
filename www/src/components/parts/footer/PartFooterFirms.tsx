@@ -21,6 +21,9 @@ const PartFooterFirms = () => {
             Société des Grands Projets
           </Link>
         </li>
+        <li>
+          <Link to={"/societes/crimson"}>Crimson</Link>
+        </li>
       </ul>
     </div>
   );
