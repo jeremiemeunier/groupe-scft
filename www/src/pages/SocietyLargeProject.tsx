@@ -11,7 +11,7 @@ const PageSocietyLargeProject = () => {
   }, []);
 
   return (
-    <>
+    <div className="teaui grid rgs-120">
       <div className="teaui grid bg-dark-cobalt-reverse va-center sv-80">
         <div className="teaui grid format-page sl">
           <p className="teaui text lh-100 fs-80 fw-900">
@@ -115,7 +115,7 @@ const PageSocietyLargeProject = () => {
           <i className="icon teaui-icon-arrow-right"></i>
         </Link>
       </div>
-    </>
+    </div>
   );
 };
 
