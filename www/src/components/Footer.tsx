@@ -11,7 +11,7 @@ const Footer = () => {
         <PartFooterLinks />
         <PartFooterFirms />
       </div>
-      <div className="teaui grid format-page tc-4 sl pt40">
+      <div className="teaui grid format-page tc-4 sl pt40 pb40">
         <Link
           to="https://bff.ecoindex.fr/redirect/?url=https://teuteutrainco.jeremiemeunier.fr"
           target="_blank"
