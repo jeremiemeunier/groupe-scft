@@ -5,11 +5,8 @@ const PartFooterLogo = () => {
     <div className="teaui footer-column">
       <div className="teaui grid">
         <Link to={"/"}>
-          <img src="/imgs/ttt-groupe-logo.png" height={56} />
+          <img src="/imgs/ttt-groupe-logo.webp" height={64} />
         </Link>
-        {/* <Link to={"/societes/societe-grands-projets"}>
-          <img src="/imgs/societe-grand-projet-color-black.png" height={48} />
-        </Link> */}
       </div>
     </div>
   );
