@@ -89,7 +89,7 @@ const PageGareConnection = () => {
       </div>
 
       <div className="teaui grid bg-corail pa64">
-        <div className="teaui grid no-rgs format-page sl">
+        <div className="teaui grid rgs-0 format-page sl">
           <Link
             className="teaui color shade-corail text-link"
             to={"/societes/gare-connexions/ailleurs-sur-loin"}
