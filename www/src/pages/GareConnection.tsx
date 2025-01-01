@@ -11,12 +11,12 @@ const PageGareConnection = () => {
   }, []);
 
   return (
-    <div>
+    <div className="teaui grid rgs-120">
       <div className="teaui grid rgs-0 bg-corail">
         <div
           className="teaui grid sv-60"
           style={{
-            backgroundImage: "url(/imgs/pictures/spawn_from_north.png)",
+            backgroundImage: "url(/imgs/pictures/spawn_from_north.webp)",
             backgroundPosition: "center center",
           }}
         ></div>
