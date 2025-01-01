@@ -16,7 +16,7 @@ const PageGareConnection = () => {
         <div
           className="teaui grid sv-60"
           style={{
-            backgroundImage: "url(/imgs/pictures/spawn_form_rail.png)",
+            backgroundImage: "url(/imgs/pictures/spawn_from_north.png)",
             backgroundPosition: "center center",
           }}
         ></div>
@@ -27,9 +27,8 @@ const PageGareConnection = () => {
             </p>
             <div className="teaui grid tc-2">
               <p className="teaui">
-                Ponts audacieux, tunnels interminables, et lignes de train
-                mythiques : aucun défi n’est trop grand pour cette équipe
-                d’experts… ou presque.
+                Créer, rénover et maintenir des gares accueillantes (ou du moins
+                fonctionnelles).
               </p>
             </div>
           </div>
