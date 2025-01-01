@@ -300,6 +300,7 @@
 
 @mixin adjust($theme) {
   $colors: map.get($map: $theme, $key: "colors");
+  $shades: map.get($map: $theme, $key: "shades");
   $schemas: map.get($map: $theme, $key: "color_schemas");
   $fonts: map.get($map: $theme, $key: "fonts");
 
@@ -349,6 +350,13 @@
     @each $name, $value in $fonts {
       &.ff-#{$name} {
         font-family: $value;
+      }
+    }
+
+    // making all colors
+    @each $name, $value in $shades {
+      &.color-#{$name} {
+        color: $value;
       }
     }
 
