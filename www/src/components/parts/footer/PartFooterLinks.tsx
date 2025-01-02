@@ -17,6 +17,9 @@ const PartFooterLinks = () => {
         <li>
           <Link to={""}>Identité</Link>
         </li>
+        <li>
+          <Link to={"/information/eco-conception"}>Éco conception</Link>
+        </li>
       </ul>
     </div>
   );
