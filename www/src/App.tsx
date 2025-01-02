@@ -13,6 +13,7 @@ import PageSocietyLargeProject from "@pages/SocietyLargeProject";
 import PageGareConnection from "@pages/GareConnection";
 import PageFret from "@pages/Fret";
 import PageCrimson from "@pages/Crimson";
+import PageEcoBuild from "@pages/EcoBuild";
 
 const App = () => {
   return (
@@ -52,6 +53,10 @@ const RouteContainer = () => {
             />
             <Route path="/societes/fret" element={<PageFret />} />
             <Route path="/societes/crimson" element={<PageCrimson />} />
+            <Route
+              path="/information/eco-conception"
+              element={<PageEcoBuild />}
+            />
             <Route path="*" element={<PageError404 />} />
           </Routes>
         </GlobalLayout>
