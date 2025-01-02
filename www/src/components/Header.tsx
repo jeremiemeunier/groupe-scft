@@ -26,20 +26,10 @@ const Header = () => {
 export default Header;
 
 const Logo = () => {
-  const { shade } = useContext(ThemeContext);
-
   return (
     <div className="teaui app-logo">
       <Link to={"/"}>
-        <span
-          className={
-            shade
-              ? `teaui logo-shape color-${shade} format-groupe`
-              : "teaui logo-shape format-groupe"
-          }
-        >
-          &nbsp;
-        </span>
+        <img src="/imgs/ttt-groupe-logo.webp" height={"40px"} />
       </Link>
     </div>
   );
