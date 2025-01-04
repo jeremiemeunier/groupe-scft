@@ -9,10 +9,7 @@ const PartFooterLinks = () => {
           <Link to={""}>Nos engagements</Link>
         </li>
         <li>
-          <Link to={""}>Se former</Link>
-        </li>
-        <li>
-          <Link to={""}>S'informer</Link>
+          <Link to={""}>Techno Campus</Link>
         </li>
         <li>
           <Link to={""}>Identité</Link>
