@@ -1,6 +1,5 @@
 import { ThemeContext } from "@context/ThemeContext";
 import PartHeroHeader from "@part/PartHeroHeader";
-import SectionGare from "@section/SectionGare";
 import { useContext, useEffect } from "react";
 
 const Home = () => {
@@ -12,10 +11,9 @@ const Home = () => {
   }, []);
 
   return (
-    <div>
+    <>
       <PartHeroHeader />
-      <SectionGare />
-    </div>
+    </>
   );
 };
 
