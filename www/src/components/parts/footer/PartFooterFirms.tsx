@@ -6,6 +6,9 @@ const PartFooterFirms = () => {
       <h6>Toutes les entreprises</h6>
       <ul>
         <li>
+          <Link to={"/societe/groupe"}>TeuTeuTrain SA</Link>
+        </li>
+        <li>
           <Link to={"/societe/reseaux"}>TeuTeuTrain Réseaux</Link>
         </li>
         <li>
