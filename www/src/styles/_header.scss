@@ -30,7 +30,7 @@
     @each $name, $value in $shades {
       &.color-#{$name} {
         .header-container {
-          border-top-color: color.adjust($color: $value, $lightness: -50%);
+          border-top-color: color.adjust($color: $value, $lightness: -55%);
         }
       }
     }
@@ -88,7 +88,7 @@
 
       @each $name, $value in $shades {
         &.color-#{$name} {
-          background-color: color.adjust($color: $value, $lightness: -50%);
+          background-color: color.adjust($color: $value, $lightness: -55%);
         }
       }
     }

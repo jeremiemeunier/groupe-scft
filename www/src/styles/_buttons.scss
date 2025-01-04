@@ -308,7 +308,7 @@
       @each $name, $value in $colors {
         &.color-#{$name} {
           background-color: color.adjust($color: $value, $lightness: 5%);
-          color: color.adjust($color: $value, $lightness: -50%);
+          color: color.adjust($color: $value, $lightness: -55%);
 
           @if($schemas =="dark") {
             background-color: $value;
@@ -320,7 +320,7 @@
           &:target {
             background-color: rgba($value, .3);
             color: map.get($map: $colors, $key: "content");
-            border-color: color.adjust($color: $value, $lightness: -50%);
+            border-color: color.adjust($color: $value, $lightness: -55%);
 
             @if($schemas =="dark") {
               background-color: color.adjust($color: $value, $lightness: -35%);
@@ -331,16 +331,16 @@
 
       @each $name, $value in $shades {
         &.color-#{$name} {
-          background-color: color.adjust($color: $value, $lightness: -50%);
+          background-color: color.adjust($color: $value, $lightness: -55%);
           color: color.adjust($color: $value, $lightness: 60%);
 
           &:hover,
           &:focus,
           &:target {
             background-color: $value;
-            color: color.adjust($color: $value, $lightness: -50%);
-            border-color: color.adjust($color: $value, $lightness: -50%);
-            outline-color: rgba(color.adjust($color: $value, $lightness: -50%), $alpha: .4);
+            color: color.adjust($color: $value, $lightness: -55%);
+            border-color: color.adjust($color: $value, $lightness: -55%);
+            outline-color: rgba(color.adjust($color: $value, $lightness: -55%), $alpha: .4);
           }
         }
       }

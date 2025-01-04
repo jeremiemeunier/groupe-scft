@@ -271,7 +271,7 @@
     @each $name, $value in $shades {
       &.color-#{$name} {
         path {
-          stroke: color.adjust($color: $value, $lightness: -50%);
+          stroke: color.adjust($color: $value, $lightness: -55%);
         }
       }
     }
@@ -617,7 +617,7 @@
           background-color: color.adjust($value, $lightness: 40%);
 
           @if($color_schemas =="dark") {
-            background-color: color.adjust($value, $lightness: -50%);
+            background-color: color.adjust($value, $lightness: -55%);
           }
 
           color: $value;
@@ -634,7 +634,7 @@
           background-color: color.adjust($value, $lightness: 50%);
 
           @if($color_schemas =="dark") {
-            background-color: color.adjust($value, $lightness: -50%);
+            background-color: color.adjust($value, $lightness: -55%);
           }
 
           color: $value;

@@ -114,7 +114,7 @@
       @each $name, $value in $shades {
         &.shade-#{$name} {
           background-color: $value;
-          color: color.adjust($color: $value, $lightness: -50%);
+          color: color.adjust($color: $value, $lightness: -55%);
 
           &:is(a) {
             &:hover {

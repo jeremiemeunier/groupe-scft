@@ -91,10 +91,10 @@
       &.color-#{$name} {
         border-color: $value;
         background-color: color.adjust($value, $lightness: 30%);
-        color: color.adjust($color: $value, $lightness: -50%);
+        color: color.adjust($color: $value, $lightness: -55%);
 
         @if($color_schemas =="dark") {
-          background-color: color.adjust($value, $lightness: -50%);
+          background-color: color.adjust($value, $lightness: -55%);
           color: $value;
         }
       }
@@ -104,10 +104,10 @@
       &.color-#{$name} {
         border-color: $value;
         background-color: color.adjust($value, $lightness: 30%);
-        color: color.adjust($color: $value, $lightness: -50%);
+        color: color.adjust($color: $value, $lightness: -55%);
 
         @if($color_schemas =="dark") {
-          background-color: color.adjust($value, $lightness: -50%);
+          background-color: color.adjust($value, $lightness: -55%);
           color: $value;
         }
       }
@@ -117,10 +117,10 @@
       &.color-#{$name} {
         border-color: $value;
         background-color: color.adjust($value, $lightness: 30%);
-        color: color.adjust($color: $value, $lightness: -50%);
+        color: color.adjust($color: $value, $lightness: -55%);
 
         @if($color_schemas =="dark") {
-          background-color: color.adjust($value, $lightness: -50%);
+          background-color: color.adjust($value, $lightness: -55%);
           color: $value;
         }
       }

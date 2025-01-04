@@ -62,14 +62,18 @@
     &.color {
       @each $name, $value in $shades {
         &.shade-#{$name} {
-          color: color.adjust($color: $value, $lightness: -50%);
+          color: color.adjust($color: $value, $lightness: -55%);
+
+          &:before {
+            background-color: color.adjust($color: $value, $lightness: -55%);
+          }
 
           &:hover {
             padding-left: 40px;
 
             i.icon {
               color: $value;
-              background-color: color.adjust($color: $value, $lightness: -50%);
+              background-color: color.adjust($color: $value, $lightness: -55%);
             }
 
             &:before {
@@ -80,7 +84,6 @@
               content: "";
               height: 2px;
               width: 100%;
-              background-color: map.get($colors, "content");
             }
           }
         }

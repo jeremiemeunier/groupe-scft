@@ -253,7 +253,7 @@
 
     input:focus+.form-max-length,
     textarea:focus+.form-max-length {
-      background-color: color.adjust($color: map.get($colors, "main"), $lightness: -50%);
+      background-color: color.adjust($color: map.get($colors, "main"), $lightness: -55%);
       border-color: rgba(map.get($colors, "main"), .3);
 
       @if ($color_schemas =="default") {
