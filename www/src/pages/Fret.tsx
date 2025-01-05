@@ -39,9 +39,9 @@ const PageFret = () => {
 
       <div className="teaui grid format-page sl">
         <h2>Les chiffres clés</h2>
-        <div className="teaui grid tc-3 cgs-32">
-          <div className="teaui card">
-            <div className="teaui pa24">
+        <div className="teaui grid va-start tc-3 cgs-32">
+          <div className="teaui card mt40">
+            <div className="teaui pa24 text-container ratio-square">
               <p className="teaui text ff-title fs-64 fw-700 pa0 ma0">1000t</p>
               <p className="teaui text fs-24 pa0 ma0">
                 de blé en pleine saison des inondations (seulement 100 sacs
@@ -49,8 +49,8 @@ const PageFret = () => {
               </p>
             </div>
           </div>
-          <div className="teaui card">
-            <div className="teaui pa24">
+          <div className="teaui card mt120">
+            <div className="teaui pa24 text-container ratio-square">
               <p className="teaui text ff-title fs-64 fw-700 pa0 ma0">300km</p>
               <p className="teaui text fs-24 pa0 ma0">
                 pour ravitailler une centrale avant qu’elle ne s’éteigne (record
@@ -59,7 +59,7 @@ const PageFret = () => {
             </div>
           </div>
           <div className="teaui card">
-            <div className="teaui pa24">
+            <div className="teaui pa24 text-container ratio-square">
               <p className="teaui text fs-24 pa0 ma0">
                 Convoyer une sculpture de{" "}
               </p>
