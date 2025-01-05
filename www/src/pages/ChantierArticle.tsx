@@ -41,7 +41,8 @@ const PageChantierArticle = () => {
         <h2>Les chiffres clés</h2>
         <div className="teaui grid va-start tc-3 cgs-32">
           <div className="teaui card mt40">
-            <div className="teaui pa24">
+            <img src="/imgs/assets/media_track.webp" width={"100%"} alt="" />
+            <div className="teaui text-container ratio-square pa24">
               <p className="teaui text ff-title fs-64 fw-700 pa0 ma0">132km</p>
               <p className="teaui text fs-24 pa0 ma0">
                 de rail posé sans les virages
@@ -49,7 +50,7 @@ const PageChantierArticle = () => {
             </div>
           </div>
           <div className="teaui card mt120">
-            <div className="teaui pa24">
+            <div className="teaui text-container ratio-square pa24">
               <p className="teaui text ff-title fs-64 fw-700 pa0 ma0">18</p>
               <p className="teaui text fs-24 pa0 ma0">
                 tunnels creusés à la main (ou presque)
@@ -57,7 +58,8 @@ const PageChantierArticle = () => {
             </div>
           </div>
           <div className="teaui card">
-            <div className="teaui pa24">
+            <img src="/imgs/assets/media_worker.webp" width={"100%"} alt="" />
+            <div className="teaui text-container ratio-square pa24">
               <p className="teaui text ff-title fs-64 fw-700 pa0 ma0">5000</p>
               <p className="teaui text fs-24 pa0 ma0">
                 ouvriers mobilisés, dont 800 pour retrouver les outils égarés.
