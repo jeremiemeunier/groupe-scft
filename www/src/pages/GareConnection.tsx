@@ -49,31 +49,34 @@ const PageGareConnection = () => {
 
       <div className="teaui grid format-page sl">
         <h2>Les chiffres clés</h2>
-        <div className="teaui grid tc-3 cgs-32">
-          <div className="teaui card">
-            <div className="teaui pa24">
-              <p className="teaui text ff-title fs-64 fw-700 pa0 ma0">
-                276 000
-              </p>
+        <div className="teaui grid va-start tc-3 cgs-32">
+          <div className="teaui card mt40">
+            <img src="/imgs/assets/media_agents.webp" width={"100%"} />
+            <div className="teaui pa24 text-container ratio-square">
+              <p className="teaui text ff-title fs-64 fw-700 pa0 ma0">12,5</p>
               <p className="teaui text fs-24 pa0 ma0">
-                tuiles nettoyés et remplacés
+                agents à votre services dans nos gares
               </p>
             </div>
           </div>
-          <div className="teaui card">
-            <div className="teaui pa24">
+          <div className="teaui card mt120">
+            <div className="teaui pa24 text-container ratio-square">
               <p className="teaui text ff-title fs-64 fw-700 pa0 ma0">5</p>
               <p className="teaui text fs-24 pa0 ma0">
                 gare couverte par le plan "Un banc, un toit"
               </p>
             </div>
+            <img src="/imgs/assets/media_gare.webp" width={"100%"} />
           </div>
           <div className="teaui card">
-            <div className="teaui pa24">
-              <p className="teaui text ff-title fs-64 fw-700 pa0 ma0">5000</p>
-              <p className="teaui text fs-24 pa0 ma0">
-                ouvriers mobilisés, dont 800 pour retrouver les outils égarés.
-              </p>
+            <div className="teaui">
+              <img src="/imgs/assets/media_worker.webp" width={"100%"} />
+              <div className="teaui grid pa24 text-container ratio-square">
+                <p className="teaui text ff-title fs-64 fw-700 pa0 ma0">5000</p>
+                <p className="teaui text fs-24 pa0 ma0">
+                  ouvriers mobilisés, dont 800 pour retrouver les outils égarés.
+                </p>
+              </div>
             </div>
           </div>
         </div>
