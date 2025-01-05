@@ -97,23 +97,25 @@ const PageSocietyLargeProject = () => {
         </div>
       </div>
 
-      <div className="teaui grid format-page sl pa80 ms-pa80 xs-pa80 radius-small bg-dark-cobalt-reverse">
-        <h3>La SCP recrute !</h3>
-        <p>
-          Vous rêvez de travailler sur des chantiers gigantesques où chaque jour
-          est une nouvelle énigme ? À la Société des Grands Projets, on ne
-          cherche pas des experts, on cherche des Teuteus motivés ! Posez des
-          rails, creusez des tunnels, ou essayez juste de retrouver les plans…
-          ici, tout est possible (surtout l’improbable).
-        </p>
+      <div className="teaui grid pa80 ms-pa80 xs-pa80 bg-dark-cobalt-reverse">
+        <div className="teaui grid format-page">
+          <h3>La SCP recrute !</h3>
+          <p>
+            Vous rêvez de travailler sur des chantiers gigantesques où chaque
+            jour est une nouvelle énigme ? À la Société des Grands Projets, on
+            ne cherche pas des experts, on cherche des Teuteus motivés ! Posez
+            des rails, creusez des tunnels, ou essayez juste de retrouver les
+            plans… ici, tout est possible (surtout l’improbable).
+          </p>
 
-        <Link
-          to={""}
-          className="teaui cta format-icon-right level-primary color-cobalt-reverse sl"
-        >
-          <span>Faire carrière</span>
-          <i className="icon teaui-icon-arrow-right"></i>
-        </Link>
+          <Link
+            to={""}
+            className="teaui cta format-icon-right level-primary color-cobalt-reverse sl"
+          >
+            <span>Faire carrière</span>
+            <i className="icon teaui-icon-arrow-right"></i>
+          </Link>
+        </div>
       </div>
     </div>
   );
