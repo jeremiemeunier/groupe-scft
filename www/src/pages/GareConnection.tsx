@@ -55,7 +55,7 @@ const PageGareConnection = () => {
             <div className="teaui pa24 text-container ratio-square">
               <p className="teaui text ff-title fs-64 fw-700 pa0 ma0">12,5</p>
               <p className="teaui text fs-24 pa0 ma0">
-                agents à votre services dans nos gares
+                agents à votre service dans nos gares
               </p>
             </div>
           </div>
