@@ -71,9 +71,16 @@
     border: 1px solid transparent;
     background: map.get($map: $colors, $key: 'background_1');
     box-shadow: 0 0 32px rgba(0, 0, 0, .1);
+    overflow: hidden;
 
     color: map.get($map: $colors, $key: 'content');
     text-decoration: none;
+
+    .text-container {
+      &.ratio-square {
+        aspect-ratio: 1/1;
+      }
+    }
 
     &.active {
       box-shadow: 0 0 24px rgba(0, 0, 0, .2);
