@@ -31,7 +31,7 @@ const EmblaCarousel: React.FC<PropType> = (props) => {
           {slides.map((slide, key) => (
             <Link
               to={`/gare-connexions/${slide.link}`}
-              className="teaui card no-shadow color shade-cool-gray-2 pa40 embla__slide mr40"
+              className="teaui card no-shadow border pa40 embla__slide mr40"
               key={key}
               title={slide.label}
             >
