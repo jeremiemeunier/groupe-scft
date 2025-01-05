@@ -1,5 +1,6 @@
 import { ThemeContext } from "@context/ThemeContext";
 import { useContext, useEffect } from "react";
+import { Link } from "react-router-dom";
 
 const PageCrimson = () => {
   const { setShade } = useContext(ThemeContext);
@@ -68,6 +69,28 @@ const PageCrimson = () => {
               </p>
             </div>
           </div>
+        </div>
+      </div>
+
+      <div className="teaui grid text bg-bleu-marine-reverse va-center pt80 pb80">
+        <div className="teaui grid rgs-0 format-page sl">
+          <h2>En découvrir plus</h2>
+          <Link
+            className="teaui color shade-bleu-marine-reverse text-link"
+            to={"/societes/crimson/nos-connexions"}
+          >
+            <span className="teaui text fs-24 fw-600">Nos connexions</span>
+            <i className="icon teaui-icon-arrow-right"></i>
+          </Link>
+          <Link
+            className="teaui color shade-bleu-marine-reverse text-link"
+            to={"/societes/societe-grands-projets"}
+          >
+            <span className="teaui text fs-24 fw-600">
+              Société des Grands Projets
+            </span>
+            <i className="icon teaui-icon-arrow-right"></i>
+          </Link>
         </div>
       </div>
     </div>
