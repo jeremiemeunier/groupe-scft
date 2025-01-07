@@ -19,17 +19,17 @@
       }
     ],
     "paths": {
-      "@form/*": ["./src/components/forms/*"],
-      "@part/*": ["./src/components/parts/*"],
-      "@section/*": ["./src/components/sections/*"],
-      "@modal/*": ["./src/components/modals/*"],
-      "@card/*": ["./src/components/cards/*"],
+      "@form/*": ["src/_components/forms/*"],
+      "@part/*": ["src/_components/parts/*"],
+      "@section/*": ["src/_components/sections/*"],
+      "@modal/*": ["src/_components/modals/*"],
+      "@card/*": ["src/_components/cards/*"],
       "@context/*": ["./src/contexts/*"],
       "@layout/*": ["./src/layouts/*"],
       "@pages/*": ["./src/pages/*"],
       "@hooks/*": ["./src/hooks/*"],
       "@layouts/*": ["./src/layouts/*"],
-      "@ui/*": ["./src/components/ui/*"],
+      "@ui/*": ["src/_components/ui/*"],
       "@/*": ["./src/*"]
     }
   },
