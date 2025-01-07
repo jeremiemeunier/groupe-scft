@@ -1,8 +1,12 @@
 import Link from "next/link";
+import Switch from "./Switch";
 
 const Header = () => {
   return (
     <header className={"teaui header-root"}>
+      <div className="teaui header-top">
+        <Switch />
+      </div>
       <div className="teaui header-container">
         <div className="teaui grid tac va-center">
           <Logo />

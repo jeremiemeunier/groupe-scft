@@ -1,6 +1,6 @@
-import PartFooterLogo from "@part/footer/PartFooterLogo";
-import PartFooterLinks from "@part/footer/PartFooterLinks";
-import PartFooterFirms from "@part/footer/PartFooterFirms";
+import PartFooterLogo from "@/_components/parts/footer/PartFooterLogo";
+import PartFooterLinks from "@/_components/parts/footer/PartFooterLinks";
+import PartFooterFirms from "@/_components/parts/footer/PartFooterFirms";
 import Link from "next/link";
 
 const Footer = () => {
