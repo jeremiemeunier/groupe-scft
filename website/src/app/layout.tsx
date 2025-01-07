@@ -1,7 +1,8 @@
 import type { Metadata } from "next";
 import "./globals.scss";
-import Header from "@/components/Header";
-import Footer from "@/components/Footer";
+import Header from "@/_components/Header";
+import Footer from "@/_components/Footer";
+import ThemeProvider from "@/_context/ThemeContext";
 
 export const metadata: Metadata = {
   title: "Vous transportez, notre métier — TeuTeuTrain Company",
@@ -19,9 +20,11 @@ export default function RootLayout({
     <html lang="fr">
       <body>
         <div className="teaui">
-          <Header />
-          {children}
-          <Footer />
+          <ThemeProvider>
+            <Header />
+            {children}
+            <Footer />
+          </ThemeProvider>
         </div>
       </body>
     </html>
