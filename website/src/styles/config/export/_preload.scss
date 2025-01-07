@@ -1,6 +1,11 @@
 @use '../theme/theme' as theme_light;
+@use '../theme/theme_dark' as theme_dark;
 @use '../worker';
 @use '../reset';
 @use '../import';
 
 @include worker.worker(theme_light.$theme);
+
+.theme-dark {
+  @include worker.worker(theme_dark.$theme);
+}

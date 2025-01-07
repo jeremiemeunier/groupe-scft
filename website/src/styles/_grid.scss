@@ -364,6 +364,11 @@
       &.bg-#{$name} {
         background-color: $value;
         color: color.adjust($color: $value, $lightness: -55%);
+
+        @if $schemas =="dark" {
+          background-color: color.adjust($color: $value, $lightness: -55%);
+          color: $value;
+        }
       }
 
       &.color-#{$name} {

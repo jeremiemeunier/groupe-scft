@@ -99,6 +99,14 @@
           &:hover {
             border-bottom-color: map.get($map: $colors, $key: "punch");
           }
+
+          @if $color_schemas =="dark" {
+            color: color.adjust($color: map.get($map: $colors, $key: "punch"), $lightness: 10%);
+
+            &:hover {
+              border-bottom-color: color.adjust($color: map.get($map: $colors, $key: "punch"), $lightness: 10%);
+            }
+          }
         }
       }
     }

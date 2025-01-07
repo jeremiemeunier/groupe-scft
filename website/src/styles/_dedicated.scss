@@ -5,7 +5,7 @@
   $colors: map.get($map: $theme, $key: "colors");
   $shades: map.get($map: $theme, $key: "shades");
   $radius: map.get($map: $theme, $key: "radius");
-  $themes: map.get($map: $theme, $key: "color_schemas");
+  $schemas: map.get($map: $theme, $key: "color_schemas");
 
   // https://images.pexels.com/photos/841130/pexels-photo-841130.jpeg
   // https://images.pexels.com/photos/248547/pexels-photo-248547.jpeg
@@ -18,7 +18,7 @@
   .hero-sport {
     background-color: map.get($map: $colors, $key: "main");
 
-    @if ($themes =="dark") {
+    @if ($schemas =="dark") {
 
       h1,
       h2,
@@ -84,6 +84,21 @@
               content: "";
               height: 2px;
               width: 100%;
+            }
+          }
+
+          @if $schemas =="dark" {
+            color: $value;
+
+            &:before {
+              background-color: $value;
+            }
+
+            &:hover {
+              i.icon {
+                color: color.adjust($color: $value, $lightness: -55%);
+                background-color: $value;
+              }
             }
           }
         }

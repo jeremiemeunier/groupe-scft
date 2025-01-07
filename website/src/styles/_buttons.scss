@@ -342,6 +342,21 @@
             border-color: color.adjust($color: $value, $lightness: -55%);
             outline-color: rgba(color.adjust($color: $value, $lightness: -55%), $alpha: .4);
           }
+
+          @if $schemas =="dark" {
+            background-color: $value;
+            color: color.adjust($color: $value, $lightness: -55%);
+            border-color: $value;
+
+            &:hover,
+            &:focus,
+            &:target {
+              background-color: color.adjust($color: $value, $lightness: -55%);
+              outline-color: rgba($value, $alpha: .4);
+              border-color: $value;
+              color: $value;
+            }
+          }
         }
       }
 
