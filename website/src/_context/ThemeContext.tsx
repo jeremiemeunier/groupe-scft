@@ -14,16 +14,16 @@ export const ThemeContext = createContext<ThemeContextProps>({
 const ThemeProvider: React.FC<ContextProviderProps> = ({ children }) => {
   const [websiteDarkTheme, setWebsiteDarkTheme] = useState<boolean>(false);
 
-  useEffect(() => {
-    const prefersDark = window.matchMedia("(prefers-color-scheme: dark)");
+  // useEffect(() => {
+  //   const prefersDark = window.matchMedia("(prefers-color-scheme: dark)");
 
-    if (prefersDark.matches) {
-      setWebsiteDarkTheme(true);
-    }
-    prefersDark.addEventListener("change", (event) =>
-      setWebsiteDarkTheme(event.matches)
-    );
-  }, []);
+  //   if (prefersDark.matches) {
+  //     setWebsiteDarkTheme(true);
+  //   }
+  //   prefersDark.addEventListener("change", (event) =>
+  //     setWebsiteDarkTheme(event.matches)
+  //   );
+  // }, []);
 
   return (
     <ThemeContext.Provider
