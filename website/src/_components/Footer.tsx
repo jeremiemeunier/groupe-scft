@@ -13,18 +13,17 @@ const Footer = () => {
       </div>
       <div className="teaui grid format-page tc-4 sl pt40 pb40 va-center">
         <Link
-          href="https://bff.ecoindex.fr/redirect/?url=https://teuteutrainco.jeremiemeunier.fr"
+          href="https://bff.ecoindex.fr/redirect/?url=https://groupe-scft.jeremiemeunier.fr"
           target="_blank"
         >
           <img
-            src="https://bff.ecoindex.fr/badge/?theme=light&url=https://teuteutrainco.jeremiemeunier.fr"
+            src="https://bff.ecoindex.fr/badge/?theme=light&url=https://groupe-scft.jeremiemeunier.fr"
             alt="Ecoindex Badge"
           />
         </Link>
         <div className="teaui grid gwc-3 gsc-2">
           <p className="teaui text label">
-            Vous transporter, notre métier — © {new Date().getFullYear()} —
-            TeuTeuTrain Company
+            Vous transporter, notre métier — © {new Date().getFullYear()} — SCFT
           </p>
         </div>
       </div>
