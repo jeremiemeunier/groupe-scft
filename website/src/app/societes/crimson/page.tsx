@@ -2,8 +2,7 @@ import { Metadata } from "next";
 import Link from "next/link";
 
 export const metadata: Metadata = {
-  title:
-    "Crismon : Vous transportez entre les dimensions — TeuTeuTrain Company",
+  title: "Crismon : Vous transportez entre les dimensions — SCFT",
 };
 
 const PageCrimson = () => {
