@@ -5,8 +5,8 @@ import { Metadata } from "next";
 import Link from "next/link";
 
 export const metadata: Metadata = {
-  title: "Page non trouvée — TeuTeuTrain Company",
-  description: "Page non trouvée — TeuTeuTrain Company",
+  title: "Page non trouvée — SCFT",
+  description: "Page non trouvée — SCFT",
 };
 
 const NotFound = () => {
