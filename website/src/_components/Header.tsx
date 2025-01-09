@@ -1,5 +1,9 @@
+"use client";
+
 import Link from "next/link";
 import Switch from "./Switch";
+import { useContext } from "react";
+import { ThemeContext } from "@/_context/ThemeContext";
 
 const Header = () => {
   return (
@@ -22,10 +26,19 @@ const Header = () => {
 export default Header;
 
 const Logo = () => {
+  const { websiteDarkTheme } = useContext(ThemeContext);
+
   return (
     <div className="teaui app-logo">
       <Link href={"/"}>
-        <img src="/imgs/ttt-groupe-logo.webp" height={"40px"} />
+        <img
+          src={
+            websiteDarkTheme
+              ? `/imgs/logo_groupe_white_4x.webp`
+              : `/imgs/logo_groupe_color_4x.webp`
+          }
+          height={"40px"}
+        />
       </Link>
     </div>
   );
