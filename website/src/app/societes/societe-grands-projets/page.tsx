@@ -2,7 +2,7 @@ import { Metadata } from "next";
 import Link from "next/link";
 
 export const metadata: Metadata = {
-  title: "Société des Grands Projets — TeuTeuTrain Company",
+  title: "Société des Grands Projets — SCFT",
 };
 
 const PageSocietyLargeProject = () => {
