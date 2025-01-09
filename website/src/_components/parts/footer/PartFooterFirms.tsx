@@ -6,18 +6,16 @@ const PartFooterFirms = () => {
       <h6>Toutes les entreprises</h6>
       <ul>
         <li>
-          <Link href={"/societe/groupe"}>TeuTeuTrain SA</Link>
+          <Link href={"/societe/groupe"}>SCFT SA</Link>
         </li>
         <li>
-          <Link href={"/societe/reseaux"}>TeuTeuTrain Réseaux</Link>
+          <Link href={"/societe/reseaux"}>SCFT Réseaux</Link>
         </li>
         <li>
-          <Link href={"/societes/gare-connexions"}>
-            TeuTeuTrain Gare & Connexions
-          </Link>
+          <Link href={"/societes/gare-connexions"}>SCFT Gare & Connexions</Link>
         </li>
         <li>
-          <Link href={"/societes/fret"}>TeuTeuTrain FRET</Link>
+          <Link href={"/societes/fret"}>SCFT FRET</Link>
         </li>
         <li>
           <Link href={"/societes/societe-grands-projets"}>
