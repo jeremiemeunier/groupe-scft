@@ -3,7 +3,7 @@ import { Metadata } from "next";
 import Link from "next/link";
 
 export const metadata: Metadata = {
-  title: "Gare & Connexions — TeuTeuTrain Company",
+  title: "Gare & Connexions — SCFT",
 };
 
 const PageGareConnection = () => {
@@ -35,12 +35,11 @@ const PageGareConnection = () => {
       <div className="teaui grid format-page pa64">
         <h2>Pourquoi Gare & Connexions ?</h2>
         <p>
-          Filiale essentielle de la TeuTeuTrain Company, Gare & Connexion veille
-          sur toutes les gares de Teuteuland, de la plus grande à la plus
-          improbable. Entre les horaires parfois fantaisistes, les quais
-          numérotés sans logique, et les distributeurs de billets qui vendent
-          tout sauf des billets, Gare & Connexion est là pour offrir une
-          expérience inoubliable aux voyageurs.
+          Filiale essentielle de la SCFT, Gare & Connexion veille sur toutes les
+          gares de Teuteuland, de la plus grande à la plus improbable. Entre les
+          horaires parfois fantaisistes, les quais numérotés sans logique, et
+          les distributeurs de billets qui vendent tout sauf des billets, Gare &
+          Connexion est là pour offrir une expérience inoubliable aux voyageurs.
         </p>
       </div>
 
