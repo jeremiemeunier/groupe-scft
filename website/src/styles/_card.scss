@@ -68,9 +68,13 @@
 
     min-height: 48px;
     border-radius: map.get($map: $radius, $key: 'small');
-    background: map.get($map: $colors, $key: 'background_2');
+    background: map.get($map: $colors, $key: 'background_1');
     box-shadow: 0 0 32px rgba(0, 0, 0, .1);
     overflow: hidden;
+
+    @if $color_schemas =="dark" {
+      background: map.get($map: $colors, $key: 'background_2');
+    }
 
     color: map.get($map: $colors, $key: 'content');
     text-decoration: none;
