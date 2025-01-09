@@ -1,7 +1,7 @@
 import { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Notre engagement pour l’éco-conception — TeuTeuTrain Company",
+  title: "Notre engagement pour l’éco-conception — SCFT",
 };
 
 const PageEcoBuild = () => {
