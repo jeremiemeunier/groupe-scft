@@ -19,17 +19,17 @@
       }
     ],
     "paths": {
-      "@form/*": ["src/_components/forms/*"],
-      "@part/*": ["src/_components/parts/*"],
-      "@section/*": ["src/_components/sections/*"],
-      "@modal/*": ["src/_components/modals/*"],
-      "@card/*": ["src/_components/cards/*"],
-      "@ui/*": ["src/_components/ui/*"],
+      "@form/*": ["./src/_components/forms/*"],
+      "@part/*": ["./src/_components/parts/*"],
+      "@section/*": ["./src/_components/sections/*"],
+      "@modal/*": ["./src/_components/modals/*"],
+      "@card/*": ["./src/_components/cards/*"],
+      "@ui/*": ["./src/_components/ui/*"],
       "@context/*": ["./src/contexts/*"],
       "@pages/*": ["./src/pages/*"],
       "@hooks/*": ["./src/hooks/*"],
       "@layouts/*": ["./src/layouts/*"],
-      "@libs/*": ["src/_libs/*"],
+      "@libs/*": ["./src/_libs/*"],
       "@/*": ["./src/*"]
     }
   },
