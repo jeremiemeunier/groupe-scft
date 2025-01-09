@@ -2,7 +2,7 @@ import { Metadata } from "next";
 import Link from "next/link";
 
 export const metadata: Metadata = {
-  title: "Nos chantiers — TeuTeuTrain Company",
+  title: "Nos chantiers — SCFT",
 };
 
 const PageChantier = () => {
