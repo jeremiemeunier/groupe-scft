@@ -24,12 +24,12 @@
       "@section/*": ["src/_components/sections/*"],
       "@modal/*": ["src/_components/modals/*"],
       "@card/*": ["src/_components/cards/*"],
+      "@ui/*": ["src/_components/ui/*"],
       "@context/*": ["./src/contexts/*"],
-      "@layout/*": ["./src/layouts/*"],
       "@pages/*": ["./src/pages/*"],
       "@hooks/*": ["./src/hooks/*"],
       "@layouts/*": ["./src/layouts/*"],
-      "@ui/*": ["src/_components/ui/*"],
+      "@libs/*": ["src/_libs/*"],
       "@/*": ["./src/*"]
     }
   },
