@@ -1,7 +1,7 @@
 import { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "TeuTeuTrain FRET — TeuTeuTrain Company",
+  title: "SCFT FRET — SCFT",
 };
 
 const PageFret = () => {
@@ -14,9 +14,9 @@ const PageFret = () => {
           </p>
           <div className="teaui grid tc-2">
             <p>
-              Avec TeuTeuTrain FRET, vos marchandises sont entre de bonnes
-              mains… ou du moins dans des wagons qui avancent (parfois même dans
-              la bonne direction) !
+              Avec SCFT FRET, vos marchandises sont entre de bonnes mains… ou du
+              moins dans des wagons qui avancent (parfois même dans la bonne
+              direction) !
             </p>
           </div>
         </div>
@@ -53,6 +53,7 @@ const PageFret = () => {
                 battu : 3 jours de retard)
               </p>
             </div>
+            <img src="/imgs/assets/media_track.webp" width={"100%"} alt="" />
           </div>
           <div className="teaui card">
             <div className="teaui pa24 text-container ratio-square">
@@ -73,11 +74,11 @@ const PageFret = () => {
       <div className="teaui grid format-page pa64">
         <h2>Transporter tout… ou presque !</h2>
         <p>
-          Filiale incontournable de la TeuTeuTrain Company, TeuTeuTrain FRET est
-          le pilier du transport de marchandises en Teuteuland. Du charbon à
-          l’art moderne en passant par des chargements mystérieux (qu’on préfère
-          ne pas ouvrir), TeuTeuTrain FRET s’engage à livrer tout, partout, et
-          parfois même dans les délais prévus.
+          Filiale incontournable de la SCFT, SCFT FRET est le pilier du
+          transport de marchandises en Teuteuland. Du charbon à l’art moderne en
+          passant par des chargements mystérieux (qu’on préfère ne pas ouvrir),
+          SCFT FRET s’engage à livrer tout, partout, et parfois même dans les
+          délais prévus.
         </p>
       </div>
     </div>
