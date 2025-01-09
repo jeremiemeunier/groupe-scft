@@ -2,7 +2,7 @@ import { Metadata } from "next";
 
 export const metadata: Metadata = {
   title:
-    "Rejoindre l'End en seulement 1h20 — Société des Grands Projets — TeuTeuTrain Company",
+    "Rejoindre l'End en seulement 1h20 — Société des Grands Projets — SCFT",
 };
 
 const PageChantierArticle = () => {
@@ -68,10 +68,10 @@ const PageChantierArticle = () => {
       <div className="teaui grid format-page pa64">
         <h3>Un projet pour l’histoire</h3>
         <p>
-          La TeuTeuTrain Company espère inaugurer cette voie d’ici 7 ans (ou 10,
-          selon les aléas). Quoi qu’il en soit, ce chantier s’annonce déjà comme
-          une prouesse technique et une nouvelle fierté pour la Raie Publique.
-          "Un jour, on racontera ça à nos petits Teuteus !", conclut un ouvrier.
+          La SCFT espère inaugurer cette voie d’ici 7 ans (ou 10, selon les
+          aléas). Quoi qu’il en soit, ce chantier s’annonce déjà comme une
+          prouesse technique et une nouvelle fierté pour la Raie Publique. "Un
+          jour, on racontera ça à nos petits Teuteus !", conclut un ouvrier.
         </p>
       </div>
     </div>
