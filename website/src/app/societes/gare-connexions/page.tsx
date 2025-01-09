@@ -1,3 +1,4 @@
+import SectionAllGare from "@section/SectionAllGare";
 import { Metadata } from "next";
 import Link from "next/link";
 
@@ -87,56 +88,7 @@ const PageGareConnection = () => {
         </p>
       </div>
 
-      <div className="teaui grid bg-corail pa64">
-        <div className="teaui grid rgs-0 format-page sl">
-          <Link
-            className="teaui color shade-corail text-link"
-            href={"/societes/gare-connexions/ailleurs-sur-loin"}
-          >
-            <span className="teaui text fs-24 fw-600">Ailleurs-sur-Loin</span>
-            <i className="icon teaui-icon-arrow-right"></i>
-          </Link>
-          <Link
-            className="teaui color shade-corail text-link"
-            href={"/societes/gare-connexions/soleil-en-vadrouille"}
-          >
-            <span className="teaui text fs-24 fw-600">
-              Soleil-en-Vadrouille
-            </span>
-            <i className="icon teaui-icon-arrow-right"></i>
-          </Link>
-          <Link
-            className="teaui color shade-corail text-link"
-            href={"/societes/gare-connexions/bordure-les-finis"}
-          >
-            <span className="teaui text fs-24 fw-600">Bordure-Lès-Finis</span>
-            <i className="icon teaui-icon-arrow-right"></i>
-          </Link>
-          <Link
-            className="teaui color shade-corail text-link"
-            href={"/societes/gare-connexions/froidville-en-soupir"}
-          >
-            <span className="teaui text fs-24 fw-600">
-              Froidville-en-Soupir
-            </span>
-            <i className="icon teaui-icon-arrow-right"></i>
-          </Link>
-          <Link
-            className="teaui color shade-corail text-link"
-            href={"/societes/gare-connexions/nether"}
-          >
-            <span className="teaui text fs-24 fw-600">Nether</span>
-            <i className="icon teaui-icon-arrow-right"></i>
-          </Link>
-          <Link
-            className="teaui color shade-corail text-link"
-            href={"/societes/gare-connexions/rouille-sur-acier"}
-          >
-            <span className="teaui text fs-24 fw-600">Rouille-sur-Acier</span>
-            <i className="icon teaui-icon-arrow-right"></i>
-          </Link>
-        </div>
-      </div>
+      <SectionAllGare />
     </div>
   );
 };
