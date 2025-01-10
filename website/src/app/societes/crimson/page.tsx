@@ -37,9 +37,9 @@ const PageCrimson = () => {
 
       <div className="teaui grid format-page sl">
         <h2>Les chiffres clés</h2>
-        <div className="teaui grid tc-3 cgs-32">
-          <div className="teaui card">
-            <div className="teaui pa24">
+        <div className="teaui grid tc-3 va-start cgs-32">
+          <div className="teaui card mt40">
+            <div className="teaui pa24 text-container ratio-square">
               <p className="teaui text ff-title fs-64 fw-700 pa0 ma0">1.2</p>
               <p className="teaui text fs-24 pa0 ma0">
                 millions de litres de lave sécurisé (ou presque) de chaques coté
@@ -47,8 +47,8 @@ const PageCrimson = () => {
               </p>
             </div>
           </div>
-          <div className="teaui card">
-            <div className="teaui pa24">
+          <div className="teaui card mt120">
+            <div className="teaui pa24 text-container ratio-square">
               <p className="teaui text ff-title fs-64 fw-700 pa0 ma0">269</p>
               <p className="teaui text fs-24 pa0 ma0">
                 ghast et wither squelette préservé par la plan "1 gare, 1
@@ -57,7 +57,7 @@ const PageCrimson = () => {
             </div>
           </div>
           <div className="teaui card">
-            <div className="teaui pa24">
+            <div className="teaui pa24 text-container ratio-square">
               <p className="teaui text ff-title fs-64 fw-700 pa0 ma0">1 430</p>
               <p className="teaui text fs-24 pa0 ma0">
                 bouteilles de potions servies dans nos wagons-bars.
