@@ -9,7 +9,7 @@ const PageFret = () => {
     <div className="teaui grid rgs-120">
       <div className="teaui grid bg-vert-menthe va-center sv-80">
         <div className="teaui grid format-page sl">
-          <p className="teaui text fs-80 fw-900">
+          <p className="teaui text lh-100 fs-80 fw-900">
             Transporter les biens essentiels
           </p>
           <div className="teaui grid tc-2">
