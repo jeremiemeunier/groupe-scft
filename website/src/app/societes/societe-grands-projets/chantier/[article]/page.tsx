@@ -52,6 +52,7 @@ const PageChantierArticle = () => {
                 tunnels creusés à la main (ou presque)
               </p>
             </div>
+            <img src="/imgs/assets/media_tunnel.webp" width={"100%"} alt="" />
           </div>
           <div className="teaui card">
             <img src="/imgs/assets/media_worker.webp" width={"100%"} alt="" />
