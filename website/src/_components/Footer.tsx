@@ -12,18 +12,20 @@ const Footer = () => {
         <PartFooterFirms />
       </div>
       <div className="teaui grid format-page tc-4 sl pt40 pb40 va-center">
-        <Link
-          href="https://bff.ecoindex.fr/redirect/?url=https://groupe-scft.jeremiemeunier.fr"
-          target="_blank"
-        >
-          <img
-            src="https://bff.ecoindex.fr/badge/?theme=light&url=https://groupe-scft.jeremiemeunier.fr"
-            alt="Ecoindex Badge"
-          />
-        </Link>
-        <div className="teaui grid gwc-3 gsc-2">
+        <div className="teaui grid gsc-2">
+          <Link
+            href="https://bff.ecoindex.fr/redirect/?url=https://groupe-scft.jeremiemeunier.fr"
+            target="_blank"
+          >
+            <img
+              src="https://bff.ecoindex.fr/badge/?theme=light&url=https://groupe-scft.jeremiemeunier.fr"
+              alt="Ecoindex Badge"
+            />
+          </Link>
+        </div>
+        <div className="teaui grid gwc-2 gsc-3">
           <p className="teaui text label">
-            Vous transporter, notre métier — © {new Date().getFullYear()} — SCFT
+            © {new Date().getFullYear()} — SCFT
           </p>
         </div>
       </div>
