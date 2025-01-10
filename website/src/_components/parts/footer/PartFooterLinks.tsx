@@ -6,13 +6,13 @@ const PartFooterLinks = () => {
       <h6>Nous découvrir</h6>
       <ul>
         <li>
-          <Link href={""}>Nos engagements</Link>
+          <Link href={"/information/engagements"}>Nos engagements</Link>
         </li>
         <li>
-          <Link href={""}>Techno Campus</Link>
+          <Link href={"/information/techno-campus"}>Techno Campus</Link>
         </li>
         <li>
-          <Link href={""}>Identité</Link>
+          <Link href={"/information/identitee"}>Identité</Link>
         </li>
         <li>
           <Link href={"/information/eco-conception"}>Éco conception</Link>
