@@ -1,3 +1,4 @@
+import SectionArticleList from "@section/SectionArticleList";
 import { Metadata } from "next";
 import Link from "next/link";
 
@@ -41,7 +42,14 @@ const PageSocietyLargeProject = () => {
         </p>
       </div>
 
-      <div className="teaui grid format-page sl pt64 ms-pt64 xs-pt64 pb64 ms-pb64 xs-pb64">
+      <SectionArticleList
+        society={{
+          label: "Société des Grands Projets",
+          enc: "societe-grands-projets",
+        }}
+      />
+
+      {/* <div className="teaui grid format-page sl pt64 ms-pt64 xs-pt64 pb64 ms-pb64 xs-pb64">
         <h2>Nos réalisations</h2>
 
         <div className="teaui grid cgs-24 tc-3">
@@ -91,7 +99,7 @@ const PageSocietyLargeProject = () => {
             </p>
           </Link>
         </div>
-      </div>
+      </div> */}
 
       <div className="teaui grid pa80 ms-pa80 xs-pa80 bg-dark-cobalt-reverse">
         <div className="teaui grid format-page">
