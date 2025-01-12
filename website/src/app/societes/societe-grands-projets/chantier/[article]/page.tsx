@@ -1,81 +1,164 @@
-import { Metadata } from "next";
+import {
+  ArticleBlockElementInterface,
+  ArticleBlockInterface,
+} from "@/_types/Database.type";
+import { createClient } from "@libs/server";
+import SectionOtherArticle from "@section/SectionOtherArticle";
+import { Metadata, ResolvingMetadata } from "next";
+import { redirect } from "next/navigation";
+import { ReactNode } from "react";
 
-export const metadata: Metadata = {
-  title:
-    "Rejoindre l'End en seulement 1h20 — Société des Grands Projets — SCFT",
+export const generateMetadata = async (
+  {
+    params,
+    searchParams,
+  }: {
+    params: Promise<{ article: string }>;
+    searchParams: Promise<{ [key: string]: string | string[] | undefined }>;
+  },
+  parent: ResolvingMetadata
+) => {
+  const enc_title = (await params).article;
+  const supabase = await createClient();
+  const { data: article } = await supabase
+    .from("article")
+    .select()
+    .eq("enc_title", (await params).article);
+
+  return {
+    title: `${article && article[0].title} — SCFT`,
+    description: article && article[0].resume,
+  };
 };
 
-const PageChantierArticle = () => {
-  return (
-    <div>
-      <div className="teaui grid background bg-nude pt80">
+const PageChantierArticle = async ({
+  params,
+}: {
+  params: Promise<{ article: string }>;
+}) => {
+  const supabase = await createClient();
+  const { data: article } = await supabase
+    .from("article")
+    .select()
+    .eq("enc_title", (await params).article);
+
+  const parsingHtmlContent: ({
+    bson,
+  }: {
+    bson: ArticleBlockElementInterface[];
+  }) => ReactNode = ({ bson }) => {
+    return bson.map((element, key: number) => {
+      if (element.type === "h3") {
+        return (
+          <h3 key={key} className={`teaui text ${element?.class?.join(" ")}`}>
+            {element.content as string}
+          </h3>
+        );
+      } else {
+        return (
+          <p key={key} className={`teaui text ${element?.class?.join(" ")}`}>
+            {element.content as string}
+          </p>
+        );
+      }
+    });
+  };
+
+  return article && article.length === 1 ? (
+    <>
+      <div
+        className={`teaui grid background ${
+          article[0]?.color ? `bg-${article[0]?.color}` : "bg-nude"
+        } pt80`}
+      >
         <div className="teaui grid tc-2 format-page sl pt80 ms-pt80 xs-pt80 pb80 ms-pb80 xs-pb80">
           <h2 className="teaui pa0 ms-pa0 xs-pa0 ma0 ms-ma0 xs-ma0 text fs-72">
-            Rejoindre l'end en seulement 1h20
+            {article[0].title}
           </h2>
           <div className="teaui grid pl40">
-            <p>
-              Comment sommes nous en train de réaliser le plus grand chantier
-              ferroviaire de toutes la TeuTeuLandie en créant une liaison
-              directe entre le Grand Centre du Monde et l'End ?
-            </p>
-          </div>
-        </div>
-      </div>
-      <div className="teaui grid format-page pa64">
-        <h3>Un défi technique hors norme</h3>
-        <p>
-          Le chantier traverse des terrains variés, allant de vastes plaines à
-          des zones marécageuses où chaque rail doit être soigneusement posé
-          pour éviter qu’il ne s’enfonce. "On a même découvert un ancien nid de
-          pigeons sacrés sur le tracé !", explique Marcel, chef des travaux.
-          Après trois jours de cérémonie pour apaiser les esprits des pigeons,
-          les travaux ont pu reprendre.
-        </p>
-      </div>
-      <div className="teaui grid format-page sl">
-        <h2>Les chiffres clés</h2>
-        <div className="teaui grid va-start tc-3 cgs-32">
-          <div className="teaui card mt40">
-            <img src="/imgs/assets/media_track.webp" width={"100%"} alt="" />
-            <div className="teaui text-container ratio-square pa24">
-              <p className="teaui text ff-title fs-64 fw-700 pa0 ma0">132km</p>
-              <p className="teaui text fs-24 pa0 ma0">
-                de rail posé sans les virages
-              </p>
-            </div>
-          </div>
-          <div className="teaui card mt120">
-            <div className="teaui text-container ratio-square pa24">
-              <p className="teaui text ff-title fs-64 fw-700 pa0 ma0">18</p>
-              <p className="teaui text fs-24 pa0 ma0">
-                tunnels creusés à la main (ou presque)
-              </p>
-            </div>
-            <img src="/imgs/assets/media_tunnel.webp" width={"100%"} alt="" />
-          </div>
-          <div className="teaui card">
-            <img src="/imgs/assets/media_worker.webp" width={"100%"} alt="" />
-            <div className="teaui text-container ratio-square pa24">
-              <p className="teaui text ff-title fs-64 fw-700 pa0 ma0">5000</p>
-              <p className="teaui text fs-24 pa0 ma0">
-                ouvriers mobilisés, dont 800 pour retrouver les outils égarés.
-              </p>
-            </div>
+            <p>{article[0].resume}</p>
           </div>
         </div>
       </div>
 
-      <div className="teaui grid format-page pa64">
-        <h3>Un projet pour l’histoire</h3>
-        <p>
-          La SCFT espère inaugurer cette voie d’ici 7 ans (ou 10, selon les
-          aléas). Quoi qu’il en soit, ce chantier s’annonce déjà comme une
-          prouesse technique et une nouvelle fierté pour la Raie Publique. "Un
-          jour, on racontera ça à nos petits Teuteus !", conclut un ouvrier.
-        </p>
-      </div>
-    </div>
+      {article[0].content?.blocks.map(
+        (block: ArticleBlockInterface, key: number) => (
+          <div
+            key={key}
+            className={`teaui grid format-page ${block?.class?.join(" ")}`}
+          >
+            {/* mapping all elements inside a block */}
+            {block.elements.map((element: any, key: number) => {
+              if (element.type === "h3") {
+                return (
+                  <h3
+                    key={key}
+                    className={`teaui text ${element?.class?.join(" ")}`}
+                  >
+                    {element.content}
+                  </h3>
+                );
+              } else if (element.type === "p") {
+                return (
+                  <p
+                    key={key}
+                    className={`teaui text ${element?.class?.join(" ")}`}
+                  >
+                    {element.content}
+                  </p>
+                );
+              } else if (element.type === "cards") {
+                // mapping specific card section
+                return (
+                  <div className="teaui grid va-start tc-3 cgs-32">
+                    {element.content.map(
+                      (
+                        card: {
+                          media: string;
+                          content: {
+                            type: string;
+                            class?: string[];
+                            content: string;
+                          }[];
+                        },
+                        key: number
+                      ) => (
+                        <div
+                          className={`teaui card ${
+                            key === 0 ? "mt40" : key === 1 ? "mt120" : ""
+                          }`}
+                        >
+                          {key !== 1 && (
+                            <img src={card.media} width={"100%"} alt="" />
+                          )}
+                          <div className="teaui text-container ratio-square pa24">
+                            {parsingHtmlContent({ bson: card.content })}
+                          </div>
+                          {key === 1 && (
+                            <img src={card.media} width={"100%"} alt="" />
+                          )}
+                        </div>
+                      )
+                    )}
+                  </div>
+                );
+              }
+            })}
+          </div>
+        )
+      )}
+
+      <SectionOtherArticle
+        society={{
+          label: "Société des Grands Projets",
+          enc: "societe-grands-projets",
+        }}
+        color={article[0]?.color}
+        params={params}
+      />
+    </>
+  ) : (
+    redirect("/")
   );
 };
 
