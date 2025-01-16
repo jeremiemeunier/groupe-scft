@@ -280,13 +280,14 @@
 @mixin blockquote($theme) {
   $colors: map.get($theme, 'colors');
   $fonts: map.get($theme, 'fonts');
+  $fontsize: map.get($theme, 'fontsize');
   $radius: map.get($theme, 'radius');
 
   blockquote {
-    padding: 8px 16px;
-    margin-bottom: 24px;
-    margin-top: 24px;
-    border-left: 4px solid map.get($map: $colors, $key: 'main');
+    padding: 40px;
+    margin: 64px 0;
+
+    font-size: map.get($fontsize, "h3");
 
     p:first-child {
       margin-top: 0
@@ -294,6 +295,11 @@
 
     p:last-child {
       margin-bottom: 0
+    }
+
+    p.author {
+      font-size: map.get($fontsize, "text");
+      opacity: .6;
     }
   }
 }
