@@ -2,6 +2,7 @@ import {
   ArticleBlockElementInterface,
   ArticleBlockInterface,
 } from "@/_types/Database.type";
+import { HTMLParser } from "@libs/htmlparser";
 import { createClient } from "@libs/server";
 import SectionOtherArticle from "@section/SectionOtherArticle";
 import { Metadata, ResolvingMetadata } from "next";
@@ -42,35 +43,22 @@ const PageChantierArticle = async ({
     .select()
     .eq("enc_title", (await params).article);
 
-  const parsingHtmlContent: ({
-    bson,
-  }: {
-    bson: ArticleBlockElementInterface[];
-  }) => ReactNode = ({ bson }) => {
-    return bson.map((element, key: number) => {
-      if (element.type === "h3") {
-        return (
-          <h3 key={key} className={`teaui text ${element?.class?.join(" ")}`}>
-            {element.content as string}
-          </h3>
-        );
-      } else {
-        return (
-          <p key={key} className={`teaui text ${element?.class?.join(" ")}`}>
-            {element.content as string}
-          </p>
-        );
-      }
-    });
-  };
-
   return article && article.length === 1 ? (
     <>
       <div
-        className={`teaui grid background ${
+        className={`teaui grid rgs-0 background ${
           article[0]?.color ? `bg-${article[0]?.color}` : "bg-nude"
         } pt80`}
       >
+        {article[0].media && (
+          <div
+            className="teaui grid sv-60"
+            style={{
+              backgroundImage: `url(${article[0].media})`,
+              backgroundPosition: "center center",
+            }}
+          ></div>
+        )}
         <div className="teaui grid tc-2 format-page sl pt80 ms-pt80 xs-pt80 pb80 ms-pb80 xs-pb80">
           <h2 className="teaui pa0 ms-pa0 xs-pa0 ma0 ms-ma0 xs-ma0 text fs-72">
             {article[0].title}
@@ -89,25 +77,7 @@ const PageChantierArticle = async ({
           >
             {/* mapping all elements inside a block */}
             {block.elements.map((element: any, key: number) => {
-              if (element.type === "h3") {
-                return (
-                  <h3
-                    key={key}
-                    className={`teaui text ${element?.class?.join(" ")}`}
-                  >
-                    {element.content}
-                  </h3>
-                );
-              } else if (element.type === "p") {
-                return (
-                  <p
-                    key={key}
-                    className={`teaui text ${element?.class?.join(" ")}`}
-                  >
-                    {element.content}
-                  </p>
-                );
-              } else if (element.type === "cards") {
+              if (element.type === "cards") {
                 // mapping specific card section
                 return (
                   <div className="teaui grid va-start tc-3 cgs-32">
@@ -132,7 +102,7 @@ const PageChantierArticle = async ({
                             <img src={card.media} width={"100%"} alt="" />
                           )}
                           <div className="teaui text-container ratio-square pa24">
-                            {parsingHtmlContent({ bson: card.content })}
+                            {HTMLParser({ bson: card.content })}
                           </div>
                           {key === 1 && (
                             <img src={card.media} width={"100%"} alt="" />
@@ -142,6 +112,8 @@ const PageChantierArticle = async ({
                     )}
                   </div>
                 );
+              } else {
+                return HTMLParser({ bson: element });
               }
             })}
           </div>
