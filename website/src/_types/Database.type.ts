@@ -18,6 +18,7 @@ export interface ArticleBlockElementInterface {
   type: string;
   content: string | ArticleBlockCardInterface[];
   class?: string[];
+  author?: string;
 }
 
 export interface ArticleBlockCardInterface {
