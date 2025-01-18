@@ -63,7 +63,7 @@ const PageChantierArticle = async ({
           <h2 className="teaui pa0 ms-pa0 xs-pa0 ma0 ms-ma0 xs-ma0 text fs-72">
             {article[0].title}
           </h2>
-          <div className="teaui grid pl40">
+          <div className="teaui grid pl40 text fs-24">
             <p>{article[0].resume}</p>
           </div>
         </div>
