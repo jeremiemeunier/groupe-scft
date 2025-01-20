@@ -1,25 +1,18 @@
-import {
-  ArticleBlockElementInterface,
-  ArticleBlockInterface,
-} from "@/_types/Database.type";
+import { ArticleBlockInterface } from "@/_types/Database.type";
 import { HTMLParser } from "@libs/htmlparser";
 import { createClient } from "@libs/server";
 import SectionOtherArticle from "@section/SectionOtherArticle";
-import { Metadata, ResolvingMetadata } from "next";
+import { ResolvingMetadata } from "next";
 import { redirect } from "next/navigation";
-import { ReactNode } from "react";
 
 export const generateMetadata = async (
   {
     params,
-    searchParams,
   }: {
     params: Promise<{ article: string }>;
-    searchParams: Promise<{ [key: string]: string | string[] | undefined }>;
   },
   parent: ResolvingMetadata
 ) => {
-  const enc_title = (await params).article;
   const supabase = await createClient();
   const { data: article } = await supabase
     .from("article")
