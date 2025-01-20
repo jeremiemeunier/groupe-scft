@@ -1,18 +1,18 @@
-import { ArticleBlockInterface } from "@/_types/Database.type";
+import {
+  ArticleBlockElementInterface,
+  ArticleBlockInterface,
+} from "@/_types/Database.type";
 import { HTMLParser } from "@libs/htmlparser";
 import { createClient } from "@libs/server";
 import SectionOtherArticle from "@section/SectionOtherArticle";
-import { ResolvingMetadata } from "next";
+import Image from "next/image";
 import { redirect } from "next/navigation";
 
-export const generateMetadata = async (
-  {
-    params,
-  }: {
-    params: Promise<{ article: string }>;
-  },
-  parent: ResolvingMetadata
-) => {
+export const generateMetadata = async ({
+  params,
+}: {
+  params: Promise<{ article: string }>;
+}) => {
   const supabase = await createClient();
   const { data: article } = await supabase
     .from("article")
@@ -69,46 +69,53 @@ const PageChantierArticle = async ({
             className={`teaui grid format-page ${block?.class?.join(" ")}`}
           >
             {/* mapping all elements inside a block */}
-            {block.elements.map((element: any, key: number) => {
-              if (element.type === "cards") {
-                // mapping specific card section
-                return (
-                  <div className="teaui grid va-start tc-3 cgs-32">
-                    {element.content.map(
-                      (
-                        card: {
-                          media: string;
-                          content: {
-                            type: string;
-                            class?: string[];
-                            content: string;
-                          }[];
-                        },
-                        key: number
-                      ) => (
-                        <div
-                          className={`teaui card ${
-                            key === 0 ? "mt40" : key === 1 ? "mt120" : ""
-                          }`}
-                        >
-                          {key !== 1 && (
-                            <img src={card.media} width={"100%"} alt="" />
-                          )}
-                          <div className="teaui text-container ratio-square pa24">
-                            {HTMLParser({ bson: card.content })}
+            {block.elements.map(
+              (element: ArticleBlockElementInterface, key: number) => {
+                if (element.type === "cards") {
+                  // mapping specific card section
+                  return (
+                    <div key={key} className="teaui grid va-start tc-3 cgs-32">
+                      {(element.content as []).map(
+                        (
+                          card: {
+                            media: string;
+                            content: {
+                              type: string;
+                              class?: string[];
+                              content: string;
+                            }[];
+                          },
+                          key: number
+                        ) => (
+                          <div
+                            className={`teaui card ${
+                              key === 0 ? "mt40" : key === 1 ? "mt120" : ""
+                            }`}
+                            key={key}
+                          >
+                            {key !== 1 && (
+                              <div className="teaui text-container ratio-square">
+                                <Image src={card.media} fill alt="" />
+                              </div>
+                            )}
+                            <div className="teaui text-container ratio-square pa24">
+                              {HTMLParser({ bson: card.content })}
+                            </div>
+                            {key === 1 && (
+                              <div className="teaui text-container ratio-square">
+                                <Image src={card.media} fill alt="" />
+                              </div>
+                            )}
                           </div>
-                          {key === 1 && (
-                            <img src={card.media} width={"100%"} alt="" />
-                          )}
-                        </div>
-                      )
-                    )}
-                  </div>
-                );
-              } else {
-                return HTMLParser({ bson: element });
+                        )
+                      )}
+                    </div>
+                  );
+                } else {
+                  return HTMLParser({ bson: element });
+                }
               }
-            })}
+            )}
           </div>
         )
       )}
