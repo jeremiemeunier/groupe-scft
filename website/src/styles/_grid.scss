@@ -1,0 +1,411 @@
+@use "sass:color";
+@use "sass:map";
+@use "sass:math";
+
+@mixin base($theme) {
+  $colors: map.get($map: $theme, $key: 'colors');
+  $shades: map.get($map: $theme, $key: 'shades');
+  $schemas: map.get($map: $theme, $key: 'color_schemas');
+  $radius: map.get($map: $theme, $key: 'radius');
+
+  &.grid {
+    display: grid;
+    grid-auto-flow: row;
+    grid-auto-rows: min-content;
+
+    column-gap: 8px;
+    row-gap: 24px;
+
+    // Style
+    &.style {
+      &.border-top {
+        border-top: 1px solid rgba(map.get($map: $colors, $key: 'content'), .3);
+      }
+
+      &.border-left {
+        border-left: 1px solid rgba(map.get($map: $colors, $key: 'content'), .3);
+      }
+
+      &.border-right {
+        border-right: 1px solid rgba(map.get($map: $colors, $key: 'content'), .3);
+      }
+
+      &.border-bottom {
+        border-bottom: 1px solid rgba(map.get($map: $colors, $key: 'content'), .3);
+      }
+
+      &.border-all {
+        border: 1px solid rgba(map.get($map: $colors, $key: 'content'), .3);
+      }
+
+      &.shadow {
+        box-shadow: 0 4px 16px rgba($color: #000000, $alpha: .1);
+      }
+    }
+
+    // Alignements
+    &.va-start {
+      align-items: start;
+      align-content: start;
+    }
+
+    &.va-center {
+      align-items: center;
+      align-content: center;
+    }
+
+    &.va-end {
+      align-items: end;
+      align-content: end;
+    }
+
+    &.va-stretch {
+      align-items: stretch;
+      align-content: stretch;
+    }
+
+    &.ha-start {
+      justify-items: start;
+      justify-content: start;
+    }
+
+    &.ha-center {
+      justify-items: center;
+      justify-content: center;
+    }
+
+    &.ha-end {
+      justify-items: end;
+      justify-content: end;
+    }
+
+    @media all and (max-width: 768px) {
+      &.xs-va-start {
+        align-items: start;
+        align-content: start;
+      }
+
+      &.xs-va-center {
+        align-items: center;
+        align-content: center;
+      }
+
+      &.xs-va-end {
+        align-items: end;
+        align-content: end;
+      }
+
+      &.xs-va-stretch {
+        align-items: stretch;
+        align-content: stretch;
+      }
+
+      &.xs-ha-start {
+        justify-items: start;
+        justify-content: start;
+      }
+
+      &.xs-ha-center {
+        justify-items: center;
+        justify-content: center;
+      }
+
+      &.xs-ha-end {
+        justify-items: end;
+        justify-content: end;
+      }
+    }
+
+    &.nrg {
+      row-gap: 0;
+    }
+
+    &.no-column-gap {
+      column-gap: 0;
+    }
+
+    &.grid-row-auto {
+      grid-auto-rows: auto;
+    }
+
+    &.grid-row-fr {
+      grid-auto-rows: 1fr;
+    }
+
+    &.grid-col-fr {
+      grid-auto-flow: column;
+      grid-auto-columns: 1fr;
+    }
+
+    &.grid-row-max {
+      grid-auto-rows: max-content;
+    }
+
+    &.format-page {
+      width: 100vw;
+      max-width: 900px;
+      margin: auto;
+      box-sizing: border-box;
+
+      &.sm {
+        width: 540px;
+        max-width: 90vw;
+      }
+
+      &.sl {
+        width: 90vw;
+        max-width: 1080px;
+      }
+
+      &.sxl {
+        width: 90vw;
+        max-width: 75vw;
+      }
+
+      &.sf {
+        width: 100vw;
+        max-width: calc(100vw - 32px);
+      }
+    }
+
+    &.layout {
+      &.template-dashboard {
+        grid-template-columns: 280px 1fr;
+        transition:
+          width .3s,
+          max-width .3s;
+
+        @media all and (max-width: 768px) {
+          grid-template-columns: 1fr;
+        }
+      }
+    }
+
+    // Size vertical
+    $i: 1;
+
+    @while $i <=10 {
+      &.sv-#{$i * 10} {
+        min-height: 10vh * $i;
+      }
+
+      &.msv-#{$i * 10} {
+        max-height: 10vh * $i;
+        overflow: hidden;
+      }
+
+      $i: $i + 1;
+    }
+
+    &.border {
+      border: 1px solid rgba(map.get($map: $colors, $key: 'content'), .3);
+      border-radius: map.get($map: $radius, $key: 'small');
+    }
+
+    // Columns template
+    $j: 1;
+
+    &.tac {
+      grid-auto-flow: column;
+      grid-auto-columns: min-content;
+
+      @media all and (max-width: 768px) {
+        grid-auto-flow: row;
+        grid-auto-rows: min-content;
+      }
+    }
+
+    @media all and (max-width: 768px) {
+      &.xs-tac {
+        grid-auto-flow: column;
+        grid-auto-columns: min-content;
+      }
+    }
+
+    @while $j <=12 {
+      @media all and (min-width: 992px) {
+        &.tc-#{$j} {
+          grid-template-columns: repeat($j, 1fr);
+        }
+
+        &.tr-#{$j} {
+          grid-template-rows: repeat($j, 1fr);
+        }
+
+        .gsc-#{$j} {
+          grid-column-start: $j;
+        }
+
+        .gsr-#{$j} {
+          grid-row-start: $j;
+        }
+
+        .gwc-#{$j} {
+          grid-column-end: span $j;
+        }
+
+        .gwr-#{$j} {
+          grid-row-end: span $j;
+        }
+      }
+
+      @media all and (min-width: 768px) and (max-width: 992px) {
+        &.ms-tc-#{$j} {
+          grid-template-columns: repeat($j, 1fr);
+        }
+
+        &.ms-tr-#{$j} {
+          grid-template-rows: repeat($j, 1fr);
+        }
+
+        .ms-gsc-#{$j} {
+          grid-column-start: $j;
+        }
+
+        .ms-gwc-#{$j} {
+          grid-column-end: span $j;
+        }
+
+        .ms-gsr-#{$j} {
+          grid-row-start: $j;
+        }
+
+        .ms-gwr-#{$j} {
+          grid-row-end: span $j;
+        }
+      }
+
+      @media all and (max-width: 768px) {
+        &.xs-tc-#{$j} {
+          grid-template-columns: repeat($j, 1fr);
+        }
+
+        &.xs-tr-#{$j} {
+          grid-template-rows: repeat($j, 1fr);
+        }
+
+        .xs-gsc-#{$j} {
+          grid-column-start: $j;
+        }
+
+        .xs-gwc-#{$j} {
+          grid-column-end: span $j;
+        }
+
+        .xs-gsr-#{$j} {
+          grid-row-start: $j;
+        }
+
+        .xs-gwr-#{$j} {
+          grid-row-end: span $j;
+        }
+      }
+
+      $j: $j + 1;
+    }
+
+    // Radius 
+    &.radius-small {
+      border-radius: map.get($map: $radius, $key: 'small');
+
+      &.parent-border {
+        border-radius: map.get($map: $radius, $key: 'small') - 2px;
+      }
+    }
+
+    &.radius-medium {
+      border-radius: map.get($map: $radius, $key: 'medium');
+
+      &.parent-border {
+        border-radius: map.get($map: $radius, $key: 'medium') - 2px;
+      }
+    }
+
+    &.radius-large {
+      border-radius: map.get($map: $radius, $key: 'large');
+
+      &.parent-border {
+        border-radius: map.get($map: $radius, $key: 'large') - 2px;
+      }
+    }
+
+    // Overflow
+    &.overflow-hidden {
+      overflow: hidden !important;
+    }
+
+    // Background
+    &.background-effect-blur {
+      backdrop-filter: blur(24px) saturate(180%);
+    }
+
+    &.background-color-main {
+      background-color: map.get($map: $colors, $key: 'main');
+    }
+
+    &.background-color-content {
+      background-color: map.get($map: $colors, $key: 'content');
+      color: map.get($map: $colors, $key: 'background_1');
+    }
+
+    &.background-color-bg1 {
+      background-color: map.get($map: $colors, $key: 'background_1');
+    }
+
+    &.background-color-bg2 {
+      background-color: map.get($map: $colors, $key: 'background_2');
+    }
+
+    &.background-color-bg3 {
+      background-color: map.get($map: $colors, $key: 'background_3');
+    }
+
+    @each $name, $value in $shades {
+      &.bg-#{$name} {
+        background-color: $value;
+        color: color.adjust($color: $value, $lightness: -55%);
+
+        @if $schemas =="dark" {
+          background-color: color.adjust($color: $value, $lightness: -55%);
+          color: $value;
+        }
+      }
+
+      &.color-#{$name} {
+        color: $value;
+      }
+    }
+
+    // Row size
+    &.row-size-default {
+      grid-auto-rows: auto;
+    }
+
+    // Gap size
+    $k: 0;
+
+    @while $k <=30 {
+      @media all and (min-width: 768px) {
+        &.cgs-#{$k * 8} {
+          column-gap: 8px * $k;
+        }
+
+        &.rgs-#{$k * 8} {
+          row-gap: 8px * $k;
+        }
+      }
+
+      @media all and (max-width: 768px) {
+        &.xs-cgs-#{$k * 8} {
+          column-gap: 8px * $k;
+        }
+
+        &.xs-rgs-#{$k * 8} {
+          row-gap: 8px * $k;
+        }
+      }
+
+      $k: $k + 1;
+    }
+  }
+}

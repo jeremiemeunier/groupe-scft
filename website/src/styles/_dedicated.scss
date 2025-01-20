@@ -1,0 +1,239 @@
+@use "sass:color";
+@use "sass:map";
+
+@mixin global($theme) {
+  $colors: map.get($map: $theme, $key: "colors");
+  $shades: map.get($map: $theme, $key: "shades");
+  $radius: map.get($map: $theme, $key: "radius");
+  $schemas: map.get($map: $theme, $key: "color_schemas");
+
+  // https://images.pexels.com/photos/841130/pexels-photo-841130.jpeg
+  // https://images.pexels.com/photos/248547/pexels-photo-248547.jpeg
+  // https://images.pexels.com/photos/28061/pexels-photo.jpg
+  // https://images.pexels.com/photos/1432039/pexels-photo-1432039.jpeg
+  // https://images.pexels.com/photos/1564868/pexels-photo-1564868.jpeg
+  // https://images.pexels.com/photos/34514/spot-runs-start-la.jpg
+  // https://images.pexels.com/photos/1564868/pexels-photo-1564868.jpeg
+
+  .hero-sport {
+    background-color: map.get($map: $colors, $key: "main");
+
+    @if ($schemas =="dark") {
+
+      h1,
+      h2,
+      p {
+        color: map.get($map: $colors, $key: "background_1");
+      }
+    }
+
+    @media all and (max-width: 768px) {
+      width: 100vw;
+      mask-size: 200%;
+      vertical-align: end;
+    }
+  }
+
+  .text-link {
+    display: grid;
+    grid-template-columns: 1fr min-content;
+    align-items: center;
+    align-content: center;
+
+    position: relative;
+
+    height: 80px;
+    padding-right: 24px;
+
+    transition:
+      padding-left .3s;
+
+    p,
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6 {
+      padding: 0;
+      margin: 0;
+    }
+
+    &.color {
+      @each $name, $value in $shades {
+        &.shade-#{$name} {
+          color: color.adjust($color: $value, $lightness: -55%);
+
+          &:before {
+            background-color: color.adjust($color: $value, $lightness: -55%);
+          }
+
+          &:hover {
+            padding-left: 40px;
+
+            i.icon {
+              color: $value;
+              background-color: color.adjust($color: $value, $lightness: -55%);
+            }
+
+            &:before {
+              position: absolute;
+              bottom: 0;
+              left: 0;
+
+              content: "";
+              height: 2px;
+              width: 100%;
+            }
+          }
+
+          @if $schemas =="dark" {
+            color: $value;
+
+            &:before {
+              background-color: $value;
+            }
+
+            &:hover {
+              i.icon {
+                color: color.adjust($color: $value, $lightness: -55%);
+                background-color: $value;
+              }
+            }
+          }
+        }
+      }
+    }
+
+    i.icon {
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+
+      transition:
+        color .3s,
+        background-color .3s;
+    }
+
+    &:hover i.icon {
+      background-color: map.get($colors, "content");
+    }
+
+    &:before {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+
+      content: "";
+      height: 2px;
+      width: 15%;
+      background-color: map.get($colors, "content");
+
+      transition:
+        width .3s;
+    }
+  }
+
+
+
+  // support
+  .support-search {
+    width: 100%;
+    min-height: 64px;
+    border-width: 1px;
+    border-style: solid;
+    border-color: rgba(map.get($colors, "content"), .3);
+    background-color: color.adjust($color: map.get($map: $colors, $key: "main"), $lightness: -10%);
+    border-radius: map.get($radius, "small");
+    box-sizing: border-box;
+    padding: 32px;
+    outline-width: 0;
+    outline-style: solid;
+    outline-color:
+      rgba($color: map.get($colors, 'main'), $alpha: .3);
+
+    color: map.get($map: $colors, $key: 'content');
+  }
+}
+
+@mixin calendar($theme) {
+  $colors: map.get($map: $theme, $key: "colors");
+  $fonts: map.get($map: $theme, $key: "fonts");
+  $fontsize: map.get($map: $theme, $key: "fontsize");
+
+  .calendar {
+    display: grid;
+    grid-template-columns: 64px 1fr;
+    grid-template-rows: 64px repeat(5, 1fr);
+    column-gap: 8px;
+    row-gap: 8px;
+
+    height: 70vh;
+
+    &.clean {
+      grid-template-columns: 1fr;
+      grid-template-rows: 1fr;
+    }
+
+    .line {
+      display: grid;
+      grid-template-columns: repeat(7, 1fr);
+      border-radius: 8px;
+      border: 1px solid rgba(map.get($colors, "content"), .3);
+      background-color: map.get($map: $colors, $key: "background_2");
+    }
+
+    .cell {
+      position: relative;
+
+      width: 100%;
+      height: 100%;
+      border-right: 1px solid rgba(map.get($colors, "content"), .3);
+
+      &:last-child {
+        border-right-color: transparent;
+      }
+
+      .day {
+        position: absolute;
+        bottom: 0px;
+        right: 8px;
+
+        padding: 0;
+        margin: 0;
+        pointer-events: none;
+
+        color: rgba($color: map.get($map: $colors, $key: "content"), $alpha: .3);
+        font-size: 80px;
+        font-family: map.get($map: $fonts, $key: "title");
+        line-height: 80px;
+      }
+
+      .event {
+        display: grid;
+        grid-template-columns: 64px 1fr;
+        align-content: center;
+
+        margin: 8px;
+
+        .time {
+          display: grid;
+          align-items: center;
+          align-content: center;
+          justify-items: center;
+          justify-content: center;
+
+          height: 24px;
+        }
+
+        .color {
+          background-color: map.get($map: $colors, $key: "main");
+          border-radius: 4px;
+          padding: 8px;
+
+          color: map.get($map: $colors, $key: "content");
+        }
+      }
+    }
+  }
+}

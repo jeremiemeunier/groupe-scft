@@ -1,0 +1,250 @@
+@use "sass:map";
+@use "sass:math";
+@use "sass:color";
+
+@mixin global($theme) {
+  $colors: map.get($map: $theme, $key: 'colors');
+  $shades: map.get($map: $theme, $key: 'shades');
+  $color_schemas: map.get($map: $theme, $key: 'color_schemas');
+  $fonts: map.get($map: $theme, $key: 'fonts');
+  $radius: map.get($map: $theme, $key: 'radius');
+
+  &.header-root {
+    display: grid;
+    align-items: center;
+    align-content: center;
+
+    position: fixed;
+    top: 16px;
+    left: 50%;
+    z-index: 3;
+
+    height: 80px;
+    background-color: rgba(map.get($map: $colors, $key: "background_1"), .6);
+    backdrop-filter: blur(16px);
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 0 24px rgba(0, 0, 0, .1);
+    transform: translateX(-50%);
+
+    @each $name, $value in $shades {
+      &.color-#{$name} {
+        .header-container {
+          border-top-color: color.adjust($color: $value, $lightness: -55%);
+        }
+      }
+    }
+  }
+
+  &.header-container {
+    display: grid;
+    align-items: center;
+    align-content: center;
+    grid-template-columns: min-content 1fr;
+    column-gap: 16px;
+
+    height: 80px;
+    width: 90vw;
+    padding: 0 16px;
+    max-width: 1160px;
+    margin: auto;
+    border-top-style: solid;
+    border-top-width: 8px;
+    border-top-color: map.get($shades, "burgundy");
+  }
+
+  .header-nav {
+    display: grid;
+  }
+
+  .app-logo {
+    display: grid;
+    align-items: center;
+    align-content: center;
+    grid-auto-flow: column;
+    grid-auto-columns: min-content;
+    column-gap: 8px;
+
+    height: 40px;
+
+    .logo-shape {
+      display: grid;
+
+      height: 48px;
+      width: 48px;
+      background-color: map.get($shades, "burgundy");
+
+      mask-image: url(data:image/jpeg;base64,iVBORw0KGgoAAAANSUhEUgAAAGQAAABkCAYAAABw4pVUAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAALRSURBVHgB7dwxctpAGIbhL7hxZ8qUyg3cpqNMmRtYN0huYN8gkxNgnyDOCVBOYNpUWk4Qp0sqsr8lPBpFwoCRViveZ+YzyFAg/VqtpF2QAAAAAAAAAAAAAAAAIvBGh7ksk/hc+Ex9Vi3vfSyz4Rpeq7/nZO1TkJnPlc9HFQXoitP/hVpVnrva46jsUpCZz3X5ODTVwixVFM6VWWpkrBV88VlHnAefbz6fVexQXbbsTiU+ueLa+PsUaa7uD71Hk2i8xWjKwict13twEp1WMQZfnLni2oB9FCeYVHFtsL6Sq9hRE/UsV9wbro8s1FOrSSWtyc7JfT6pw1aTS1qTgzLXkQszk7QmwyjMRMO8JRKjVEc6AVgorj1x9C3mQVLoD09hKmJZsdhzrR0LE8sKjSG5driOiWVlxpSFtrSWfEAf9JSSNxXFTnsZyw4jUUNLsYL8EEJJVIxoPg+Unfm8VTF6hjBs+//1yWzBJjlYdX4Job3zcZs+ZHQzNCJkEzGe+hBDPxLelc/0rFz4o8DDldC5z89NC7FDFqe/4V1WW8gHDXQqzAk5n1QW6EfCS6oFyYTQpvXJ1nY9Eu381zGY1JYzIaTHekHoR8Jy9YLcCyGt6gVx4nokpGzS8M/vQij3TQXJhBAyNfQhhn4kjDv701QQbseHkdmfScuLnP72y/ptZ0/aCsJhq1/P27vte+oM6/bHqRi+fdLWQqwfyYQ+ZNWFyZY30o/04666sK0gmdA1pz23s82sG/J0zNiT1rb31hZivgpdcWpoHS8V5F4curpifYfTAWaK6zAQQ3K1ONPLnM9vFbNS8Hp2SfFeRxjmuFVce+FQk+qIbiWtyTCKsXEjaU32it2GmqlDqfgq3K5ZqKcZoXYD8kYUpi32/f+ZArDCpOKq3mKHprleUYhDf0i5jRXnssy0zIXGyy4HNj9VuxQjrQAAAAAAAAAAAAAA4FT8A3QYkvGUI6dnAAAAAElFTkSuQmCC);
+      mask-size: contain;
+      mask-repeat: no-repeat;
+      mask-position: center;
+
+      transition:
+        background-color .3s;
+
+      &.format-groupe {
+        mask-image: url(data:image/jpeg;base64,iVBORw0KGgoAAAANSUhEUgAAAGQAAABkCAYAAABw4pVUAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAU2SURBVHgB7Z09duM2FIVv5BTTjct0wexAbaowXbo4KzCzgjgrsLKCcVYgzQqkrED0CuyUqQivIJ4uqRS+IWhBEEhR4g9I6X7nXFskAYjCw8MDBNAGCCGEEEIIIYQQQggh5AS+wmlMjVSm95muM72UpH01KtCea26ai+UYg0SZbjPdIDdAV2jsG+rFeq2d32dFHYNEme7N76FhG+YZueG00TPODPGCj5k2I9ZTpmWmO+QNqkvP7hSVKcW4Kv8YI83RfdfbGgrnawyf1pli87kHh8JlGWPwxpljXBXYh3GCEWNcFdaXUuQNVaFnUoy74vrQGj15TQxgQ9VWmulXdOg1KYANdZLmaNkwEYANNQzDTDDMr0TGSIyWBgBrjKslnr3HPAEIffM0jMVYPtjYdY+ahhnLBzoHpagxjxnLhzknrVHhLemAbvSSlPqMIsNermWHQcHjKWKQR5BQKOQrmm8LZVeZvkG+ekbCIPX/X6ZEDmSTg1jnH5DQfMikixhydjs0RohsxPgSQwTGkfDcZrq+Mgf/IvByJcG7TH8XHiJdFoe/4ZnaHvIjBroV5oJ4N7EOGEfCo2yDJCChuXY3W8t8ZLT7X8+BiXOcgITk1TUI40hYtGuQFUhIXlyDaHA+EpJk4jn5J0goVj6DJCAhSOCJIQLjSBg+yQ+fQfh1fBgS+TEpucjhb79I3Nbyoswg7Lb65a2+y55T57Juf2jky7dfKPMQiSMJSB8k9sGkIiHjSD98sg+qDJKAdI3GkfUsO+uGvB1z7Iqd+q70EOEPkK7Q8HjHIYOswK6rKyR2aJxAhHF1A2NQihKucBid6TPyXSmkOTKl+A4tLHMsMK5WOFTFaJEFgA01DGMUzABsqKMkX0NF6JAYfBSurtboaUeofAE5Aw1TJnn+P0IAxDAxOKsXSdc0RwNDnPqHlMsQ40yNro3e43yR6UDxp2qfwZVWQshl0WYMkXghj1crc1z0qdpJV8QXHwnql69Neu1JNy0p071WPDkWwY+7A8fNXydP7xz6k+Qy6lBW+nVF2hT+Z+bvkY9g6pQfOddRcU0ZVY2c1lb5MQ6PtOYIiEK9eciTlWddI310ZPoU20qL0K5BivKFuEbaORrwNZohnqGs4wTbtfifkLu3uPAvJfllP9Idci9bWmXdmLLusWucBNu9x99j602STyriBzRHytCm7I9W+ZEn7e+ec8G6qwi7LWPmSSPn3D7XbvF2a1p6zqfWuaWn/Afse5Z7X1X3rLDvIcpKb79/jH0PaZ0mHhJZr8ULZtZ5ZV5rbCeKwsIpY2ryyeTRjh2PTjmCbzlZ8t5iO0iQ8tpqoZHz/q/YH4yknnwfEIgFdgOf77wr4HBMKOJNhPKWa2O34geEjyGNaOIh9oqXOjJ9GeIFs5L0ZUPl6yPf41h0pp8rrrVKE4PYXYNC3voS5K10Yc5LUJx60hessP3nYoK0sKJSNXa7iVtPGTF2DfKMfaMolFecrxuSQcZn6x4SlBOse/IhH8TuLmSeEGMbM9y5SWzyrbEbvCPsB+aChXOtMLDC/twkte7LPr/ENtjb91t0jQr1ukZgv8uKPDo0ceyUCIf7VDfGuAYR7BGWVFrRal2jVymy3mNWI31s0iqcbhCf5giMjI6qKm2N3W7BZxBfqy5QB8ovWx59qMgzc8ofjEGaTgyFlVGMfDJYVP5f8G+0e3s4BdtJpPTlvyGf7BUUQ1hJK331jdG3Vh7Jv4A/mN+Z97bz+O7pFbvD8aqBgcb+0N3lEYQQQgghhBBCCCGEENI3/wP+CyRFafIVgwAAAABJRU5ErkJggg==);
+      }
+
+      @each $name, $value in $shades {
+        &.color-#{$name} {
+          background-color: color.adjust($color: $value, $lightness: -55%);
+        }
+      }
+    }
+
+    span {
+      line-height: 24px;
+
+      font-weight: 900;
+      font-size: 24px;
+      font-family: map.get($map: $fonts, $key: "title");
+      text-transform: uppercase;
+      white-space: nowrap;
+    }
+
+    &.mono {
+      color: map.get($map: $colors, $key: "background_1");
+
+      @if ($color_schemas =="default") {
+        color: map.get($map: $colors, $key: "content");
+      }
+
+      .logo {
+        background-color: map.get($map: $colors, $key: "background_1");
+
+        @if ($color_schemas =="default") {
+          background-color: map.get($map: $colors, $key: "content");
+        }
+
+        >span {
+          background-color: map.get($map: $colors, $key: 'main');
+        }
+      }
+    }
+
+  }
+}
+
+@mixin search($theme) {
+  $colors: map.get($theme, 'colors');
+  $radius: map.get($theme, 'radius');
+  $color_schemas: map.get($theme, 'color_schemas');
+
+  .header-search {
+    background: transparent;
+    border-width: 1px;
+    border-style: solid;
+    border-color: transparent;
+    border-radius: map.get($map: $radius, $key: "small") + 4px;
+    padding: 4px;
+    margin: -5px;
+
+    transition:
+      border-color .3s,
+      background-color .3s,
+      box-shadow .3s;
+
+    .form {
+      position: relative;
+
+      input {
+        padding-right: 40px;
+      }
+
+      .infusedui-loader {
+        position: absolute;
+        right: 48px;
+        top: 50%;
+
+        transform: translateY(-50%);
+      }
+
+      .clear {
+        all: unset;
+
+        position: absolute;
+        right: 8px;
+        top: 50%;
+
+        color: map.get($map: $colors, $key: "main");
+        transform: translateY(-50%);
+      }
+    }
+
+    .form-input:focus-within {
+      outline: none;
+    }
+
+    &.active,
+    &:focus-within {
+      box-shadow: 0 2px 16px rgba(#000000, .15);
+      background: map.get($map: $colors, $key: "background_2");
+      border-color: rgba($color: map.get($map: $colors, $key: "content"), $alpha: .3);
+    }
+
+    .results {
+      max-height: 50vh;
+    }
+  }
+}
+
+@mixin account($theme) {
+  $colors: map.get($map: $theme, $key: 'colors');
+  $radius: map.get($map: $theme, $key: 'radius');
+
+  &.account {
+    position: relative;
+
+    display: grid;
+    justify-content: end;
+    justify-items: end;
+
+    height: 40px;
+
+    .account-menu {
+      position: relative;
+      z-index: 3;
+
+      .account-links {
+        position: absolute;
+        top: calc(100% + 8px);
+        right: 0;
+
+        background-color: rgba(map.get($map: $colors, $key: "background_1"), .6);
+        backdrop-filter: blur(8px);
+        border-radius: map.get($map: $radius, $key: "small");
+        border: 1px solid rgba(map.get($map: $colors, $key: "content"), .3);
+        box-shadow: 0 0 16px rgba(0, 0, 0, .1);
+        overflow: hidden;
+      }
+
+      ul,
+      li {
+        padding: 0;
+        margin: 0;
+        list-style: none;
+
+        a {
+          display: grid;
+          align-items: center;
+          align-content: center;
+
+          height: 40px;
+          padding: 0 16px;
+          border: none;
+
+          color: map.get($map: $colors, $key: "content");
+          white-space: nowrap;
+          transition:
+            background-color .3s;
+
+          &:hover {
+            background: rgba(map.get($map: $colors, $key: "background_2"), .5);
+            border: none;
+          }
+        }
+      }
+    }
+  }
+}

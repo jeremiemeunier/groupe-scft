@@ -1,0 +1,65 @@
+@use "sass:color";
+@use "sass:map";
+@use "sass:math";
+
+@mixin global($theme) {
+
+  .carousel-root {
+    --gap: 1rem;
+    --items: 4;
+
+    display: flex;
+    gap: var(--gap);
+    scroll-snap-type: x proximity;
+
+    padding: calc(var(--gap) * .5);
+    margin: calc(var(--gap) * -.5);
+    scroll-padding-inline: calc(var(--gap) * .5);
+    overflow-x: auto;
+
+    $i: 1;
+
+    @while $i <=10 {
+      &.items-#{$i * 10} {
+        --items: $i;
+      }
+
+      $i: $i + 1;
+    }
+
+    @media (min-width: 1000px) and (pointer: fine) {}
+
+    @media (max-width: 1000px) {
+      padding: 1rem;
+      margin: -1rem;
+    }
+
+    .carousel-slide {
+      min-width: calc((100% - (var(--items) - 1) * var(--gap)) / var(--items));
+      max-width: calc((100% - (var(--items) - 1) * var(--gap)) / var(--items));
+      scroll-snap-align: start;
+
+      @media (max-width: 1000px) {
+        scroll-snap-align: center;
+        min-width: 250px;
+      }
+    }
+  }
+
+  .carousel-nav {
+    @media (max-width: 1000px) {
+      display: none;
+    }
+
+    .carousel-nav-button {
+      @extend .cta;
+      @extend .level-secondary;
+      @extend .format-icon-only;
+
+
+      * {
+        pointer-events: none;
+      }
+    }
+  }
+}

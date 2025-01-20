@@ -1,0 +1,79 @@
+@use "sass:map";
+@mixin global($theme) {
+  $colors: map.get($map: $theme, $key: 'colors');
+  $radius: map.get($map: $theme, $key: 'radius');
+
+  table {
+
+    overflow: hidden;
+    border-radius: map.get($map: $radius, $key: "small");
+    border: 1px solid rgba(map.get($map: $colors, $key: "content"), .3);
+    background: rgba(map.get($map: $colors, $key: "content"), .3);
+    box-sizing: border-box;
+
+    thead,
+    tbody {
+      height: 48px;
+      min-height: 48px;
+    }
+
+    tr,
+    td,
+    th {
+      align-items: center;
+      align-content: center;
+      vertical-align: middle;
+
+      height: fit-content;
+      min-height: 48px;
+      min-width: 64px;
+      line-height: 1.2em;
+      vertical-align: middle;
+
+      p {
+        padding: 16px 0;
+        margin: 0;
+      }
+    }
+
+    thead,
+    tbody {
+      min-width: 100%;
+    }
+
+    tbody {
+
+      tr {
+        &:nth-child(2n+2) {
+          background: map.get($map: $colors, $key: 'background_2');
+        }
+
+        &:nth-child(2n+1) {
+          background: map.get($map: $colors, $key: 'background_1');
+        }
+      }
+    }
+
+    td {
+      padding: 16px 8px;
+    }
+
+    thead {
+      position: sticky;
+      top: 0;
+
+      background: map.get($map: $colors, $key: "main");
+
+      color: map.get($map: $colors, $key: 'background_1');
+
+      tr,
+      td {
+        align-items: center;
+        align-content: center;
+
+        min-height: 54px;
+        padding: 8px 12px;
+      }
+    }
+  }
+}
