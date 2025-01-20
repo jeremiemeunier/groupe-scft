@@ -24,8 +24,9 @@ const SectionOtherGare = async ({
               gare.length > 0 &&
               gare.map((doc, key: number) => (
                 <Link
+                  key={key}
                   className={`teaui color shade-corail text-link`}
-                  href={`/gare-connexions/${doc.enc_name}`}
+                  href={`/societes/gare-connexions/${doc.enc_name}`}
                 >
                   <span className="teaui text fs-24 fw-600">{doc.name}</span>
                   <i className="icon teaui-icon-arrow-right"></i>
