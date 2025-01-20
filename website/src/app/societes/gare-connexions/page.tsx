@@ -1,6 +1,6 @@
 import SectionAllGare from "@section/SectionAllGare";
 import { Metadata } from "next";
-import Link from "next/link";
+import Image from "next/image";
 
 export const metadata: Metadata = {
   title: "Gare & Connexions — SCFT",
@@ -47,7 +47,9 @@ const PageGareConnection = () => {
         <h2>Les chiffres clés</h2>
         <div className="teaui grid va-start tc-3 cgs-32">
           <div className="teaui card mt40">
-            <img src="/imgs/assets/media_agents.webp" width={"100%"} />
+            <div className="teaui text-container ratio-square">
+              <Image fill src="/imgs/assets/media_agents.webp" alt="" />
+            </div>
             <div className="teaui pa24 text-container ratio-square">
               <p className="teaui text ff-title fs-64 fw-700 pa0 ma0">12,5</p>
               <p className="teaui text fs-24 pa0 ma0">
@@ -59,14 +61,18 @@ const PageGareConnection = () => {
             <div className="teaui pa24 text-container ratio-square">
               <p className="teaui text ff-title fs-64 fw-700 pa0 ma0">5</p>
               <p className="teaui text fs-24 pa0 ma0">
-                gare couverte par le plan "Un banc, un toit"
+                gare couverte par le plan &apos;Un banc, un toit&apos;
               </p>
             </div>
-            <img src="/imgs/assets/media_gare.webp" width={"100%"} />
+            <div className="teaui text-container ratio-square">
+              <Image fill src="/imgs/assets/media_gare.webp" alt="" />
+            </div>
           </div>
           <div className="teaui card">
             <div className="teaui">
-              <img src="/imgs/assets/media_worker.webp" width={"100%"} />
+              <div className="teaui text-container ratio-square">
+                <Image fill src="/imgs/assets/media_worker.webp" alt="" />
+              </div>
               <div className="teaui grid pa24 text-container ratio-square">
                 <p className="teaui text ff-title fs-64 fw-700 pa0 ma0">5000</p>
                 <p className="teaui text fs-24 pa0 ma0">
