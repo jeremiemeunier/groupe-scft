@@ -32,6 +32,7 @@ const SectionOtherArticle = async ({
               article.length > 0 &&
               article.map((doc, key: number) => (
                 <Link
+                  key={key}
                   className={`teaui color ${
                     color ? `shade-${color}` : "shade-nude"
                   } text-link`}
