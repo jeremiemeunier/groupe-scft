@@ -1,4 +1,5 @@
 import { Metadata } from "next";
+import Image from "next/image";
 
 export const metadata: Metadata = {
   title: "SCFT FRET — SCFT",
@@ -53,7 +54,9 @@ const PageFret = () => {
                 battu : 3 jours de retard)
               </p>
             </div>
-            <img src="/imgs/assets/media_track.webp" width={"100%"} alt="" />
+            <div className="teaui text-container ratio-square">
+              <Image src="/imgs/assets/media_track.webp" fill alt="" />
+            </div>
           </div>
           <div className="teaui card">
             <div className="teaui pa24 text-container ratio-square">
