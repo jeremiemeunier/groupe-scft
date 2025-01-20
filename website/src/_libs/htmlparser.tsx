@@ -1,7 +1,4 @@
-import {
-  ArticleBlockCardInterface,
-  ArticleBlockElementInterface,
-} from "@/_types/Database.type";
+import { ArticleBlockElementInterface } from "@/_types/Database.type";
 import { ReactNode } from "react";
 
 const HTMLPrinter: ({
