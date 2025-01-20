@@ -1,4 +1,5 @@
 import { Metadata } from "next";
+import Image from "next/image";
 import Link from "next/link";
 
 export const metadata: Metadata = {
@@ -11,7 +12,7 @@ const PageCrimson = () => {
       <div className="teaui grid text bg-bleu-marine-reverse va-center sv-80">
         <div className="teaui grid tc-2 format-page sl">
           <div className="teaui grid">
-            <img src="/imgs/crimson_logo_text_color.svg" height={48} alt="" />
+            <Image src="/imgs/crimson_logo_text_color.svg" height={48} alt="" />
             <p className="teaui text lh-100 fs-80 fw-900 text color-corail-reverse">
               Le train interdimensionnel haut de gamme
             </p>
@@ -51,8 +52,8 @@ const PageCrimson = () => {
             <div className="teaui pa24 text-container ratio-square">
               <p className="teaui text ff-title fs-64 fw-700 pa0 ma0">269</p>
               <p className="teaui text fs-24 pa0 ma0">
-                ghast et wither squelette préservé par la plan "1 gare, 1
-                nether".
+                ghast et wither squelette préservé par la plan &quot;1 gare, 1
+                nether&quot;.
               </p>
             </div>
           </div>
