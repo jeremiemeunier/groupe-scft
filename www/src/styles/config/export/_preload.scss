@@ -1,6 +1,0 @@
-@use '../theme/theme' as theme_light;
-@use '../worker';
-@use '../reset';
-@use '../import';
-
-@include worker.worker(theme_light.$theme);
