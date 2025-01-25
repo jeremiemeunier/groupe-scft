@@ -93,7 +93,7 @@ const PageChantiergare = async ({
                               key === 0 ? "mt40" : key === 1 ? "mt120" : ""
                             }`}
                           >
-                            {key !== 1 && (
+                            {key !== 1 && card.media && (
                               <div className="teaui text-container ratio-square">
                                 <Image src={card.media} fill alt="" />
                               </div>
@@ -101,7 +101,7 @@ const PageChantiergare = async ({
                             <div className="teaui text-container ratio-square pa24">
                               {HTMLParser({ bson: card.content })}
                             </div>
-                            {key === 1 && (
+                            {key === 1 && card.media && (
                               <div className="teaui text-container ratio-square">
                                 <Image src={card.media} fill alt="" />
                               </div>
