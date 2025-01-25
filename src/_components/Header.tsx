@@ -3,7 +3,6 @@
 import Link from "next/link";
 import { useContext } from "react";
 import { ThemeContext } from "@/_context/ThemeContext";
-import Image from "next/image";
 
 const Header = () => {
   return (
