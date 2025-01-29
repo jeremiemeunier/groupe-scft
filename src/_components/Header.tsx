@@ -3,7 +3,6 @@
 import Link from "next/link";
 import { useContext } from "react";
 import { ThemeContext } from "@/_context/ThemeContext";
-import Image from "next/image";
 
 const Header = () => {
   return (
@@ -29,14 +28,13 @@ const Logo = () => {
   return (
     <div className="teaui app-logo">
       <Link href={"/"}>
-        <Image
+        <img
           src={
             websiteDarkTheme
               ? `/imgs/logo_groupe_white_4x.webp`
               : `/imgs/logo_groupe_color_4x.webp`
           }
           height={40}
-          width={58.75}
           alt="Logo SCFT"
         />
       </Link>
