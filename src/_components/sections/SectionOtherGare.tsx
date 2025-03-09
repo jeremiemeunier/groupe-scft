@@ -19,7 +19,7 @@ const SectionOtherGare = async ({
         <div className="teaui grid format-page sl pt64 ms-pt64 xs-pt64 pb64 ms-pb64 xs-pb64">
           <h2>Nos gares</h2>
 
-          <div className="teaui grid tc-2 rgs-0">
+          <div className="teaui grid tc-2 cgs-24 rgs-0">
             {gare &&
               gare.length > 0 &&
               gare.map((doc, key: number) => (
