@@ -13,7 +13,7 @@ const PageCrimson = () => {
         <div className="teaui grid tc-2 format-page sl">
           <div className="teaui grid">
             <Image src="/imgs/crimson_logo_text_color.svg" height={48} alt="" />
-            <p className="teaui text lh-100 fs-80 fw-900 text color-corail-reverse">
+            <p className="teaui text lh-100 fs-80 ff-title fw-900 text color-corail-reverse">
               Le train interdimensionnel haut de gamme
             </p>
             <p>

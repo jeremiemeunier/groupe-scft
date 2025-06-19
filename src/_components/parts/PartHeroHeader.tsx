@@ -6,7 +6,7 @@ const PartHeroHeader = () => {
       <div className="teaui grid bg-burgundy-reverse">
         <div className="teaui grid format-page sl tc-2 pt160 pb160">
           <div className="teaui grid">
-            <p className="teaui text lh-100 fs-80 fw-900">
+            <p className="teaui text lh-100 fs-80 ff-title fw-900">
               Vous transporter, notre métier.
             </p>
             <p>
