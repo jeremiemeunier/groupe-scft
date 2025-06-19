@@ -19,7 +19,7 @@ const PageGareConnection = () => {
         ></div>
         <div className="teaui grid bg-corail va-center sv-30">
           <div className="teaui grid format-page sl">
-            <p className="teaui ma0 ms-ma0 xs-ma0 pa0 ms-pa0 xs-pa0 text fs-80 fw-900">
+            <p className="teaui ma0 ms-ma0 xs-ma0 pa0 ms-pa0 xs-pa0 text ff-title fs-80 fw-900">
               Gare & Connexions
             </p>
             <div className="teaui grid tc-2">

@@ -9,7 +9,7 @@ const PageEcoBuild = () => {
     <>
       <div className="teaui grid bg-foret-reverse sv-80 va-center text color-foret">
         <div className="teaui grid format-page sl">
-          <p className="teaui text lh-100 fs-80 fw-900">
+          <p className="teaui text lh-100 fs-80 ff-title fw-900">
             Notre engagement pour l’éco-conception
           </p>
           <div className="teaui grid tc-2">

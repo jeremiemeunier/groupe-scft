@@ -11,16 +11,15 @@ export const metadata: Metadata = {
 };
 
 const NotFound = () => {
-  // const { setShade } = useContext(ThemeContext);
-
-  // useEffect(() => {
-  //   setShade("");
-  // }, []);
-
   return (
     <div className="teaui grid bg-vert-eau sv-100 va-center">
       <div className="teaui grid format-page ha-center">
-        <Image src="/imgs/assets/assets_eyes.webp" height={"120"} alt="" />
+        <Image
+          src="/imgs/assets/assets_eyes.webp"
+          height={"120"}
+          width={"427"}
+          alt=""
+        />
         <h2 className="teaui text align-center">
           Il semblerait que vous n&apos;ayez pas pris la bonne direction...
         </h2>
