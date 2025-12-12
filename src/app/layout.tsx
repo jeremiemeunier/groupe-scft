@@ -3,6 +3,8 @@ import "./globals.scss";
 import Header from "@/_components/Header";
 import Footer from "@/_components/Footer";
 import ThemeProvider from "@/_context/ThemeContext";
+import { SpeedInsights } from "@vercel/speed-insights/next";
+import { Analytics } from "@vercel/analytics/next";
 
 export const metadata: Metadata = {
   title: "Accueil — SCFT Groupe",
@@ -20,6 +22,8 @@ export default function RootLayout({
     <html lang="fr">
       <body>
         <div className="teaui">
+          <SpeedInsights />
+          <Analytics />
           <ThemeProvider>
             <Header />
             {children}

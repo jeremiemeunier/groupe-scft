@@ -103,7 +103,7 @@ const PageSocietyLargeProject = () => {
 
       <div className="teaui grid pa80 ms-pa80 xs-pa80 bg-dark-cobalt-reverse">
         <div className="teaui grid format-page">
-          <h3>La SCP recrute !</h3>
+          <h3>La SGP recrute !</h3>
           <p>
             Vous rêvez de travailler sur des chantiers gigantesques où chaque
             jour est une nouvelle énigme ? À la Société des Grands Projets, on
@@ -113,7 +113,7 @@ const PageSocietyLargeProject = () => {
           </p>
 
           <Link
-            href={""}
+            href={"/scft/career"}
             className="teaui cta format-icon-right level-primary color-cobalt-reverse sl"
           >
             <span>Faire carrière</span>
