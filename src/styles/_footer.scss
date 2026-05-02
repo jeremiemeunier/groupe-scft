@@ -9,9 +9,10 @@
   $radius: map.get($map: $theme, $key: 'radius');
   $color_schemas: map.get($map: $theme, $key: 'color_schemas');
 
-  &.footer {
+  .footer {
     overflow: hidden;
-    background: map.get($map: $colors, $key: 'background_1');
+    background: color.adjust(map.get($map: $colors, $key: 'background_1'), $lightness: -5%);
+    padding-top: 40px;
 
     &.format-simple {
       display: flex;

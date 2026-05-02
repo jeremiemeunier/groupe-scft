@@ -6,14 +6,14 @@
   $colors: map.get($map: $theme, $key: 'colors');
   $radius: map.get($map: $theme, $key: 'radius');
 
-  &.form {
+  .form {
     display: grid;
     grid-auto-flow: row;
     grid-auto-rows: min-content;
     gap: 32px;
   }
 
-  &.form-auth {
+  .form-auth {
     border: 1px solid rgba(map.get($colors, "content"), .3);
     padding: 24px;
     border-radius: map.get($map: $radius, $key: "large");
@@ -32,7 +32,7 @@
     }
   }
 
-  &.form-msg {
+  .form-msg {
     display: grid;
     grid-auto-rows: min-content;
     grid-auto-flow: row;
@@ -69,7 +69,7 @@
   $radius: map.get($map: $theme, $key: 'radius');
   $color_schemas: map.get($map: $theme, $key: 'color_schemas');
 
-  &.form-container {
+  .form-container {
     display: grid;
     grid-auto-flow: row;
     grid-auto-rows: min-content;
@@ -144,8 +144,8 @@
     }
   }
 
-  &.form-input,
-  &.form-select {
+  .form-input,
+  .form-select {
     display: grid;
     justify-content: stretch;
     justify-items: stretch;
@@ -288,7 +288,7 @@
     }
   }
 
-  &.form-select {
+  .form-select {
     select {
       padding-right: 48px;
     }
@@ -387,7 +387,7 @@
   $schemas_colors: map.get($map: $theme, $key: 'schemas_colors');
   $fontsize: map.get($map: $theme, $key: 'fontsize');
 
-  &.form-file {
+  .form-file {
     display: grid;
     grid-auto-flow: column;
     grid-auto-columns: min-content 1fr;
@@ -412,7 +412,7 @@
   $colors: map.get($map: $theme, $key: 'colors');
   $radius: map.get($map: $theme, $key: 'radius');
 
-  &.form-autocomplete-list-root {
+  .form-autocomplete-list-root {
     position: absolute;
     top: calc(100% + 8px);
     left: -2px;
@@ -429,7 +429,7 @@
     padding: 8px 0;
   }
 
-  &.autocomplete-root-input {
+  .autocomplete-root-input {
     display: grid;
     grid-template-columns: 1fr 40px;
     align-items: center;
@@ -439,7 +439,7 @@
     }
   }
 
-  &.form-autocomplete-list {
+  .form-autocomplete-list {
     display: grid;
     grid-auto-flow: row;
     grid-auto-rows: 40px;
@@ -467,7 +467,7 @@
   $colors: map.get($map: $theme, $key: 'colors');
   $radius: map.get($map: $theme, $key: 'radius');
 
-  &.form-radio {
+  .form-radio {
 
     input[type="radio"] {
       display: none;
@@ -560,7 +560,7 @@
   $fonts: map.get($map: $theme, $key: 'fonts');
   $radius: map.get($map: $theme, $key: 'radius');
 
-  &.form-checkbox {
+  .form-checkbox {
 
     input[type="checkbox"] {
       display: none;
@@ -684,7 +684,7 @@
   $radius: map.get($map: $theme, $key: 'radius');
   $schemas_colors: map.get($map: $theme, $key: 'color_schemas');
 
-  &.form-checkbox-no-check {
+  .form-checkbox-no-check {
 
     input[type="checkbox"] {
       display: none;
@@ -731,7 +731,7 @@
   $radius: map.get($map: $theme, $key: 'radius');
   $schemas_colors: map.get($map: $theme, $key: 'color_schemas');
 
-  &.form-radio-no-check {
+  .form-radio-no-check {
 
     input[type="radio"] {
       display: none;
@@ -773,7 +773,7 @@
 
 @mixin group($theme) {
 
-  &.form-group {
+  .form-group {
     display: grid;
     align-items: start;
     gap: 16px;
@@ -814,7 +814,7 @@
   $fontsize: map.get($map: $theme, $key: 'fontsize');
   $radius: map.get($map: $theme, $key: 'radius');
 
-  &.form-password {
+  .form-password {
     display: grid;
     grid-template-columns: 1fr 40px;
     column-gap: 0;
@@ -870,13 +870,13 @@
   $colors: map.get($theme, 'colors');
   $radius: map.get($map: $theme, $key: 'radius');
 
-  &.dnd-container {
+  .dnd-container {
     display: grid;
     grid-template-columns: 2fr 1fr;
     border-radius: map.get($map: $radius, $key: 'medium');
   }
 
-  &.upload-progress {
+  .upload-progress {
     display: grid;
 
     position: relative;
@@ -909,7 +909,7 @@
     }
   }
 
-  &.form-drag-n-drop {
+  .form-drag-n-drop {
     display: grid;
     grid-template-rows: 1fr min-content;
     row-gap: 8px;
@@ -965,7 +965,7 @@
     }
   }
 
-  &.file-drop-root {
+  .file-drop-root {
     display: grid;
     grid-template-columns: 2fr 1fr;
     grid-template-rows: 1fr;
@@ -1252,7 +1252,7 @@
   $colors: map.get($map: $theme, $key: "colors");
   $radius: map.get($map: $theme, $key: "radius");
 
-  &.search-root {
+  .search-root {
     display: grid;
     grid-template-columns: 1fr;
     grid-template-rows: 1fr;
