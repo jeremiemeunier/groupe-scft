@@ -5,7 +5,7 @@ import Link from "next/link";
 
 const Footer = () => {
   return (
-    <footer className="teaui footer mt120">
+    <footer className="footer mt120">
       <div className="teaui grid format-page sl tc-4">
         <PartFooterLogo />
         <PartFooterLinks />
