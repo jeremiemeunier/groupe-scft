@@ -12,22 +12,27 @@ const HTMLPrinter: ({
   content: string;
   author?: string;
 }) => ReactNode = ({ type, className, content, author }) => {
+  const buildId = () => {
+    const randomId = Math.random().toString(36).substring(2, 10);
+    return `htmlparser-${randomId}`;
+  };
+
   if (type === "h3") {
     return (
-      <h3 className={`teaui text ${className?.join(" ")}`}>
+      <h3 key={buildId()} className={`teaui text ${className?.join(" ")}`}>
         {content as string}
       </h3>
     );
   } else if (type === "cit") {
     return (
-      <blockquote>
+      <blockquote key={buildId()}>
         <p>{content as string}</p>
         {author && <p className="author">{author}</p>}
       </blockquote>
     );
   } else {
     return (
-      <p className={`teaui text ${className?.join(" ")}`}>
+      <p key={buildId()} className={`teaui text ${className?.join(" ")}`}>
         {content as string}
       </p>
     );
@@ -46,7 +51,7 @@ export const HTMLParser: ({
         className: element.class,
         content: element.content as string,
         author: element.author,
-      })
+      }),
     );
   } else
     return HTMLPrinter({
