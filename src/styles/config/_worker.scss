@@ -20,6 +20,7 @@
 @use '../media';
 @use '../carousel';
 @use '../dedicated';
+@use '../map';
 
 @mixin worker($theme) {
   @include global.icon($theme);
@@ -119,6 +120,8 @@
 
     @include dedicated.global($theme);
     @include dedicated.calendar($theme);
+
+    @include map.global($theme);
 
     // At end only
     @include marge.margin($theme);
