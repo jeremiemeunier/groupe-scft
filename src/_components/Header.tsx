@@ -55,6 +55,9 @@ const Nav = () => {
         <li>
           <Link href={"/societes/gare-connexions"}>Nos gares</Link>
         </li>
+        <li>
+          <Link href={"/carte"}>Carte</Link>
+        </li>
       </ul>
     </nav>
   );
