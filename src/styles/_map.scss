@@ -1,0 +1,198 @@
+@use "sass:color";
+@use "sass:map";
+
+@mixin global($theme) {
+  $colors: map.get($map: $theme, $key: "colors");
+  $fonts: map.get($map: $theme, $key: "fonts");
+  $radius: map.get($map: $theme, $key: "radius");
+
+  .map-root {
+    position: relative;
+    width: 100%;
+    height: calc(100vh - 80px);
+  }
+
+  .map-container {
+    width: 100%;
+    height: 100%;
+    background-color: map.get($map: $colors, $key: "background_2");
+  }
+
+  .map-loading {
+    display: grid;
+    align-items: center;
+    justify-items: center;
+    width: 100%;
+    height: calc(100vh - 80px);
+    background-color: map.get($map: $colors, $key: "background_2");
+
+    p {
+      color: rgba(map.get($map: $colors, $key: "content"), 0.5);
+      font-family: map.get($map: $fonts, $key: "body");
+    }
+  }
+
+  // Marker
+  .map-marker {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    border-width: 3px;
+    border-style: solid;
+
+    color: #ffffff;
+    font-size: 14px;
+
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+    cursor: pointer;
+
+    transition: transform 0.15s;
+
+    &:hover {
+      transform: scale(1.15);
+    }
+  }
+
+  // Popup
+  .map-popup-wrapper {
+    .leaflet-popup-content-wrapper {
+      border-radius: map.get($map: $radius, $key: "small");
+      background-color: map.get($map: $colors, $key: "background_1");
+      box-shadow: 0 4px 24px rgba(0, 0, 0, 0.18);
+      padding: 0;
+      overflow: hidden;
+    }
+
+    .leaflet-popup-content {
+      margin: 0;
+      width: auto !important;
+    }
+
+    .leaflet-popup-tip {
+      background-color: map.get($map: $colors, $key: "background_1");
+    }
+  }
+
+  .map-popup {
+    padding: 16px 20px;
+    min-width: 200px;
+    max-width: 280px;
+
+    &__badge {
+      display: inline-block;
+      padding: 2px 10px;
+      border-radius: 20px;
+      font-size: 11px;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      color: #ffffff;
+      margin-bottom: 8px;
+    }
+
+    &__title {
+      font-family: map.get($map: $fonts, $key: "title");
+      font-size: 20px;
+      font-weight: 700;
+      margin: 0 0 8px;
+      padding: 0;
+      color: map.get($map: $colors, $key: "content");
+    }
+
+    &__desc {
+      font-size: 14px;
+      margin: 0 0 12px;
+      padding: 0;
+      color: rgba(map.get($map: $colors, $key: "content"), 0.7);
+      line-height: 1.5;
+    }
+
+    &__link {
+      display: inline-block;
+      font-size: 13px;
+      font-weight: 600;
+      color: map.get($map: $colors, $key: "main");
+      text-decoration: none;
+
+      &:hover {
+        text-decoration: underline;
+      }
+    }
+  }
+
+  // Legend
+  .map-legend {
+    position: absolute;
+    bottom: 24px;
+    right: 16px;
+    z-index: 1000;
+
+    background-color: map.get($map: $colors, $key: "background_1");
+    border-radius: map.get($map: $radius, $key: "small");
+    box-shadow: 0 2px 12px rgba(0, 0, 0, 0.15);
+    padding: 16px;
+    min-width: 160px;
+
+    &__title {
+      font-family: map.get($map: $fonts, $key: "title");
+      font-size: 14px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      margin: 0 0 12px;
+      padding: 0;
+      color: map.get($map: $colors, $key: "content");
+    }
+
+    &__item {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      margin-bottom: 8px;
+
+      &:last-child {
+        margin-bottom: 0;
+      }
+    }
+
+    &__dot {
+      flex-shrink: 0;
+      width: 14px;
+      height: 14px;
+      border-radius: 50%;
+    }
+
+    &__line {
+      flex-shrink: 0;
+      width: 22px;
+      height: 4px;
+      border-radius: 2px;
+    }
+
+    &__label {
+      font-size: 13px;
+      color: map.get($map: $colors, $key: "content");
+    }
+  }
+
+  @media all and (max-width: 768px) {
+    .map-legend {
+      bottom: 12px;
+      right: 8px;
+      padding: 10px 12px;
+      min-width: 120px;
+
+      &__title {
+        font-size: 11px;
+      }
+
+      &__label {
+        font-size: 11px;
+      }
+    }
+  }
+}
