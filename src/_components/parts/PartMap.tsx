@@ -4,12 +4,7 @@
 import { MapPoint, MapRail } from "@/_types/Map.type";
 import L from "leaflet";
 import { useEffect } from "react";
-import {
-  MapContainer,
-  Polyline,
-  Popup,
-  useMap,
-} from "react-leaflet";
+import { MapContainer, Polyline, Popup, useMap } from "react-leaflet";
 
 const TYPE_COLORS: Record<string, string> = {
   gare: "#e8533a",
@@ -121,16 +116,11 @@ export default function PartMap({ points, rails }: PartMapProps) {
         {rails.map((rail) => (
           <Polyline
             key={rail.id}
-            positions={rail.coordinates.map(({ x, z }) => [x, z] as [number, number])}
-            pathOptions={{ color: rail.color, weight: 4, opacity: 0.85 }}
-          >
-            <Popup>
-              <div className="map-popup">
-                <h3 className="map-popup__title">{rail.name}</h3>
-                <p className="map-popup__desc">Ligne ferroviaire</p>
-              </div>
-            </Popup>
-          </Polyline>
+            positions={rail.coordinates.map(
+              ({ x, z }) => [x, z] as [number, number],
+            )}
+            pathOptions={{ color: rail.color, weight: 4, opacity: 1 }}
+          ></Polyline>
         ))}
 
         <PointsLayer points={points} />

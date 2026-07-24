@@ -15,7 +15,7 @@
   .map-container {
     width: 100%;
     height: 100%;
-    background-color: map.get($map: $colors, $key: "background_2");
+    background-color: map.get($map: $colors, $key: "background_1");
   }
 
   .map-loading {
@@ -24,7 +24,7 @@
     justify-items: center;
     width: 100%;
     height: calc(100vh - 80px);
-    background-color: map.get($map: $colors, $key: "background_2");
+    background-color: map.get($map: $colors, $key: "background_1");
 
     p {
       color: rgba(map.get($map: $colors, $key: "content"), 0.5);
@@ -47,7 +47,6 @@
     color: #ffffff;
     font-size: 14px;
 
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
     cursor: pointer;
 
     transition: transform 0.15s;
@@ -62,7 +61,6 @@
     .leaflet-popup-content-wrapper {
       border-radius: map.get($map: $radius, $key: "small");
       background-color: map.get($map: $colors, $key: "background_1");
-      box-shadow: 0 4px 24px rgba(0, 0, 0, 0.18);
       padding: 0;
       overflow: hidden;
     }
@@ -133,7 +131,6 @@
 
     background-color: map.get($map: $colors, $key: "background_1");
     border-radius: map.get($map: $radius, $key: "small");
-    box-shadow: 0 2px 12px rgba(0, 0, 0, 0.15);
     padding: 16px;
     min-width: 160px;
 
